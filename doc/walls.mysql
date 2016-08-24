@@ -26,6 +26,7 @@ CREATE TABLE `walls` (
   `training` text DEFAULT NULL,
   `bar`      text DEFAULT NULL,
   `music`    text DEFAULT NULL,  
+  `public`   bool,
   PRIMARY KEY (`id`),
   KEY `address_id` (`address_id`),
   CONSTRAINT `walls_ibfk_1` FOREIGN KEY (`address_id`) REFERENCES `addresses` (`id`)
