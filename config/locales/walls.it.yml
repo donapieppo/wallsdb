@@ -1,0 +1,25 @@
+it:
+  activerecord:
+    models:
+      address:    Indirizzo
+      wall:       Muro
+
+  simple_form:
+    labels:
+      address:
+        name:        Indirizzo
+        city:        Città
+      wall:
+        name: Nome
+        description: Descrizione 
+        mq: m.q.
+        opening: aperture
+        prices:  prezzi
+
+    hints:
+      address:
+        name:  Via, Piazza, n.
+
+    placeholders:
+      wall:
+        url:  http://
