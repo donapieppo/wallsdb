@@ -13,10 +13,14 @@ it:
         name: Nome
         description: Descrizione 
         mq: m.q.
-        opening: aperture
+        opening: orari
         prices:  prezzi
+        city: città
+        province: provincia
 
     hints:
+      wall: 
+        description: Descrizione lunga
       address:
         name:  Via, Piazza, n.
 

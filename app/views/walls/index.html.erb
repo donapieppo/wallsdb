@@ -1,0 +1,6 @@
+<ul>
+  <% @walls.each do |wall| %>  
+    <li><%= wall.name %> <%= link_to_edit edit_wall_path(wall) %>  </li>
+  <% end %>
+</ul>
+

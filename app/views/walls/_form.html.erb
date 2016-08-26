@@ -1,0 +1,31 @@
+<%= horizontal_form_for @wall do |wall| %>  
+  <fielset>
+  <legend>Dati principali</legend>
+  <%= wall.dm_error_notification %>  
+  <%= wall.input :name %>  
+  <%= wall.input :description, as: :text %>  
+  <%= wall.input :contact %>  
+  <%= wall.input :city %>  
+  <%= wall.association :province %>  
+  </fielset>
+
+  <fielset>
+  <legend>Dettagli</legend>
+  <%= wall.input :mq %>  
+  <%= wall.input :boulder %>  
+  <%= wall.input :rope %>  
+  <%= wall.input :training %>  
+  <%= wall.input :bar %>  
+  <%= wall.input :music %>  
+  </fielset>
+
+  <%= wall.submit %>  
+<% end %>
+
+<% if @opening %>  
+  <fielset>
+  <legend>Aperture e prezzi</legend>
+  <%= render partial: 'opening', locals: {wall: @wall} %>  
+  </fielset>
+<% end %>
+

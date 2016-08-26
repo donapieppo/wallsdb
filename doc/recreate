@@ -1,0 +1,15 @@
+#!/bin/bash
+
+mysql -e 'drop   database wallsdb'
+mysql -e 'create database wallsdb'
+
+mysql wallsdb < doc/regions.sql 
+mysql wallsdb < doc/provinces.sql 
+mysql wallsdb < doc/walls.mysql 
+
+rake db:schema:dump
+touch tmp/restart.txt
+
+mysql wallsdb -e "insert into users values (0, 'Luca Sisalli', 'luca@gmail.com', NULL)"
+
+

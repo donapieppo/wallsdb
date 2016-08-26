@@ -3,26 +3,20 @@ use `wallsdb`;
 CREATE TABLE `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  `surname` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-CREATE TABLE `addresses` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `cap`  varchar(255) NOT NULL,
-  `city` text DEFAULT NULL,
-  `map`  varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `walls` (
   `id`          int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name`        varchar(255) NOT NULL,
-  `description` text,
-  `address_id`  int(10) unsigned DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `address`     varchar(255) DEFAULT NULL,
+  `cap`         varchar(255) DEFAULT NULL,
+  `city`        text DEFAULT NULL,
+  `province_id` int(10) unsigned DEFAULT NULL,
+  `map`         varchar(255) DEFAULT NULL,
   `contact`     text DEFAULT NULL,
   `web`         varchar(255) DEFAULT NULL,
   `opening`     text DEFAULT NULL,
@@ -35,8 +29,8 @@ CREATE TABLE `walls` (
   `music`       text DEFAULT NULL,  
   `public`      bool,
   PRIMARY KEY (`id`),
-  KEY `address_id` (`address_id`),
-  CONSTRAINT `walls_ibfk_1` FOREIGN KEY (`address_id`) REFERENCES `addresses` (`id`)
+  KEY `province_id` (`province_id`),
+  CONSTRAINT `walls_ibfk_1` FOREIGN KEY (`province_id`) REFERENCES `provinces` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `admins` (
@@ -49,7 +43,19 @@ CREATE TABLE `admins` (
   KEY `wall_id` (`wall_id`),
   CONSTRAINT `admins_ibfk_2` FOREIGN KEY (`wall_id`) REFERENCES `walls` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `openings` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `wall_id` int(10) unsigned NOT NULL,
+  `day_of_week` int(2) unsigned, 
+  `time_open` time DEFAULT NULL,
+  `time_close` time DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `wall_id` (`wall_id`),
+  CONSTRAINT `openings_ibfk_1` FOREIGN KEY (`wall_id`) REFERENCES `walls` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
   
+
 
 
 

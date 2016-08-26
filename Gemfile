@@ -1,25 +1,40 @@
 source 'https://rubygems.org'
 
-gem 'sqlite3'
+gem 'rails', '~> 5.0.0'
+gem 'mysql2'
 
-gem 'dm_unibo_common',      git: 'https://github.com/donapieppo/dm_unibo_common.git',      ref: 'rails_5', branch: 'rails_5'
-gem 'dm_unibo_user_search', git: 'https://github.com/donapieppo/dm_unibo_user_search.git', ref: 'master', branch: 'master'
+# Use Puma as the app server
+gem 'puma', '~> 3.0'
 
-gem "paperclip"
-
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.2'
 gem 'therubyracer', platforms: :ruby
-gem 'sdoc', '~> 0.4.0', group: :doc
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'  
+
+gem 'jquery-rails'
+gem 'jbuilder', '~> 2.5'
+
+gem 'simple_form'
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+
+#gem 'ice_cube'
+#gem 'schedulable'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end
 
-group :development, :test do
+group :development do
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'web-console'
   gem 'listen', '~> 3.0.5'
-  gem 'rspec-rails', '~> 3.1.0'
-  gem 'factory_girl_rails'
-  gem 'mocha'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
