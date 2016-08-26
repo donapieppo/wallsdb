@@ -4,6 +4,11 @@ class Wall < ApplicationRecord
   has_many :openings
   has_many :photos
 
+  validates :name, uniqueness: true
+
+  def to_s
+    self.name
+  end
 end
 
 

@@ -12,4 +12,17 @@ touch tmp/restart.txt
 
 mysql wallsdb -e "insert into users values (0, 'Luca Sisalli', 'luca@gmail.com', NULL)"
 
+mysql wallsdb << EOF
+insert into \`walls\` (\`id\`, \`name\`, \`description\`) values (1, 'Eden Climbing - Oz Bologna', '<p>Arrampicare! <i>... Parlare di scalata in termini di piacere può sembrare strano; eppure, è di questo che si tratta.  A tutte le età e a qualunque grado di pratica, i massi e le falesie procurano dei piaceri profondi e a diversi livelli: padroneggiare armoniosamente il corpo, imparare a vincere il dubbio, tentare di superare se stessi... o, ancora, dividere un momento di amicizia!
+</i><br/>
+Patrick Edlinger.
+</p>
+
+<p>
+Questo è lo spirito che accomuna il gruppo di Eden Climbing, non solo una struttura di arrampicata per migliorare il proprio livello ma soprattutto un luogo dove condividere la propria passione.
+</p>');
+
+EOF
+
+
 

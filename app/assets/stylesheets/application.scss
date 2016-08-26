@@ -4,6 +4,14 @@
 @import "font-awesome";
 @import "variables";
 
+h1.hometitle {
+  position: relative; 
+  font-size: 56px;
+  color: white;
+  background: url('/images/home/1.jpg');    
+  height: 450px;
+}
+
 h1:first-letter, h2:first-letter {
   font-size:      130%;
   text-transform: capitalize;

@@ -1,2 +1,10 @@
-<h1>Muri d'Italia</h1>
+<h1 class="hometitle">Muri d'Italia</h1> 
+
+<ul>
+  <% @walls.each do |wall| %>  
+    <li><%= link_to wall, wall %></li>
+  <% end %>
+</ul>
+
+
 
