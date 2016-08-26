@@ -21,6 +21,9 @@ gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 
+gem 'carrierwave'
+gem 'mini_magick'
+
 #gem 'ice_cube'
 #gem 'schedulable'
 

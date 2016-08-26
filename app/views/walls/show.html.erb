@@ -4,4 +4,8 @@
   <%= raw @wall.description %>  
 </div>
 
+<% @wall.photos.each do |photo| %>  
+  <%= image_tag photo.image.thumb.url %>  
+<% end %>
+
 

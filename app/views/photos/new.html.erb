@@ -1,0 +1,7 @@
+<h1>Nuova foto</h1>
+
+<%= horizontal_form_for [@wall, @photo] do |photo| %>  
+  <%= photo.input :image, as: :file %>  
+  <%= photo.input :importance, collection: ['a', 'b', 'c'] %>  
+  <%= photo.submit %>  
+<% end %>
