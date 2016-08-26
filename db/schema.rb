@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "openings", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "wall_id",     null: false, unsigned: true
-    t.integer "day_of_week",              unsigned: true
+    t.integer "wall_id",    null: false, unsigned: true
+    t.integer "wday",                    unsigned: true
     t.time    "time_open"
     t.time    "time_close"
     t.index ["wall_id"], name: "wall_id", using: :btree
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.text    "description", limit: 65535
     t.string  "address"
     t.string  "cap"
-    t.text    "city",        limit: 65535
+    t.string  "city"
     t.integer "province_id",                            unsigned: true
     t.string  "map"
     t.text    "contact",     limit: 65535

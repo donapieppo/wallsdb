@@ -47,7 +47,7 @@ CREATE TABLE `admins` (
 CREATE TABLE `openings` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `wall_id` int(10) unsigned NOT NULL,
-  `day_of_week` int(2) unsigned, 
+  `wday` int(2) unsigned, 
   `time_open` time DEFAULT NULL,
   `time_close` time DEFAULT NULL,
   PRIMARY KEY (`id`),
