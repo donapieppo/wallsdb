@@ -6,17 +6,16 @@ it:
 
   simple_form:
     labels:
-      address:
-        name:        Indirizzo
-        city:        Città
       wall:
         name: Nome
         description: Descrizione 
+        address: Indirizzo
         mq: m.q.
         opening: orari
         prices:  prezzi
         city: città
         province: provincia
+        web: Sito Web
 
     hints:
       wall: 

@@ -5,8 +5,11 @@
   <%= wall.input :name %>  
   <%= wall.input :description, as: :text %>  
   <%= wall.input :contact %>  
+  <%= wall.input :address %>  
+  <%= wall.input :cap %>  
   <%= wall.input :city %>  
   <%= wall.association :province %>  
+  <%= wall.input :city %>  
   </fielset>
 
   <fielset>
@@ -24,8 +27,14 @@
 
 <% if @opening %>  
   <fielset>
-  <legend>Aperture e prezzi</legend>
-  <%= render partial: 'opening', locals: {wall: @wall} %>  
+  <legend>Aperture</legend>
+  <%= render partial: 'openings/form', locals: {wall: @wall} %>  
+  </fielset>
+<% end %>
+
+<% if @opening %>  
+  <fielset>
+  <legend>Prezzi</legend>
   </fielset>
 <% end %>
 
