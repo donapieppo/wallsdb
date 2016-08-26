@@ -1,0 +1,12 @@
+<%= simple_form_for [@wall, @opening] do |opening| %>  
+  <div class="row">
+    <div class="col-md-4">
+      <%= select_opening_day %>
+    </div>
+    <div class="col-md-4">
+      dalle <%= select_opening_hour(:start) %>
+      alle  <%= select_opening_hour(:end) %>  
+    </div>
+  </div>
+  <%= opening.submit %>  
+<% end %>
