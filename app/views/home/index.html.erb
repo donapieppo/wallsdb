@@ -1,14 +1,14 @@
 <h1 class="hometitle">Muri d'Italia</h1> 
 
-<ul>
+<dl class='home-list'>
   <% old_region = nil %>  
   <% @walls.each do |wall| %>  
     <% if old_region != (old_region = wall.province.region) %>  
-      <h2><%= old_region  %></h2>
+      <dt><%= old_region  %></dt>
     <% end %>
-    <li><%= wall.province.name %> <%= link_to wall, wall %></li>
+    <dd><%= wall.province.name %> <%= link_to wall, wall %></dd>
   <% end %>
-</ul>
+</dl>
 
 
 

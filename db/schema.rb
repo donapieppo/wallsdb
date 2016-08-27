@@ -62,9 +62,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "web"
     t.text    "opening",     limit: 65535
     t.text    "prices",      limit: 65535
-    t.integer "mq",                                     unsigned: true
-    t.text    "boulder",     limit: 65535
-    t.text    "rope",        limit: 65535
+    t.integer "boulder"
+    t.integer "rope"
     t.text    "training",    limit: 65535
     t.text    "bar",         limit: 65535
     t.text    "music",       limit: 65535

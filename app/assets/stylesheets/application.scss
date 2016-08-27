@@ -6,7 +6,7 @@
 
 h1.hometitle {
   position: relative; 
-  font-size: 100px;
+  font-size: 88px;
   padding: 30px;
 }
 
@@ -153,6 +153,39 @@ ul.bordered {
 }
 span.actions {
   @extend .pull-right;
+}
+
+dl.home-list {
+  dd {
+    padding-left: 20px;
+  }
+}
+
+.wall-form {
+  @include make-row();
+  .wall-main {
+    @include make-md-column(6);
+  }
+  .wall-details {
+    @include make-md-column(6);
+  }
+}
+
+ul.wall-circles {
+  @extend .btn-group;
+  @extend .btn-group-justified;
+  li {
+    @extend .btn;
+    @extend .btn-info;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+  }
+  li.absent {
+    @extend .disabled;
+    // background-color: #ccc;
+    // color: #aaa;
+  }
 }
 
 

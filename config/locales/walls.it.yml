@@ -16,13 +16,21 @@ it:
         city: Città
         province: Provincia
         web: Sito Web
+        contact: Contatti
+        boulder: boulder
+        rope:    corda
+        training: Altro
 
     hints:
       wall: 
         description: Descrizione lunga
-      address:
-        name:  Via, Piazza, n.
+        boulder: Indicare i m.q. di parete boulder
+        rope:    Indicare i m.q. di parete con corda
+        training: Attrezzi per allenamento a secco
+        address:  Via, Piazza, n.
 
     placeholders:
       wall:
         url:  http://
+        contact: +39 
+        training: system wall, travi, trx

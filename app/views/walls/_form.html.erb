@@ -1,5 +1,6 @@
+<div class="wall-form">
 <%= horizontal_form_for @wall do |wall| %>  
-  <fielset>
+  <fielset class="wall-main">
   <legend>Dati principali</legend>
   <%= wall.dm_error_notification %>  
   <%= wall.input :name %>  
@@ -8,12 +9,11 @@
   <%= wall.input :address %>  
   <%= wall.input :cap %>  
   <%= wall.input :city %>  
-  <%= wall.association :province %>  
+  <%= wall.association :province, include_blank: false %>  
   </fielset>
 
-  <fielset>
+  <fielset class="wall-details">
   <legend>Dettagli</legend>
-  <%= wall.input :mq %>  
   <%= wall.input :boulder %>  
   <%= wall.input :rope %>  
   <%= wall.input :training %>  
@@ -21,19 +21,21 @@
   <%= wall.input :music %>  
   </fielset>
 
-  <%= wall.submit %>  
+  <fielset>
+    <%= wall.submit %>  
+  </fielset>
 <% end %>
 
 <% unless @wall.new_record? %>  
-  <fielset class="openings_form">
+  <fielset class="wall-openings">
   <legend>Aperture</legend>
   <%= render partial: 'openings/form', locals: {wall: @wall} %>  
   </fielset>
 <% end %>
 
 <% unless @wall.new_record? %>  
-  <fielset>
+  <fielset class="wall-prices">
   <legend>Prezzi</legend>
   </fielset>
 <% end %>
-
+</div>

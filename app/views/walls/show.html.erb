@@ -4,6 +4,14 @@
   <%= raw @wall.description %>  
 </div>
 
+<ul class="wall-circles">
+  <%= boulder_presence(@wall) %>
+  <%= rope_presence(@wall) %>
+  <%= training_presence(@wall) %>
+  <%= bar_presence(@wall) %>
+  <%= music_presence(@wall) %>
+</ul>
+
 <ul>
   <li><%= fwicon('map-marker') %> <%= @wall.address %> - <%= @wall.city %> (<%= @wall.province.sig %>)</li>
   <li><%= fwicon('calendar') %>  
