@@ -5,7 +5,7 @@ class Opening < ApplicationRecord
 
   def to_s
     if self.wday
-      DAY_NAMES[self.wday] + " " + self.time_open.to_s + " - " + self.time_close.to_s
+      DAY_NAMES[self.wday] + " " + I18n.l(self.time_open, format: :hour) + " - " + I18n.l(self.time_close, format: :hour)
     else
       "ERRORE"
     end

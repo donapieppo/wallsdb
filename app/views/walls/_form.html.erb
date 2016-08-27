@@ -9,7 +9,6 @@
   <%= wall.input :cap %>  
   <%= wall.input :city %>  
   <%= wall.association :province %>  
-  <%= wall.input :city %>  
   </fielset>
 
   <fielset>
@@ -25,14 +24,14 @@
   <%= wall.submit %>  
 <% end %>
 
-<% if @opening %>  
-  <fielset>
+<% unless @wall.new_record? %>  
+  <fielset class="openings_form">
   <legend>Aperture</legend>
   <%= render partial: 'openings/form', locals: {wall: @wall} %>  
   </fielset>
 <% end %>
 
-<% if @opening %>  
+<% unless @wall.new_record? %>  
   <fielset>
   <legend>Prezzi</legend>
   </fielset>

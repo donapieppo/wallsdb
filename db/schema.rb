@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "city"
     t.integer "province_id",                            unsigned: true
     t.string  "map"
-    t.text    "contact",     limit: 65535
+    t.string  "contact"
     t.string  "web"
     t.text    "opening",     limit: 65535
     t.text    "prices",      limit: 65535

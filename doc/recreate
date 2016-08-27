@@ -13,14 +13,57 @@ touch tmp/restart.txt
 mysql wallsdb -e "insert into users values (0, 'Luca Sisalli', 'luca@gmail.com', NULL)"
 
 mysql wallsdb << EOF
-insert into \`walls\` (\`id\`, \`name\`, \`description\`) values (1, 'Eden Climbing - Oz Bologna', '<p>Arrampicare! <i>... Parlare di scalata in termini di piacere può sembrare strano; eppure, è di questo che si tratta.  A tutte le età e a qualunque grado di pratica, i massi e le falesie procurano dei piaceri profondi e a diversi livelli: padroneggiare armoniosamente il corpo, imparare a vincere il dubbio, tentare di superare se stessi... o, ancora, dividere un momento di amicizia!
+insert into \`walls\` (\`id\`, \`name\`, \`description\`, \`address\`, \`city\`, \`province_id\`, \`web\`) values 
+                      (1, 
+                       'Eden Climbing - Oz Bologna', 
+                       '<p>Arrampicare! <i>... Parlare di scalata in termini di piacere può sembrare strano; eppure, è di questo che si tratta.  A tutte le età e a qualunque grado di pratica, i massi e le falesie procurano dei piaceri profondi e a diversi livelli: padroneggiare armoniosamente il corpo, imparare a vincere il dubbio, tentare di superare se stessi... o, ancora, dividere un momento di amicizia!
 </i><br/>
 Patrick Edlinger.
 </p>
 
 <p>
 Questo è lo spirito che accomuna il gruppo di Eden Climbing, non solo una struttura di arrampicata per migliorare il proprio livello ma soprattutto un luogo dove condividere la propria passione.
-</p>');
+</p>',
+                      'Via Staligrado, 15', 
+                      'Bologna',
+                      14,
+                      'http://www.ozbologna.org/eden-park/eden-climbing/'),
+                     (2,
+                      'C.U.S Catania', 
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                      'Via Pippo Pluto, 123', 
+                      'Catania', 
+                      23,
+                      'http://www.cuscatania.it/'),
+                    (3, 
+                     'Passaggio Obbligato', 
+                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                     'Via degli Imbriani, 17', 
+                     'Milano', 
+                     57,
+                     'http://www.passaggiobbligato.it/'),
+                    (4, 
+                     'Rock Sport Asd', 
+                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                     'Via iGaudenzio Fantoli, 15/1', 
+                     'Milano', 
+                     57,
+                     'http://www.rockspot.it/'),
+                    (5, 
+                     'King Rock', 
+                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                     'Via Cà Mazzè, 21', 
+                     'Verona', 
+                     107,
+                     'http://www.kingrock.it/'),
+                    (6, 
+                     'Equilibrium Scsd', 
+                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                     'Via Tincani Martelli, 140', 
+                     'Portile di Modena', 
+                     107,
+                     'http://www.equilibriumarrampicata.it');
+
 
 EOF
 

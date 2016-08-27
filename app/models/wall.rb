@@ -5,6 +5,7 @@ class Wall < ApplicationRecord
   has_many :photos
 
   validates :name, uniqueness: true
+  validates :province, presence: true
 
   def to_s
     self.name

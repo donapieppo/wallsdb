@@ -1,17 +1,11 @@
-ATTUALI APERTURE:
-
 <% @wall.openings.each do |opening| %>  
-  <%= opening %>  
+  <%= opening %> <%= link_to_delete opening_path(opening) %> <br/> 
 <% end %>
+
+<% @opening = @wall.openings.new %>  
+
 <%= simple_form_for [@wall, @opening] do |opening| %>  
-  <div class="row">
-    <div class="col-md-4">
-      <%= select_opening_day %>
-    </div>
-    <div class="col-md-4">
-      dalle <%= select_opening_hour(:open) %>
-      alle  <%= select_opening_hour(:close) %>  
-    </div>
-  </div>
+  <%= select_opening_day %>
+  dalle <%= select_opening_hour(:open) %> alle <%= select_opening_hour(:close) %>  
   <%= opening.submit %>  
 <% end %>

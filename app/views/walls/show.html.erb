@@ -1,8 +1,19 @@
-<center><h1><%= @wall.name %> </h1></center>
+<center><h1><%= @wall.name %> <%= link_to_edit [:edit, @wall] %>  </h1></center>
 
 <div class="well">
   <%= raw @wall.description %>  
 </div>
+
+<ul>
+  <li><%= fwicon('map-marker') %> <%= @wall.address %> - <%= @wall.city %> (<%= @wall.province.sig %>)</li>
+  <li><%= fwicon('calendar') %>  
+<% @wall.openings.each do |opening| %>  
+ <%= opening %> 
+<% end.join(', ') %>
+  </li>
+  <li><%= fwicon('external-link') %>  <%= link_to @wall.web, @wall.web %> </li>
+  <li><%= fwicon('phone') %>  ----- </li>
+</ul>
 
 <% @wall.photos.each do |photo| %>  
   <%= image_tag photo.image.thumb.url %>  

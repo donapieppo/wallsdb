@@ -1,5 +1,5 @@
 class OpeningsController < ApplicationController
-  before_action :get_wall_and_check_permission
+  before_action :get_wall_and_check_permission, only: [:create]
 
   def create
     params[:wday].each do |wday|
@@ -7,6 +7,14 @@ class OpeningsController < ApplicationController
                                         time_close: params[:close_hour] + ":" + params[:close_min])
     end
     redirect_to [:edit, @wall]
+  end
+
+  def destroy
+    opening = Opening.includes(:wall).find(params[:id])
+    if current_user.owns?(opening)
+      opening.delete
+    end
+    redirect_to opening.wall
   end
 
   private

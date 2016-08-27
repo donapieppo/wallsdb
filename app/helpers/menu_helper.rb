@@ -7,7 +7,7 @@ module MenuHelper
   def logged_user
     if current_user
       %Q|<li class="login-name navbar-text">#{current_user}</li>
-         <li class="logout-link">LOGOUT</li>|
+         <li class="logout-link">#{link_to 'LOGOUT', ''}</li>|
     else
       %Q|<li>#{login_link}</li>|
     end.html_safe
@@ -22,7 +22,7 @@ module MenuHelper
 
   def dm_header
     icon   = 'cubes'
-    string = "Muri d'Italia" + content_tag(:small, 'I muri di arrampicata')
+    string = "Muri d'Italia" + content_tag(:small, 'muri di arrampicata in Italia')
     %Q|<div class="navbar-header">
          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar-collapse">
            <span class="sr-only">Toggle navigation</span>

@@ -11,10 +11,10 @@ it:
         description: Descrizione 
         address: Indirizzo
         mq: m.q.
-        opening: orari
-        prices:  prezzi
-        city: città
-        province: provincia
+        opening: Orari
+        prices:  Prezzi
+        city: Città
+        province: Provincia
         web: Sito Web
 
     hints:

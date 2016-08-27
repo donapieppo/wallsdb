@@ -20,7 +20,6 @@ class WallsController < ApplicationController
   end
 
   def edit
-    @opening = @wall.openings.new
   end
 
   def update
