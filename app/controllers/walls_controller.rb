@@ -38,7 +38,7 @@ class WallsController < ApplicationController
   def wall_params
     params[:wall].permit(:name, :description, :contact, 
                          :address, :city, :cap, :province_id, :web, 
-                         :opening, :prices, :boulder, :rope, :training, :bar, :music)
+                         :opening, :prices, :boulder_mq, :boulder_notes, :rope_mq, :rope_notes, :training, :bar, :music)
   end
 
   def set_show_and_check_permission

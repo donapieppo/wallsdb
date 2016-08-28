@@ -1,17 +1,17 @@
 module WallsHelper
   def boulder_presence(wall)
-    present = (wall.boulder.to_i > 0)
+    present = (wall.boulder_mq.to_i > 0)
     content_tag :li, class: (present ? '' : 'absent') do
       big_icon('flag') + "<br/>".html_safe +
-      (present ? "#{wall.rope} m.q. di boulder" : "boulder")
+      (present ? "#{wall.boulder_mq} m.q. di boulder" : "boulder")
     end
   end
 
   def rope_presence(wall)
-    present = (wall.rope.to_i > 0)
+    present = (wall.rope_mq.to_i > 0)
     content_tag :li, class: (present ? '' : 'absent') do
       big_icon('chain') + "<br/>".html_safe +
-      (present ? "#{wall.rope} m.q. di corda" : "parete con corda")
+      (present ? "#{wall.rope_mq} m.q. di corda" : "parete con corda")
     end
   end
 

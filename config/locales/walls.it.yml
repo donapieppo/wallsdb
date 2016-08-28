@@ -3,6 +3,7 @@ it:
     models:
       address:    Indirizzo
       wall:       Muro
+      opening:    Apertura
 
   simple_form:
     labels:
@@ -17,20 +18,26 @@ it:
         province: Provincia
         web: Sito Web
         contact: Contatti
-        boulder: boulder
-        rope:    corda
-        training: Altro
+        boulder_mq: M.q.
+        boulder_notes: Note
+        rope_mq:    M.q.
+        rope_notes: Note
+        training: Attrezzi
+        music: Musica
 
     hints:
       wall: 
-        description: Descrizione lunga
-        boulder: Indicare i m.q. di parete boulder
-        rope:    Indicare i m.q. di parete con corda
-        training: Attrezzi per allenamento a secco
+        description: Descrizione lunga. È possibile inserire tag html.
+        boulder: Indicare i m.q. di parete boulder.
+        rope:    Indicare i m.q. di parete con corda.
+        training: Attrezzi per allenamento a secco.
         address:  Via, Piazza, n.
+        bar: È possibile comprarsi una birra o uno spritz? 
+        boulder_notes: Note sul boulder.
+        rope_notes: Note sui muri di corda.
 
     placeholders:
       wall:
         url:  http://
-        contact: +39 
-        training: system wall, travi, trx
+        contact: '+39 '
+        training: system wall, travi, pan Gullich, trx

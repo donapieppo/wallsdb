@@ -4,24 +4,31 @@
   <legend>Dati principali</legend>
   <%= wall.dm_error_notification %>  
   <%= wall.input :name %>  
-  <%= wall.input :description, as: :text %>  
   <%= wall.input :contact %>  
   <%= wall.input :address %>  
   <%= wall.input :cap %>  
   <%= wall.input :city %>  
   <%= wall.association :province, include_blank: false %>  
+  <%= wall.input :description, as: :text %>  
+  </fielset>
+
+  <fielset class="wall-walls">
+  <legend>Boulder</legend>
+  <%= wall.input :boulder_mq %>  
+  <%= wall.input :boulder_notes %>  
+  <legend>Corda</legend>
+  <%= wall.input :rope_mq %>  
+  <%= wall.input :rope_notes %>  
   </fielset>
 
   <fielset class="wall-details">
   <legend>Dettagli</legend>
-  <%= wall.input :boulder %>  
-  <%= wall.input :rope %>  
   <%= wall.input :training %>  
   <%= wall.input :bar %>  
   <%= wall.input :music %>  
   </fielset>
 
-  <fielset>
+  <fielset class="wall-submit">
     <%= wall.submit %>  
   </fielset>
 <% end %>

@@ -51,22 +51,24 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "walls", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string  "name",                      null: false
-    t.text    "description", limit: 65535
+    t.string  "name",                        null: false
+    t.text    "description",   limit: 65535
     t.string  "address"
     t.string  "cap"
     t.string  "city"
-    t.integer "province_id",                            unsigned: true
+    t.integer "province_id",                              unsigned: true
     t.string  "map"
     t.string  "contact"
     t.string  "web"
-    t.text    "opening",     limit: 65535
-    t.text    "prices",      limit: 65535
-    t.integer "boulder"
-    t.integer "rope"
-    t.text    "training",    limit: 65535
-    t.text    "bar",         limit: 65535
-    t.text    "music",       limit: 65535
+    t.text    "opening",       limit: 65535
+    t.text    "prices",        limit: 65535
+    t.integer "boulder_mq"
+    t.string  "boulder_notes"
+    t.integer "rope_mq"
+    t.string  "rope_notes"
+    t.text    "training",      limit: 65535
+    t.text    "bar",           limit: 65535
+    t.text    "music",         limit: 65535
     t.boolean "public"
     t.index ["province_id"], name: "province_id", using: :btree
   end

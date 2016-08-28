@@ -15,9 +15,11 @@
 <ul>
   <li><%= fwicon('map-marker') %> <%= @wall.address %> - <%= @wall.city %> (<%= @wall.province.sig %>)</li>
   <li><%= fwicon('calendar') %>  
-<% @wall.openings.each do |opening| %>  
- <%= opening %> 
-<% end.join(', ') %>
+  <ul>
+  <% @wall.openings.each do |opening| %>  
+    <li><%= opening %></li>
+    <% end %>
+  </ul>
   </li>
   <li><%= fwicon('external-link') %>  <%= link_to @wall.web, @wall.web %> </li>
   <li><%= fwicon('phone') %>  ----- </li>

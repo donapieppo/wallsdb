@@ -164,10 +164,16 @@ dl.home-list {
 .wall-form {
   @include make-row();
   .wall-main {
-    @include make-md-column(6);
+    @include make-md-column(12);
+  }
+  .wall-walls {
+    @include make-md-column(12);
   }
   .wall-details {
-    @include make-md-column(6);
+    @include make-md-column(12);
+  }
+  .wall-submit {
+    @include make-md-column(12);
   }
 }
 
