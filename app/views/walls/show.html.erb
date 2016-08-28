@@ -25,8 +25,15 @@
   <li><%= fwicon('phone') %>  ----- </li>
 </ul>
 
-<% @wall.photos.each do |photo| %>  
-  <%= image_tag photo.image.thumb.url %>  
-<% end %>
+<div class="row">
+  <% @wall.photos.each do |photo| %>  
+    <div class="col-xs-6 col-md-2">
+      <span class='thumbnail'>
+        <%= image_tag photo.image.thumb.url %>  
+      </span>
+    </div>
+  <% end %>
+</div>
+
 
 

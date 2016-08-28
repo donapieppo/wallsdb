@@ -32,17 +32,5 @@
     <%= wall.submit %>  
   </fielset>
 <% end %>
-
-<% unless @wall.new_record? %>  
-  <fielset class="wall-openings">
-  <legend>Aperture</legend>
-  <%= render partial: 'openings/form', locals: {wall: @wall} %>  
-  </fielset>
-<% end %>
-
-<% unless @wall.new_record? %>  
-  <fielset class="wall-prices">
-  <legend>Prezzi</legend>
-  </fielset>
-<% end %>
 </div>
+

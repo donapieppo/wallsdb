@@ -1,1 +1,34 @@
 <%= render partial: 'form' %>  
+
+<fielset class="wall-openings">
+<legend>Aperture</legend>
+<%= render partial: 'openings/form', locals: {wall: @wall} %>  
+</fielset>
+
+<fielset class="wall-prices">
+<legend>Prezzi</legend>
+</fielset>
+
+<fielset class="wall-gallery">
+<legend>Immagini</legend>
+
+<div class="row">
+  <% @wall.photos.each do |photo| %>  
+    <div class="col-xs-6 col-md-2">
+      <div class='thumbnail'>
+        <%= image_tag photo.image.url %>  
+      </div>
+      <div class="caption">
+        <%= link_to_delete photo_path(photo) %>  
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= horizontal_form_for [@wall, @wall.photos.new] do |photo| %>  
+  <%= photo.input :image, as: :file, label: 'Nuova Foto' %>  
+  <%= photo.input :importance, collection: ['a', 'b', 'c'] %>  
+  <%= photo.submit %>  
+<% end %>
+</fielset>
+

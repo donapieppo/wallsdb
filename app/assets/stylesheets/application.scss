@@ -177,6 +177,10 @@ dl.home-list {
   }
 }
 
+.wall-gallery {
+  text-align: center;
+}
+
 ul.wall-circles {
   @extend .btn-group;
   @extend .btn-group-justified;
