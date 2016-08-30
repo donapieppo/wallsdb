@@ -6,6 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+MASTERS_OF_UNIVERSE = ['luca@gmail.com',
+                       'donapieppo@gmail.com']
+
 module Wallsdb
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -13,5 +16,6 @@ module Wallsdb
     # -- all .rb files in that directory are automatically loaded.
     config.time_zone = 'Rome'
     config.i18n.default_locale = :it
+
   end
 end

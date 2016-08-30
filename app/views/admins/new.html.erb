@@ -1,0 +1,7 @@
+<h1>Nuovo Amministratore in <%= @wall %></h1>
+
+<%= horizontal_form_for [@wall, @admin] do |admin| %>  
+  <input type='text' name='email'></input>
+  <%= admin.submit %>  
+<% end %>
+

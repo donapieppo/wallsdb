@@ -1,5 +1,6 @@
 class WallsController < ApplicationController
-  before_action :set_show_and_check_permission, only: [:edit, :update, :show]
+  skip_before_action :force_sso_user, only: :show
+  before_action :set_wall_and_check_permission, only: [:edit, :update, :show]
 
   def index
     @walls = current_user.walls.all
@@ -41,7 +42,7 @@ class WallsController < ApplicationController
                          :opening, :prices, :boulder_mq, :boulder_notes, :rope_mq, :rope_notes, :training, :bar, :music)
   end
 
-  def set_show_and_check_permission
+  def set_wall_and_check_permission
     @wall = Wall.find(params[:id])
   end
 end

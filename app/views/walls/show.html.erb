@@ -1,7 +1,12 @@
-<center><h1><%= @wall.name %> <%= link_to_edit [:edit, @wall] %>  </h1></center>
+<center><h1><%= @wall.name %> <%= link_to_edit [:edit, @wall] %></h1></center>
 
-<div class="well">
+<div class="wall-main">
+  <div class="wall-description">
   <%= raw @wall.description %>  
+  </div>
+  <div class="wall-gmap">
+    <iframe src="<%= simple_gmap_url(@wall.gmap_address) %>"></iframe>
+  </div>
 </div>
 
 <ul class="wall-circles">

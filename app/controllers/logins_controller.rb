@@ -1,4 +1,4 @@
-# Take a look at http://railscasts.com/episodes/241-simple-omniauth
+# Take a look at http://railscasts.com/episodes/241-simple-omniauth
 # The main difference is that we mainly use shibboleth authentication.
 #
 # in routes we have
@@ -24,6 +24,7 @@
 # see lib/dm_unibo_common/controllers/helpers.rb for method definitions.
 class LoginsController < ApplicationController
   # raise: false see http://api.rubyonrails.org/classes/ActiveSupport/Callbacks/ClassMethods.html#method-i-skip_callback
+  skip_before_action :verify_authenticity_token
   skip_before_action :force_sso_user, :redirect_unsigned_user, :check_role, :retrive_authlevel, raise: false
 
   # env['omniauth.auth'].info = {email, name, last_name}

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Miri d'Italia.">
+    <meta name="description" content="Muri d'Italia.">
     <meta name="author" content="Luca and Piider">
     <title>Muri d'Italia</title>
 
@@ -16,12 +16,28 @@
   <body>
     <%= render partial: 'layouts/menu' %>
 
+    <% if @home_header %>  
+      <div class="home-header">  
+        <%# <div class="home-header-invite">Iscriviti al portale per <br/>tutti i muri di Italia.</div> %>
+        <div class="home-header-title">
+          <span>Cerca la palestra di arrampicata</span><br/>
+          <span>più vicina a te</span><br/>
+          <span>e a come ti piace.</span>
+        </div>
+      </div>
+    <% end %>
+
     <div class="container">
       <%= bootstrap_flash %>
       <%= bootstrap_modal_div %>
       <%= yield %>
     </div><!-- container -->
 
-    <%= dm_footer %>  
+    <div id="footer" role="navigation">
+      <div class="container" style="text-align: center">
+        <%= link_to('Admin', admins_path) if (@current_user and @current_user.master_of_universe?) %>  
+        <a href="http://www.unibo.it/it/ateneo/privacy-e-note-legali/privacy/informative-sul-trattamento-dei-dati-personali">Privacy</a><br/>
+      </div>
+    </div>
   </body>
 </html>

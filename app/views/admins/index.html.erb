@@ -1,0 +1,12 @@
+<h1>Amministratori</h1>
+
+<dl>
+<% @walls.each do |wall| %>  
+  <dt><%= wall %></dt> 
+  <% wall.admins.each do |admin| %>  
+    <dd><%= admin %></dd>
+  <% end %>
+  <dd><%= link_to icon('plus') + ' nuovo amministratore', new_wall_admin_path(wall) %></dd>
+<% end %>
+</dl>
+
