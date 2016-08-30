@@ -1,13 +1,35 @@
+@import "variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "variables";
 
-h1.hometitle {
-  position: relative; 
-  font-size: 88px;
-  padding: 30px;
+body {
+  background: url(asset-path('esagono.svg')) no-repeat center top ;
+}
+.navbar {
+  margin-bottom: 0;
+  background-color: transparent;
+}
+div.home-header {
+  color: #eee;
+  background: url(asset-path('background1.jpg')) no-repeat center top ;
+  height: 566px;
+  div.home-header-title {
+    font-size: 40px;
+    padding: 100px 50px;
+    span {
+      padding: 0 10px;
+      background: rgba(127, 127, 127, 0.3);
+    }
+  }
+  div.home-header-invite {
+    font-size: 13px;
+    color: #fff;
+    background-color: $wall-blue;
+    padding: 20px;
+    float: right;
+  }
 }
 
 h1:first-letter, h2:first-letter {
@@ -161,6 +183,16 @@ dl.home-list {
   }
 }
 
+.wall-main {
+  @include make-row();
+  .wall-description {
+    @extend .well;
+    @include make-md-column(7);
+  }
+  .wall-gmap {
+    @include make-md-column(5);
+  }
+}
 .wall-form {
   @include make-row();
   .wall-main {
