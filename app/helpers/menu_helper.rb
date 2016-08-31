@@ -7,7 +7,7 @@ module MenuHelper
   def logged_user
     if current_user
       %Q|<li class="login-name navbar-text">#{current_user}</li>
-         <li class="logout-link">#{link_to 'LOGOUT', ''}</li>|
+         <li class="logout-link">#{link_to 'LOGOUT', logout_path}</li>|
     else
       %Q|<li>#{login_link}</li>|
     end.html_safe
