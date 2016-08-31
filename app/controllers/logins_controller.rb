@@ -24,13 +24,13 @@
 # see lib/dm_unibo_common/controllers/helpers.rb for method definitions.
 class LoginsController < ApplicationController
   # raise: false see http://api.rubyonrails.org/classes/ActiveSupport/Callbacks/ClassMethods.html#method-i-skip_callback
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
   skip_before_action :force_sso_user, :redirect_unsigned_user, :check_role, :retrive_authlevel, raise: false
 
   # env['omniauth.auth'].info = {email, name, last_name}
   def google_oauth2
     parse_google_omniauth
-    allow_if_email
+    allow_and_create
   end
 
   def developer
@@ -43,10 +43,9 @@ class LoginsController < ApplicationController
   #         ["_lauree_session", "YU5RSTM2OXdYMkRyVjV0SXI1K3c3eDJJdjZQ..... "]
   def logout
     cookies.delete(Rails.configuration.session_options[:key].to_sym)
-    cookies.delete(shibapplicationid.to_sym)
     session[:user_id] = nil
     logger.info("after logout we redirect to params[:return] = #{params[:return]}")
-    redirect_to (params[:return] || 'http://www.unibo.it')
+    redirect_to (params[:return] || 'https://www.muriditalia.it')
   end
 
   # Not authorized but valid credentials
@@ -54,47 +53,29 @@ class LoginsController < ApplicationController
   end
 
   def pippo_show
-    # raise env.inspect
+    # raise request.env.inspect
   end
 
   private 
 
+  # omniauth.auth: #<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=... token="..."> extra=#<OmniAuth::AuthHash id_info=#<OmniAuth::AuthHash at_hash="..." aud="..." azp="..." email="donapieppo@gmail.com" email_verified=true exp=1472639186 iat=1472635586 iss="accounts.google.com" sub="..."> id_token="..." raw_info=#<OmniAuth::AuthHash email="donapieppo@gmail.com" email_verified="true" family_name="Dona" gender="male" given_name="Pieppo" kind="plus#personOpenIdConnect" locale="it" name="Pieppo Dona" picture="..." profile="..." sub="...">> info=#<OmniAuth::AuthHash::InfoHash email="donapieppo@gmail.com" first_name="Pieppo" image="https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg" last_name="Dona" name="Pieppo Dona" urls=#<OmniAuth::AuthHash Google="https://plus.google.com/104065190780467868357">> provider="google_oauth2" uid="104065190780467868357">
   def parse_google_omniauth
-    oinfo = env['omniauth.auth'].info
-    @email   = oinfo.email
-    @name    = oinfo.name
-    @surname = oinfo.last_name
+    # logger.info("omniauth.auth: #{request.env['omniauth.auth'].inspect}")
+    oinfo  = request.env['omniauth.auth'].info
+    @email = oinfo.email
+    @name  = oinfo.name
   end
 
   def allow_and_create
-    user = @idAnagraficaUnica ? User.where(id: @idAnagraficaUnica).first : User.where(email: @email).first
+    user = User.where(email: @email).first
     if ! user
       logger.info "Authentication: User #{@email} to be CREATED"
-      h = {id:      @idAnagraficaUnica || 0,
-           upn:     @email,
-           email:   @email,
-           name:    @name, 
-           surname: @surname }
-      h[:nationalpin] = @nationalpin if User.column_names.include?('nationalpin')
-      user = User.create!(h)
+      user = User.create!(email: @email, name: @name)
     end
-    logger.info "Authentication: allow_and_create as #{user.inspect} with groups #{session[:isMemberOf].inspect}"
+    logger.info "Authentication: allow_and_create as #{user.inspect}"
     sign_in_and_redirect user
   end
   alias_method :log_and_create, :allow_and_create # old syntax 
-
-  def allow_if_email
-    user = @idAnagraficaUnica ? User.where(id: @idAnagraficaUnica).first : User.where(email: @email).first
-    if user
-      logger.info "Authentication: allow_if_email as #{user.inspect} with groups #{session[:isMemberOf].inspect}"
-      user.update_attributes(name: @name, surname: @surname)
-      sign_in_and_redirect user
-    else
-      logger.info "User #{@email} not allowed"
-      redirect_to no_access_path
-    end
-  end
-  alias_method :log_if_email, :allow_if_email # old syntax 
 
   def sign_in_and_redirect(user)
     session[:user_id] = user.id
