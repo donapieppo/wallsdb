@@ -184,9 +184,10 @@ dl.home-list {
 }
 
 .wall-main {
+  padding: 30px 20px;
+  font-weight: bold;
   @include make-row();
   .wall-description {
-    @extend .well;
     @include make-md-column(7);
   }
   .wall-gmap {
