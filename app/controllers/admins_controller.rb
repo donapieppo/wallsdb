@@ -13,10 +13,13 @@ class AdminsController < ApplicationController
 
   def create
     @wall = Wall.find(params[:wall_id])
-    @user = User.where(email: params[:email]).first
+    current_user.owns!(@wall) 
+
+    @user = User.where(email: params[:email]).first || User.create(email: params[:email], name: params[:email])
+
     @admin = @wall.admins.new(user: @user)
     if @admin.save
-      redirect_to wall_path(@wall), notice: "Amministratore aggiunto a #{@wall.name}."
+      redirect_to wall_path(@wall), notice: "Amministratore #{@user.name} aggiunto a #{@wall.name}."
     else
       render :new
     end
