@@ -15,6 +15,26 @@ class Wall < ApplicationRecord
     "#{self.address} #{self.cap} #{self.city}"
   end
 
+  def has_boulder?
+    self.boulder_mq.to_i > 0
+  end
+
+  def has_rope?
+    self.rope_mq.to_i > 0
+  end
+
+  def has_training?
+    ! self.training.blank?
+  end
+
+  def has_bar?
+    ! self.bar.blank?
+  end
+
+  def has_music?
+    ! self.music.blank?
+  end
+
 end
 
 

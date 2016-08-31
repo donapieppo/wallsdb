@@ -12,7 +12,7 @@ class User < ApplicationRecord
   end
 
   def owns?(what)
-    current_user.master_of_universe? and return true
+    self.master_of_universe? and return true
     case what
     when Wall
       self.walls.include?(what)

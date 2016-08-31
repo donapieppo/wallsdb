@@ -1,4 +1,10 @@
 it:
+  boulder:  boulder
+  rope:     pareti con corda
+  training: allenamento a secco 
+  bar:      bar
+  music:    musica
+
   activerecord:
     models:
       address:    Indirizzo
