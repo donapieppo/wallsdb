@@ -1,38 +1,36 @@
 module WallsHelper
-  def boulder_presence(wall)
-    present = (wall.boulder_mq.to_i > 0)
-    content_tag :li, class: (present ? '' : 'absent') do
-      big_icon('flag') + "<br/>".html_safe +
-      (present ? "#{wall.boulder_mq} m.q. di boulder" : "boulder")
+
+  WallIcons = { boulder:  'flag',
+                rope:     'chain', 
+                training: 'bomb', 
+                bar:      'beer',
+                music:    'music' }
+
+
+  def details_bar(wall)
+    content_tag :ul, class: "wall-circles" do
+      capture do
+        concat li_tag(wall, :boulder) 
+        concat li_tag(wall, :rope)
+        concat li_tag(wall, :training)
+        concat li_tag(wall, :bar)
+        concat li_tag(wall, :music)
+      end
     end
   end
 
-  def rope_presence(wall)
-    present = (wall.rope_mq.to_i > 0)
-    content_tag :li, class: (present ? '' : 'absent') do
-      big_icon('chain') + "<br/>".html_safe +
-      (present ? "#{wall.rope_mq} m.q. di corda" : "parete con corda")
+  def li_tag(wall, what)
+    present = wall.send("has_#{what}?")        
+    mq      = [:boulder, :rope].include?(what) ? wall.send("#{what}_mq")    : nil
+    notes   = [:boulder, :rope].include?(what) ? wall.send("#{what}_notes") : wall.send(what)
+
+    popover = present ? { toggle: "popover", content: notes, container: "body", placement: "bottom"} : ''
+
+    content_tag :li, class: (present ? '' : 'absent'), data: popover, title: t(what) do 
+      big_icon(WallIcons[what]) + 
+      "<br/>".html_safe +
+      (mq ? "#{mq} m.q. di #{t what}" : t(what))
     end
   end
 
-  def training_presence(wall)
-    present = ! wall.training.blank?
-    content_tag :li, class: (present ? '' : 'absent')  do
-      big_icon('bomb') + "<br/>".html_safe + h(wall.training)
-    end
-  end
-
-  def bar_presence(wall)
-    present = ! wall.bar.blank?
-    content_tag :li, class: (present ? '' : 'absent')  do
-      big_icon(:beer) + "<br/>".html_safe + "Bar"
-    end
-  end
-
-  def music_presence(wall)
-    present = ! wall.music.blank?
-    content_tag :li, class: (present ? '' : 'absent')  do
-      big_icon(:music) + "<br/>".html_safe + "Musica"
-    end
-  end
 end  
