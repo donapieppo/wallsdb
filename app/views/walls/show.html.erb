@@ -9,13 +9,7 @@
   </div>
 </div>
 
-<ul class="wall-circles">
-  <%= boulder_presence(@wall) %>
-  <%= rope_presence(@wall) %>
-  <%= training_presence(@wall) %>
-  <%= bar_presence(@wall) %>
-  <%= music_presence(@wall) %>
-</ul>
+<%= details_bar(@wall) %>  
 
 <ul>
   <li><%= fwicon('map-marker') %> <%= @wall.address %> - <%= @wall.city %> (<%= @wall.province.sig %>)</li>
@@ -42,3 +36,8 @@
 
 
 
+<%= javascript_tag do  %>  
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+<% end %>
