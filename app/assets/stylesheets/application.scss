@@ -7,58 +7,18 @@
 body {
   background: url(asset-path('esagono.svg')) no-repeat center top ;
 }
-.navbar {
-  margin-bottom: 0;
-  background-color: transparent;
-}
-div.home-header {
-  color: #eee;
-  background: url(asset-path('background1.jpg')) no-repeat center top ;
-  height: 566px;
-  div.home-header-title {
-    font-size: 40px;
-    padding: 100px 50px;
-    span {
-      padding: 0 10px;
-      background: rgba(127, 127, 127, 0.3);
-    }
-  }
-  div.home-header-invite {
-    font-size: 13px;
-    color: #fff;
-    background-color: $wall-blue;
-    padding: 20px;
-    float: right;
-  }
-}
-
-h1, h2, h3 {
-  font-family: 'Dr Sugiyama', cursive;
-  font-size: 40px;
-}
 h1:first-letter, h2:first-letter {
   font-size:      130%;
   text-transform: capitalize;
 }
 
 /* NAVBAR */
-.navbar-brand {
-  line-height: 12px;
-  padding-top: 16px;
-}
-.navbar-image {
-  padding-top: 12px;
+.navbar {
+  margin-bottom: 0;
+  background-color: transparent;
 }
 .navbar-icon {
-  padding-top: 12px;
-}
-.navbar-brand small {
-  display:block;
-  font-size: 12px;
-  margin-top: 4px;
-}
-.dropdown-menu i {
-  @extend .fa-fw;
+  padding-top: 2px;
 }
 #footer {
   @extend .navbar;
@@ -67,33 +27,11 @@ h1:first-letter, h2:first-letter {
   padding: 20px 0;
 }
 
-/* LOGIN LOGOUT */
-li.login-name {
-  padding-right: 1px;
-  padding-left: 1px;
-  margin-right: 2px;
-}
-li.login-info > a {
-  padding-right: 1px;
-  padding-left: 1px;
-  margin-right: 2px;
-  margin-left: 2px;
-}
-li.logout-link > a {
-  padding-left: 1px;
-  padding-right: 1px;
-  margin-left: 2px;
-}
-
 /* FORMS */
 input[type="submit"] {
   @extend .btn;
   @extend .btn-primary;
 } 
-input[type="file"] {
-  border: 0;
-  width: auto;
-}
 input.boolean {
   width: auto;
 }
@@ -101,36 +39,14 @@ input.integer {
   width: 8em;
   text-align: right;
 }
-.form-horizontal input[type="submit"] {
-  @extend .col-sm-offset-3;
-  margin-bottom: 10px;
-}
 .button {
   @extend .btn;
   @extend .btn-primary;
-}
-table {
-  @extend .table;
-}
-
-.info {
-  @extend .alert; 
-  @extend .alert-info;
-}
-
-.strong-info {
-  @extend .alert; 
-  @extend .alert-danger;
 }
 
 fieldset {
   margin-top: 10px;
   margin-bottom: 10px;
-}
-.centered_action {
-  width: 100%;
-  text-align: center;
-  margin: 10px;
 }
 
 input.date_picker {
@@ -138,30 +54,6 @@ input.date_picker {
 }
 input.datetime_picker {
   width: 15em;
-}
-select.hour {
-  width: 5em;
-}
-
-.radio input[type="radio"], .checkbox input[type="checkbox"] {
-  width: 30px;
-  margin-left: 0px;
-  height: auto;
-}
-.radio label, .checkbox label {
-  margin-left: 20px;
-}
-.form-control-inline {
-  @extend .form-control;
-  display: inline;
-}
-input[type="file"] {
-  border: 0;
-  box-shadow: 0px 0px 0px 0px;
-  height: auto;
-}
-.missing-field {
-  color: $brand-danger;
 }
 
 // ul with links expanded
@@ -187,7 +79,7 @@ dl.home-list {
   }
 }
 
-.wall-main {
+.wall {
   padding: 30px 20px;
   font-weight: bold;
   @include make-row();
@@ -235,4 +127,39 @@ ul.wall-circles {
   }
 }
 
+div.home-header {
+  color: #eee;
+  background: url(asset-path('background1.jpg')) no-repeat center top;
+  height: 600px;
+  div.home-header-title {
+    font-size: 40px;
+    padding: 100px 50px;
+    span {
+      padding: 0 10px;
+      background: rgba(127, 127, 127, 0.3);
+    }
+  }
+  div.home-header-invite {
+    font-size: 13px;
+    color: #fff;
+    background-color: $wall-blue;
+    padding: 20px;
+    float: right;
+  }
+}
 
+div.home-content {
+  @include make-row();
+  .home-walls {
+    @include make-md-column(6);
+  }
+  .home-map {
+    @include make-md-column(6);
+  }
+  .home-events {
+    @include make-md-column(6);
+  }
+  .home-news {
+    @include make-md-column(6);
+  }
+}
