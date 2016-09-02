@@ -19,7 +19,7 @@ class AdminsController < ApplicationController
 
     @admin = @wall.admins.new(user: @user)
     if @admin.save
-      redirect_to wall_path(@wall), notice: "Amministratore #{@user.name} aggiunto a #{@wall.name}."
+      redirect_to admins_path, notice: "Amministratore #{@user.name} aggiunto a #{@wall.name}."
     else
       render :new
     end

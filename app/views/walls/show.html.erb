@@ -1,6 +1,8 @@
-<center><h1><%= @wall.name %> <%= link_to_edit [:edit, @wall] %></h1></center>
+<center>
+  <h1><%= @wall.name %> <%= link_to_edit [:edit, @wall] if current_user && current_user.owns?(@wall) %></h1>
+</center>
 
-<div class="wall-main">
+<div class="wall">
   <div class="wall-description">
   <%= raw @wall.description %>  
   </div>
