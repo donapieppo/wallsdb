@@ -1,16 +1,26 @@
 module MenuHelper
 
   def login_link
-    'login'
+    link_to 'login', google_login_path
+  end
+
+  def logout_link
+    link_to icon('sign-out'), logout_path, title: 'Disconnetti'
   end
 
   def logged_user
     if current_user
-      %Q|<li class="login-name navbar-text">#{current_user}</li>
-         <li class="logout-link">#{link_to 'LOGOUT', logout_path}</li>|
+      content_tag(:li, class: 'login-name navbar-text') do
+        current_user.name 
+      end + 
+      content_tag(:li, class: 'logout_link') do 
+        logout_link
+      end
     else
-      %Q|<li>#{login_link}</li>|
-    end.html_safe
+      content_tag :li do
+        login_link
+      end
+    end
   end
 
   def dropdown_menu(title, &block)
