@@ -24,7 +24,7 @@
 # see lib/dm_unibo_common/controllers/helpers.rb for method definitions.
 class LoginsController < ApplicationController
   # raise: false see http://api.rubyonrails.org/classes/ActiveSupport/Callbacks/ClassMethods.html#method-i-skip_callback
-  # skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token, only: :developer
   skip_before_action :force_sso_user, :redirect_unsigned_user, :check_role, :retrive_authlevel, raise: false
 
   # env['omniauth.auth'].info = {email, name, last_name}
@@ -34,7 +34,8 @@ class LoginsController < ApplicationController
   end
 
   def developer
-    Rails.configuration.dm_unibo_common[:omniauth_provider] == :developer or raise
+    Socket.gethostname == 'truffaut' or raise "NOT IN TRUFFAUT"
+    Rails.env.development? or raise "NOT IN DEVELOPMENT"
     request.remote_ip == '127.0.0.1' or request.remote_ip == '::1' or request.remote_ip =~ /^172\.17\.\d+\.\d+/  or raise "ONLY LOCAL OF DOCKER. YOU ARE #{request.remote_ip}"
     sign_in_and_redirect User.first
   end
