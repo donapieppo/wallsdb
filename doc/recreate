@@ -56,7 +56,15 @@ Questo è lo spirito che accomuna il gruppo di Eden Climbing, non solo una strut
                     (9, 43.1040582,12.3610691, 'Arrampicata Libera A.s.d. - Metropolitan Boulder', 
                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                      'Piazzale Umbria Jazz 1/e', '06125', 'Perugia', 70,
-                     'https://www.facebook.com/pages/Metropolitan-Boulder/655217164498659');
+                     'https://www.facebook.com/pages/Metropolitan-Boulder/655217164498659'),
+                    (10, 44.5039231,11.4041635, 'UP Urban Climbing', 
+                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                     'Via del Fonditore, 1', '40138', 'Bologna', 14,
+                     'http://www.upurbanclimbing.it/'), 
+                    (11, 44.476834,11.420544, "Monkeys' Planet a.s.d.", 
+                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                     'Via Vittoria, 23A', '40068', 'San Lazzaro di Savena',  14,
+                     'http://monkeysplanet.altervista.org');
                      
 
 
