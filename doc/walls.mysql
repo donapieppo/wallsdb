@@ -29,6 +29,8 @@ CREATE TABLE `walls` (
   `bar`         text DEFAULT NULL,
   `music`       text DEFAULT NULL,  
   `public`      bool,
+  `lat`         float(10,6),
+  `lng`         float(10,6),
   PRIMARY KEY (`id`),
   KEY `province_id` (`province_id`),
   CONSTRAINT `walls_ibfk_1` FOREIGN KEY (`province_id`) REFERENCES `provinces` (`id`)

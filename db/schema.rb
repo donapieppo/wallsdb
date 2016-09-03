@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.text    "bar",           limit: 65535
     t.text    "music",         limit: 65535
     t.boolean "public"
+    t.float   "lat",           limit: 24
+    t.float   "lng",           limit: 24
     t.index ["province_id"], name: "province_id", using: :btree
   end
 

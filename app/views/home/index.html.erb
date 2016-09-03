@@ -15,20 +15,21 @@
 </div><!-- home-container -->
 
 <script>
-  var address = 'Roma, IT';
+  var rome  = [41.9102415,12.3959142,11];
+  var walls = <%= raw Wall.geocodes.to_json %>;
   var map;
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 5,
-          center: {lat: 44.494887, lng: 11.342616}
+          zoom: 6,
+          center: {lat: rome[0], lng: rome[1]}
     });
-    new google.maps.Marker({ position: {lat: 44, lng: 11}, map: map });
-    new google.maps.Marker({ position: {lat: 45, lng: 12}, map: map });
-    new google.maps.Marker({ position: {lat: 43, lng: 13}, map: map });
+    walls.forEach(function(item, index) {
+      new google.maps.Marker({ position: {lat: item[0], lng: item[1]}, map: map, title: item[2] });
+    });
   }
 </script>
 <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['WALLSDB_GOOGLE_MAP_API_KEY'] %>&signed_in=true&callback=initMap">
+  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['WALLSDB_GOOGLE_MAP_API_KEY'] %>&signed_in=true&callback=initMap&libraries=places">
 </script>
 
 <%= render partial: 'typeahead_province' %>  

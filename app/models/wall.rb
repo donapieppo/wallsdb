@@ -38,6 +38,11 @@ class Wall < ApplicationRecord
   def self.addresses 
     self.includes(:province).map {|wall| "#{wall.address}, #{wall.city}, #{wall.province.name}"}
   end
+
+  def self.geocodes
+    self.all.map {|wall| [wall.lat, wall.lng, wall.name]}
+  end
+
 end
 
 
