@@ -131,7 +131,8 @@ ul.wall-circles {
 div.home-header {
   color: #eee;
   background: url(asset-path('background1.jpg')) no-repeat center top;
-  height: 600px;
+  height: 566px;
+  margin: 0;
   div.home-header-title {
     font-size: 40px;
     padding: 100px 50px;
@@ -156,9 +157,14 @@ div.home-container {
   }
   .home-map {
     @include make-md-column(6);
+    background-color: #ccc;
+    margin: 0;
+    padding: 20px;
     #map {
       width: 100%;
       height: 800px;
     }
   }
 }
+
+input#wall_cap { width: 10ex; }

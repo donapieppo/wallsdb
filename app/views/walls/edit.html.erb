@@ -27,7 +27,7 @@
 
 <%= horizontal_form_for [@wall, @wall.photos.new] do |photo| %>  
   <%= photo.input :image, as: :file, label: 'Nuova Foto' %>  
-  <%= photo.input :importance, collection: ['a', 'b', 'c'] %>  
+  <%= photo.input :importance, collection: ['a', 'b', 'c'], as: :radio_buttons, boolean_style: :inline %>  
   <%= photo.submit %>  
 <% end %>
 </fielset>
