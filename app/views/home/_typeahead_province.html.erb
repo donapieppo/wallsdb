@@ -1,3 +1,9 @@
+<%= form_tag show_province_path, remote: true do %>  
+  <label>Scegli la città</label>
+  <input class="typeahead" type="text" name="province" placeholder="Città">  
+  <input id="show_province" type="submit" value="invia"/>
+<% end %>
+<div id="province_results"> </div>
 <script>
   $(document).ready(function() {
   var provinces = <%= raw Province.order(:name).select(:name).pluck(:name).to_json %>;
@@ -25,12 +31,11 @@
   };
 
   $('.typeahead').typeahead({
-    hint: true,
-    highlight: true,
-    minLength: 1
-  },
-  { name: 'provinces',
-    source: substringMatcher(provinces)
-  });
+      hint: true,
+      highlight: true,
+      minLength: 1}, 
+    { name: 'provinces',
+       source: substringMatcher(provinces)
+     });
   });
 </script>

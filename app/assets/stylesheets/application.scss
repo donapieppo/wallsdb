@@ -157,7 +157,6 @@ div.home-container {
   }
   .home-map {
     @include make-md-column(6);
-    background-color: #ccc;
     margin: 0;
     padding: 20px;
     #map {

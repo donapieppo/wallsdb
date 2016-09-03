@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="200"
+   height="137"
+   id="svg4343">
+  <defs
+     id="defs4345" />
+  <metadata
+     id="metadata4348">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-280,-318.15625)"
+     id="layer1">
+    <path
+       d="m 331.04812,410.88151 c 29.08034,0 78.35534,-0.11269 106.6279,0 -28.2951,0.1127 -78.74216,1.934 -106.6279,0 z"
+       id="path3765"
+       style="fill:#000000;stroke:#000000;stroke-width:0.24233612px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       x="300.68967"
+       y="442.19455"
+       id="text3767"
+       xml:space="preserve"
+       style="font-size:34.89640427px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Dr Sugiyama;-inkscape-font-specification:Dr Sugiyama Bold Italic"><tspan
+         x="300.68967"
+         y="442.19455"
+         id="tspan3769">Muri d'Italia</tspan></text>
+    <path
+       d="m 350.53195,410.19204 c -0.24297,-0.79247 -9.47116,-69.26452 -9.35117,-69.38451 0.20252,-0.20251 32.81354,-11.83398 32.98262,-11.764 0.10232,0.0423 -12.37162,71.43125 -14.09371,80.65892 l -0.14848,0.79559 -4.64772,0 c -3.50495,0 -4.67078,-0.0752 -4.74154,-0.306 z"
+       id="path3783-1"
+       style="fill:#008080;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <path
+       d="m 360.57501,409.82484 c 0.0714,-0.37025 3.2981,-18.65471 7.17048,-40.63212 3.87239,-21.97741 7.10997,-40.02819 7.19462,-40.11284 0.1148,-0.1148 52.09287,18.58263 52.52541,18.89431 0.0444,0.032 -9.64919,14.11294 -21.54126,31.291 l -21.62198,31.23285 -11.92853,0 -11.92851,0 0.12977,-0.6732 z"
+       id="path3785"
+       style="opacity:0;fill:#008080;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.32743363;stroke-dasharray:none" />
+    <path
+       d="m 359.60566,409.82484 c 0.0714,-0.37025 3.2981,-18.65471 7.17049,-40.63212 3.87238,-21.97741 7.10997,-40.02819 7.19462,-40.11284 0.11479,-0.1148 52.09286,18.58263 52.52541,18.89431 0.0444,0.032 -9.6492,14.11294 -21.54126,31.291 l -21.62198,31.23285 -11.92854,0 -11.92851,0 0.12977,-0.6732 z"
+       id="path3787"
+       style="opacity:0.83261814;fill:#007e80;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <path
+       d="m 280.64221,318.79378 198.71561,0 0,135.70824 -198.71561,0 z"
+       id="path4196"
+       style="fill:none;stroke:#000000;stroke-width:1.28438151;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  </g>
+</svg>

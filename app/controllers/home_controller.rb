@@ -6,4 +6,9 @@ class HomeController < ApplicationController
     @walls = Wall.includes(province: :region).order('regions.name')
   end
 
+  def show_province
+    @province = Province.where(name: params[:province]).first
+    @walls = @province ? @province.walls : []
+  end
+
 end

@@ -1,0 +1,14 @@
+<ul>
+<% @walls.each do |wall| %>  
+  <li><%= link_to wall.name, wall_path(wall) %></li>
+<% end %>
+</ul>
+
+<% unless @walls.empty? %>  
+<script>
+if (map) {
+  map.setCenter({lat: <%= @walls.first.lat %>, lng: <%= @walls.first.lng %>});
+  map.setZoom(11);
+}
+</script>
+<% end %>
