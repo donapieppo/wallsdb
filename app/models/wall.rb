@@ -40,7 +40,7 @@ class Wall < ApplicationRecord
   end
 
   def self.geocodes
-    self.all.map {|wall| [wall.lat, wall.lng, wall.name]}
+    self.all.map {|wall| [wall.lat, wall.lng, wall.name, wall.id]}
   end
 
 end

@@ -21,10 +21,15 @@
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
           zoom: 6,
-          center: {lat: rome[0], lng: rome[1]}
+          center: {lat: rome[0], lng: rome[1]},
+          styles: [{ stylers: [ { hue: '#0000e6' }, { saturation: -20 } ] }]
     });
     walls.forEach(function(item, index) {
-      new google.maps.Marker({ position: {lat: item[0], lng: item[1]}, map: map, title: item[2] });
+      marker = new google.maps.Marker({ position: {lat: item[0], lng: item[1]}, 
+                                        map: map, 
+                                        title: item[2],
+                                        url: '/walls/' + item[3] });
+      google.maps.event.addListener(marker, 'click', function() { window.location.href = this.url; });
     });
   }
 </script>
