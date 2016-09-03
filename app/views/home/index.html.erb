@@ -1,33 +1,34 @@
-<div class="home-content">
-<div class="home-walls">
-  <h2>Palestre di arrampicata in Italia</h2>
-
-  <dl class='home-list'>
-    <% old_region = nil %>  
-    <% @walls.each do |wall| %>  
-      <% if old_region != (old_region = wall.province.region) %>  
-        <dt><%= old_region  %></dt>
-      <% end %>
-      <dd><%= wall.province.name %> <%= link_to wall, wall %></dd>
-    <% end %>
-  </dl>
-</div>
-
-<div class="home-map">
-  <div>
-    <iframe src="//www.google.com/maps/embed/v1/place?key=<%= ENV['WALLSDB_GOOGLE_MAP_API_KEY'] %>&q=Via Stalingrado 59, 40126 Bologna (BO)">
-    </iframe>
-  </div>
-</div>
-
-<div class="home-events">
+<div class="home-container">
+<div class="home-contents"> 
+  <label>Scegli la città</label>
+  <input class="typeahead" type="text" placeholder="Città">  
+  <input type="submit" value="invia"/>
   <h2>Prossimi Eventi</h2>
   dsdds
-</div>
-
-<div class="home-news">
   <h2>Ultime Palestre Inserite</h2>
   dsd
 </div>
-</div><!-- home-content -->
 
+<div class="home-map">
+  <div id="map"></div>
+</div>
+</div><!-- home-container -->
+
+<script>
+  var address = 'Roma, IT';
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 5,
+          center: {lat: 44.494887, lng: 11.342616}
+    });
+    new google.maps.Marker({ position: {lat: 44, lng: 11}, map: map });
+    new google.maps.Marker({ position: {lat: 45, lng: 12}, map: map });
+    new google.maps.Marker({ position: {lat: 43, lng: 13}, map: map });
+  }
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['WALLSDB_GOOGLE_MAP_API_KEY'] %>&signed_in=true&callback=initMap">
+</script>
+
+<%= render partial: 'typeahead_province' %>  

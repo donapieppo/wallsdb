@@ -35,6 +35,9 @@ class Wall < ApplicationRecord
     ! self.music.blank?
   end
 
+  def self.addresses 
+    self.includes(:province).map {|wall| "#{wall.address}, #{wall.city}, #{wall.province.name}"}
+  end
 end
 
 
