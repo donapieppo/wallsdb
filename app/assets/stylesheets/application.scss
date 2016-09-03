@@ -3,6 +3,7 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "typeaheadjs";
 
 body {
   background: url(asset-path('esagono.svg')) no-repeat center top ;
@@ -148,18 +149,16 @@ div.home-header {
   }
 }
 
-div.home-content {
+div.home-container {
   @include make-row();
-  .home-walls {
+  .home-contents {
     @include make-md-column(6);
   }
   .home-map {
     @include make-md-column(6);
-  }
-  .home-events {
-    @include make-md-column(6);
-  }
-  .home-news {
-    @include make-md-column(6);
+    #map {
+      width: 100%;
+      height: 400px;
+    }
   }
 }
