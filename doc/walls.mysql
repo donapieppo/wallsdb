@@ -68,6 +68,18 @@ CREATE TABLE `photos` (
   CONSTRAINT `photos_ibfk_1` FOREIGN KEY (`wall_id`) REFERENCES `walls` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
   
+CREATE TABLE `events` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `wall_id` int(10) unsigned NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL, 
+  `start_date` datetime DEFAULT NULL,
+  `end_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `wall_id` (`wall_id`),
+  CONSTRAINT `events_ibfk_1` FOREIGN KEY (`wall_id`) REFERENCES `walls` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  
 
 
 
