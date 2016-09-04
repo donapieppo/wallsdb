@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 0) do
     t.index ["wall_id"], name: "wall_id", using: :btree
   end
 
+  create_table "events", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "wall_id",                   null: false, unsigned: true
+    t.string   "name",                      null: false
+    t.text     "description", limit: 65535
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.index ["wall_id"], name: "wall_id", using: :btree
+  end
+
   create_table "openings", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "wall_id",    null: false, unsigned: true
     t.integer "wday",                    unsigned: true
@@ -77,6 +86,7 @@ ActiveRecord::Schema.define(version: 0) do
 
   add_foreign_key "admins", "users", name: "admins_ibfk_1"
   add_foreign_key "admins", "walls", name: "admins_ibfk_2"
+  add_foreign_key "events", "walls", name: "events_ibfk_1"
   add_foreign_key "openings", "walls", name: "openings_ibfk_1"
   add_foreign_key "photos", "walls", name: "photos_ibfk_1"
   add_foreign_key "walls", "provinces", name: "walls_ibfk_1"

@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   def index
     @home_header = true
     @walls = Wall.includes(province: :region).order('regions.name')
+    @events = Event.order(:date).limit(10)
   end
 
   def show_province

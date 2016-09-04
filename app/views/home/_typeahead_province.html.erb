@@ -3,7 +3,9 @@
   <input class="typeahead" type="text" name="province" placeholder="Città">  
   <input id="show_province" type="submit" value="invia"/>
 <% end %>
-<div id="province_results"> </div>
+<div id="province_walls">
+</div>
+
 <script>
   $(document).ready(function() {
   var provinces = <%= raw Province.order(:name).select(:name).pluck(:name).to_json %>;
