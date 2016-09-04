@@ -30,6 +30,11 @@ it:
         rope_notes: Note
         training: Attrezzi
         music: Musica
+      event:
+        name:        Titolo
+        description: Dettagli
+        start_date:  Inizio evento
+        end_date:    Fine evento
 
     hints:
       wall: 

@@ -2,14 +2,15 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :walls do
+    resources :admins
     resources :openings
     resources :photos
-    resources :admins
+    resources :events
   end
+  resources :admins
   resources :openings
   resources :photos
-
-  resources :admins
+  resources :events
 
   post 'show_province', to: 'home#show_province', as: :show_province
  
