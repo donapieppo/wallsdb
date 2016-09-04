@@ -3,6 +3,7 @@ class Wall < ApplicationRecord
   has_many :admins
   has_many :openings
   has_many :photos
+  has_many :events
 
   validates :name, uniqueness: true
   validates :province, presence: true
