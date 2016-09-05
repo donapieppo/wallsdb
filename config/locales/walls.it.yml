@@ -7,9 +7,10 @@ it:
 
   activerecord:
     models:
-      address:    Indirizzo
-      wall:       Muro
-      opening:    Apertura
+      address: Indirizzo
+      wall:    Muro
+      opening: Apertura
+      event:   Evento
 
   simple_form:
     labels:

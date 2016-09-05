@@ -1,15 +1,15 @@
 <div id="map"></div>
 
 <script>
-  var rome  = [41.9102415,12.3959142,11];
+  var rome  = {lat: 41.9102415, lng: 12.3959142};
   var walls = <%= raw Wall.geocodes.to_json %>;
-  var map;
+  var map; // global
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 5,
-          center: {lat: rome[0], lng: rome[1]},
-          styles: [{ stylers: [ { hue: '#0000e6' }, { saturation: -50 } ] }]
-    });
+                zoom: 5,
+                center: rome,
+                styles: [{ stylers: [ { hue: '#0000e6' }, { saturation: -50 } ] }]
+              });
     walls.forEach(function(item, index) {
       marker = new google.maps.Marker({ position: {lat: item[0], lng: item[1]}, 
                                         map: map, 

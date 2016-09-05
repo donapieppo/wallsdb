@@ -1,1 +1,12 @@
-elenco
+<% @events.each do |event|%>  
+  <div class="thumbnail">
+    <%= image_tag(event.photos.first.image.thumb.url, class: "img-circle") if event.photos.any? %><br/>
+    <div class="caption">
+      <h3><small><%= l event.start_date %></small> - <%= event.name %></h3>
+      <p>
+        <%= event.description %>
+        <%= link_to '[...]', event, class: :button %>  
+      </p>
+    </div>
+  </div>
+<% end %>

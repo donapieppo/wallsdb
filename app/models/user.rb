@@ -18,6 +18,8 @@ class User < ApplicationRecord
       self.walls.include?(what)
     when Opening
       self.owns?(what.wall)
+    when Event
+      self.owns?(what.wall)
     end
   end
 

@@ -36,6 +36,16 @@
   <% end %>
 </div>
 
+<% @wall.events.each do |event| %>  
+  <div class="well">
+    <h2><%= event.name %> <%= link_to_edit([:edit, event]) if current_user.owns?(event) %>  </h2>
+    <h3><%= l event.start_date %></h3>
+    <p><%= event.description %> </p>
+  </div>
+<% end %>
+
+<%= link_to_new 'Segnala prossimo evento', new_wall_event_path(@wall) %>  
+
 
 
 <%= javascript_tag do  %>  

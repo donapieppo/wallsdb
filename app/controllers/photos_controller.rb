@@ -6,9 +6,9 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = @wall.photos.new(photo_params)
+    @photo = (@wall || @event).photos.new(photo_params)
     if @photo.save
-      redirect_to @wall
+      redirect_to [:edit, @wall || @event]
     else
       render action: :new
     end
@@ -21,7 +21,9 @@ class PhotosController < ApplicationController
   end
 
   def get_wall_and_check_permission
-    @wall = Wall.first
+    @wall  = params[:wall_id]  ? Wall.find(params[:wall_id]) : nil
+    @event = params[:event_id] ? Event.find(params[:event_id]) : nil
+    current_user.owns!(@wall || @event)
   end
 end
 

@@ -1,0 +1,27 @@
+<%= render partial: 'form' %>  
+
+<fielset class="event-gallery">
+<legend>Immagini</legend>
+
+<div class="row">
+  <% @event.photos.each do |photo| %>  
+    <div class="col-xs-6 col-md-2">
+      <div class='thumbnail'>
+        <%= image_tag photo.image.url %>  
+      </div>
+      <div class="caption">
+        <%= link_to_delete photo_path(photo) %>  
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= horizontal_form_for [@event, @event.photos.new] do |photo| %>  
+  <%= photo.input :image, as: :file, label: 'Nuova Foto' %>  
+  <%= photo.input :importance, collection: ['a', 'b', 'c'], as: :radio_buttons, boolean_style: :inline %>  
+  <%= photo.submit %>  
+<% end %>
+</fielset>
+
+
+

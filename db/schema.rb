@@ -37,9 +37,11 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "photos", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "wall_id",                  null: false, unsigned: true
+    t.integer "wall_id",                  unsigned: true
+    t.integer "event_id",                 unsigned: true
     t.text    "image",      limit: 65535
     t.integer "importance"
+    t.index ["event_id"], name: "event_id", using: :btree
     t.index ["wall_id"], name: "wall_id", using: :btree
   end
 
@@ -88,6 +90,7 @@ ActiveRecord::Schema.define(version: 0) do
   add_foreign_key "admins", "walls", name: "admins_ibfk_2"
   add_foreign_key "events", "walls", name: "events_ibfk_1"
   add_foreign_key "openings", "walls", name: "openings_ibfk_1"
+  add_foreign_key "photos", "events", name: "photos_ibfk_2"
   add_foreign_key "photos", "walls", name: "photos_ibfk_1"
   add_foreign_key "walls", "provinces", name: "walls_ibfk_1"
 end

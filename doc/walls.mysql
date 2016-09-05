@@ -58,16 +58,6 @@ CREATE TABLE `openings` (
   CONSTRAINT `openings_ibfk_1` FOREIGN KEY (`wall_id`) REFERENCES `walls` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
   
-CREATE TABLE `photos` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `wall_id` int(10) unsigned NOT NULL,
-  `image` text DEFAULT NULL, 
-  `importance` int(3) DEFAULT NULL, 
-  PRIMARY KEY (`id`),
-  KEY `wall_id` (`wall_id`),
-  CONSTRAINT `photos_ibfk_1` FOREIGN KEY (`wall_id`) REFERENCES `walls` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-  
 CREATE TABLE `events` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `wall_id` int(10) unsigned NOT NULL,
@@ -80,7 +70,16 @@ CREATE TABLE `events` (
   CONSTRAINT `events_ibfk_1` FOREIGN KEY (`wall_id`) REFERENCES `walls` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
   
-
-
-
-
+CREATE TABLE `photos` (
+  `id`         int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `wall_id`    int(10) unsigned DEFAULT NULL,
+  `event_id`   int(10) unsigned DEFAULT NULL,
+  `image`      text DEFAULT NULL, 
+  `importance` int(3) DEFAULT NULL, 
+  PRIMARY KEY (`id`),
+  KEY `wall_id` (`wall_id`),
+  CONSTRAINT `photos_ibfk_1` FOREIGN KEY (`wall_id`) REFERENCES `walls` (`id`),
+  KEY `event_id` (`event_id`),
+  CONSTRAINT `photos_ibfk_2` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  

@@ -1,0 +1,5 @@
+<h1><%= @event.wall %> <%= link_to_edit([:edit, @event]) if current_user.owns?(@event) %>  </h1>
+
+<div class="well">
+  <%= @event.description %>  
+</div>

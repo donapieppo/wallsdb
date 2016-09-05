@@ -1,0 +1,8 @@
+<%= horizontal_form_for [@wall, @event] do |event| %>  
+  <%= event.input :name %>  
+  <%= event.input :description %>  
+  <%= event.input :start_date, as: :datetime_picker %>  
+  <%= event.input :end_date, as: :datetime_picker %>  
+  <%= event.submit %>  
+<% end %>
+

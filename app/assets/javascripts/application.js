@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require typeahead.bundle
+//= require moment
+//= require moment/it
+//= require bootstrap-datetimepicker
 //= require_tree .

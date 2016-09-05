@@ -1,9 +1,3 @@
-<h1>Nuovo Evento</h1>
+<h1>Nuovo Evento <small><%= @wall.name %></small></h1>
 
-<%= horizontal_form_for [@wall, @event] do |event| %>  
-  <%= event.input :name %>  
-  <%= event.input :description %>  
-  <%= event.input :start_date %>  
-  <%= event.input :end_date %>  
-  <%= event.submit %>  
-<% end %>
+<%= render partial: 'form' %>  

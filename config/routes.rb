@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   resources :admins
   resources :openings
   resources :photos
-  resources :events
+  resources :events do 
+    resources :photos
+  end
 
   post 'show_province', to: 'home#show_province', as: :show_province
  
