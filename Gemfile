@@ -21,6 +21,9 @@ gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~>4.0.0'
+
 gem 'carrierwave'
 gem 'mini_magick'
 
