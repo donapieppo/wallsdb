@@ -71,5 +71,13 @@ Questo è lo spirito che accomuna il gruppo di Eden Climbing, non solo una strut
 
 EOF
 
+mysql wallsdb << EOF
+update walls set `boulder_mq` = 100 where id=1;
+update walls set `boulder_notes` = "Pareti appogiate, verticali e strapiombanti fino a 40 gradi." where id=1;
+update walls set `training` = "1 trave, 2 pan Gullich, Trx, spalliere etc etc." where id=1;
+update walls set `bar`      = "Birre e spritz da mani professionali." where id=1;
+update walls set `music`    = "Sempre" where id=1;
+
+EOF
 
 
