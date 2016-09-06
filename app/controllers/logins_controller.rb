@@ -46,7 +46,8 @@ class LoginsController < ApplicationController
     cookies.delete(Rails.configuration.session_options[:key].to_sym)
     session[:user_id] = nil
     logger.info("after logout we redirect to params[:return] = #{params[:return]}")
-    redirect_to (params[:return] || 'https://www.muriditalia.it')
+    # redirect_to (params[:return] || 'https://www.muriditalia.it')
+    redirect_to root_path 
   end
 
   # Not authorized but valid credentials
@@ -80,7 +81,8 @@ class LoginsController < ApplicationController
 
   def sign_in_and_redirect(user)
     session[:user_id] = user.id
-    redirect_to session[:original_request] || root_path
+    # redirect_to session[:original_request] || root_path
+    redirect_to root_path
   end
 end
 

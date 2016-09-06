@@ -9,7 +9,7 @@ class HomeController < ApplicationController
 
   def show_province
     @province = Province.where(name: params[:province]).first
-    @walls = @province ? @province.walls : []
+    @walls = @province ? @province.walls.order(:name) : []
   end
 
 end

@@ -1,7 +1,7 @@
 module MenuHelper
 
   def login_link
-    link_to 'login', google_login_path
+    link_to 'accedi / registrati', login_path
   end
 
   def logout_link

@@ -5,10 +5,6 @@
 <%= render partial: 'openings/form', locals: {wall: @wall} %>  
 </fielset>
 
-<fielset class="wall-prices">
-<legend>Prezzi</legend>
-</fielset>
-
 <fielset class="wall-gallery">
 <legend>Immagini</legend>
 
@@ -25,7 +21,7 @@
   <% end %>
 </div>
 
-<%= horizontal_form_for [@wall, @wall.photos.new] do |photo| %>  
+<%= simple_form_for [@wall, @wall.photos.new] do |photo| %>  
   <%= photo.input :image, as: :file, label: 'Nuova Foto' %>  
   <%= photo.input :importance, collection: ['a', 'b', 'c'], as: :radio_buttons, boolean_style: :inline %>  
   <%= photo.submit %>  
