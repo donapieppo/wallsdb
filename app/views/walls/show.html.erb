@@ -1,16 +1,18 @@
 <center>
-  <h1><%= @wall.name %> <%= link_to_edit [:edit, @wall] if current_user && current_user.owns?(@wall) %></h1>
+<h1><%= @wall.name %> <%= link_to_edit [:edit, @wall] if current_user && current_user.owns?(@wall) %></h1>
 </center>
 
-<div class="wall">
-  <div class="wall-description">
-    <p><%= fwicon('external-link') %> <%= link_to 'pagina web ufficiale', @wall.web %> </p>
+<div id="show_wall">
+  <iframe id="wall_map" src="<%= simple_gmap_url(@wall.gmap_address) %>"></iframe>
+
+  <div class="container">
+
     <p><%= raw @wall.description %></p>
-    <p><%= link_to_new 'Segnala prossimo evento', new_wall_event_path(@wall) %></p>  
-  </div>
-  <div class="wall-gmap">
-    <iframe src="<%= simple_gmap_url(@wall.gmap_address) %>"></iframe>
-    <p>
+
+    <p><%= fwicon('external-link') %> <%= link_to 'pagina web ufficiale', @wall.web %> </p>
+
+    <%= details_bar(@wall) %>  
+
     <dl class="dl-horizontal">
       <dt><%= fwicon('map-marker') %></dt>
       <dd><%= @wall.address %> - <%= @wall.city %> (<%= @wall.province.sig %>)</dd>
@@ -19,36 +21,28 @@
         <dd><%= opening %></dd>
       <% end %>
     </dl>
-    </p>
-    
-  </div>
-</div>
 
-<%= details_bar(@wall) %>  
+    <div class="row">
+      <div id="wall_photos">
+        <h2>Immagini</h2>
+        <% @wall.photos.each do |photo| %>  
+          <%= image_tag photo.image.thumb.url %> 
+        <% end %>
+      </div><!-- wall_photos -->
 
-<div class="row">
-  <% @wall.photos.each do |photo| %>  
-    <div class="col-xs-6 col-md-2">
-      <span class='thumbnail'>
-        <%= image_tag photo.image.thumb.url %>  
-      </span>
+      <div id="wall_events">
+        <h2>Notizie ed eventi</h2>
+        <% @wall.events.each do |event| %>  
+          <%= render event %>  
+        <% end %>
+        <p><%= link_to icon('plus-circle') + ' Segnala prossimo evento', new_wall_event_path(@wall), class: 'wall_add_event' %></p>  
+      </div>
     </div>
-  <% end %>
-</div>
-
-<% @wall.events.each do |event| %>  
-  <div class="well">
-    <h2><%= event.name %> <%= link_to_edit([:edit, event]) if current_user.owns?(event) %>  </h2>
-    <h3><%= l event.start_date %></h3>
-    <p><%= event.description %> </p>
   </div>
-<% end %>
-
-
-
+</div>
 
 <%= javascript_tag do  %>  
   $(function () {
-    $('[data-toggle="popover"]').popover()
+  $('[data-toggle="popover"]').popover()
   })
 <% end %>

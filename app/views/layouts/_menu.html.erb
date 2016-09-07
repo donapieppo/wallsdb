@@ -11,13 +11,20 @@
   </div><!-- navbar-header -->
 
   <nav class="collapse navbar-collapse" id="bs-navbar-collapse">
-    <ul class="nav navbar-nav">
-      <li><%= link_to big_icon('home') + ' Home', root_path %></li>
-      <% if current_user %>  
+    <% if @search_in_menu %>  
+      <%= form_tag show_province_path, remote: true, id: 'search-province', class: "navbar-form navbar-left" do %>  
+        <div class="form-group">
+          <input class="typeahead form-control" type="search" name="province" placeholder="Segli la città" /> 
+        </div>
+        <input id="show_province" type="submit" value="invia"/> 
+      <% end %>
+    <% end %>
+    <% if current_user %>  
+      <ul class="nav navbar-nav">
         <li><%= link_to big_icon('plus')  + ' Nuovo muro', new_wall_path %></li>
         <li><%= link_to(big_icon('users') + ' Amministratori', admins_path) if current_user.master_of_universe? %></li>
-      <% end %>
-    </ul>
+      </ul>
+    <% end %>
     <ul class="nav navbar-nav navbar-right">
       <%= logged_user %>
     </ul>
@@ -27,4 +34,39 @@
 
 <%=  privacy_alert %>
 
+<script>
+  $(document).ready(function() {
+  var provinces = <%= raw Province.order(:name).select(:name).pluck(:name).to_json %>;
+
+  var substringMatcher = function(strs) {
+    return function findMatches(q, cb) {
+      var matches, substringRegex;
+
+      // an array that will be populated with substring matches
+      matches = [];
+
+      // regex used to determine if a string contains the substring `q`
+      substrRegex = new RegExp(q, 'i');
+
+      // iterate through the pool of strings and for any string that
+      // contains the substring `q`, add it to the `matches` array
+      $.each(strs, function(i, str) {
+        if (substrRegex.test(str)) {
+          matches.push(str);
+        }
+      });
+
+      cb(matches);
+    };
+  };
+
+  $('.typeahead').typeahead({
+      hint: true,
+      highlight: true,
+      minLength: 1}, 
+    { name: 'provinces',
+       source: substringMatcher(provinces)
+     });
+  });
+</script>
 

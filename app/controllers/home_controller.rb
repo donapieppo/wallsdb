@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @home_header = true
+    @search_in_menu = true
     @walls = Wall.includes(province: :region).order('regions.name')
     @events = Event.includes(:photos).order(:start_date).limit(10)
   end

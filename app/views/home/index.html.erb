@@ -1,12 +1,17 @@
-<div class="home-container">
-<div class="home-contents"> 
+<div class="home-container row">
+<div class="col-md-6"> 
+  <h2><%= t :search  %></h2>
   <%= render partial: 'typeahead_province' %>  
-  <h2>Prossimi Eventi</h2>
-  <%= render partial: 'next_events' %>  
 </div>
+<div class="col-md-6">
+  <h2><%= t :events %></h2>
+  <% @events.each do |event|%>  
+    <%= render event %>  
+  <% end %>
+</div>
+</div><!-- home-container -->
 
 <div class="home-map">
   <%= render partial: 'main_google_map' %>  
 </div>
-</div><!-- home-container -->
 

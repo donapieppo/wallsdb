@@ -1,12 +1,11 @@
 <div id="map"></div>
-
 <script>
   var rome  = {lat: 41.9102415, lng: 12.3959142};
   var walls = <%= raw Wall.geocodes.to_json %>;
   var map; // global
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 5,
+                zoom: 6,
                 center: rome,
                 styles: [{ stylers: [ { hue: '#0000e6' }, { saturation: -50 } ] }]
               });

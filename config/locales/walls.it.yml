@@ -4,6 +4,7 @@ it:
   training: allenamento a secco 
   bar:      bar
   music:    musica
+  events:   Notizie ed Eventi
 
   activerecord:
     models:

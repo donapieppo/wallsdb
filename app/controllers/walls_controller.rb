@@ -32,6 +32,7 @@ class WallsController < ApplicationController
   end
 
   def show
+    @bg_photo = @wall.photos.where(importance: 1).first
   end
 
   private
