@@ -1,0 +1,141 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Admin	app/models/admin.rb	/^class Admin < ActiveRecord::Base$/;"	c
+AdminsController	app/controllers/admins_controller.rb	/^class AdminsController < ApplicationController$/;"	c
+ApplicationCable	app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m
+ApplicationCable	app/channels/application_cable/connection.rb	/^module ApplicationCable$/;"	m
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
+ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
+Channel	app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
+Connection	app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
+DatetimePickerInput	app/inputs/datetime_picker_input.rb	/^class DatetimePickerInput < SimpleForm::Inputs::Base$/;"	c
+Event	app/models/event.rb	/^class Event < ApplicationRecord$/;"	c
+EventsController	app/controllers/events_controller.rb	/^class EventsController < ApplicationController$/;"	c
+FormBuilder	app/helpers/form_helper.rb	/^  class FormBuilder < ActionView::Helpers::FormBuilder$/;"	c	class:SimpleForm
+FormHelper	app/helpers/form_helper.rb	/^module FormHelper$/;"	m
+GoogleHelper	app/helpers/google_helper.rb	/^module GoogleHelper$/;"	m
+HomeController	app/controllers/home_controller.rb	/^class HomeController < ApplicationController$/;"	c
+ImageUploader	app/uploaders/image_uploader.rb	/^class ImageUploader < CarrierWave::Uploader::Base$/;"	c
+LinkHelper	app/helpers/link_helper.rb	/^module LinkHelper$/;"	m
+LoginsController	app/controllers/logins_controller.rb	/^class LoginsController < ApplicationController$/;"	c
+MenuHelper	app/helpers/menu_helper.rb	/^module MenuHelper$/;"	m
+Opening	app/models/opening.rb	/^class Opening < ApplicationRecord$/;"	c
+OpeningHelper	app/helpers/opening_helper.rb	/^module OpeningHelper$/;"	m
+OpeningsController	app/controllers/openings_controller.rb	/^class OpeningsController < ApplicationController$/;"	c
+Photo	app/models/photo.rb	/^class Photo < ApplicationRecord$/;"	c
+PhotosController	app/controllers/photos_controller.rb	/^class PhotosController < ApplicationController$/;"	c
+PrivacyHelper	app/helpers/privacy_helper.rb	/^module PrivacyHelper $/;"	m
+Province	app/models/province.rb	/^class Province < ApplicationRecord$/;"	c
+Region	app/models/region.rb	/^class Region < ApplicationRecord$/;"	c
+SimpleForm	app/helpers/form_helper.rb	/^module SimpleForm$/;"	m
+User	app/models/user.rb	/^class User < ApplicationRecord$/;"	c
+Wall	app/models/wall.rb	/^class Wall < ApplicationRecord$/;"	c
+WallsController	app/controllers/walls_controller.rb	/^class WallsController < ApplicationController$/;"	c
+WallsHelper	app/helpers/walls_helper.rb	/^module WallsHelper$/;"	m
+addresses	app/models/wall.rb	/^  def self.addresses $/;"	F	class:Wall
+allow_and_create	app/controllers/logins_controller.rb	/^  def allow_and_create$/;"	f	class:LoginsController
+big_icon	app/helpers/application_helper.rb	/^  def big_icon(name, options = {})$/;"	f	class:ApplicationHelper
+bootstrap_flash	app/helpers/application_helper.rb	/^  def bootstrap_flash$/;"	f	class:ApplicationHelper
+bootstrap_modal_div	app/helpers/application_helper.rb	/^  def bootstrap_modal_div$/;"	f	class:ApplicationHelper
+class_active	app/helpers/application_helper.rb	/^  def class_active(x,y)$/;"	f	class:ApplicationHelper
+create	app/controllers/admins_controller.rb	/^  def create$/;"	f	class:AdminsController
+create	app/controllers/events_controller.rb	/^  def create$/;"	f	class:EventsController
+create	app/controllers/openings_controller.rb	/^  def create$/;"	f	class:OpeningsController
+create	app/controllers/photos_controller.rb	/^  def create$/;"	f	class:PhotosController
+create	app/controllers/walls_controller.rb	/^  def create$/;"	f	class:WallsController
+current_user	app/controllers/application_controller.rb	/^  def current_user$/;"	f	class:ApplicationController
+destroy	app/controllers/admins_controller.rb	/^  def destroy$/;"	f	class:AdminsController
+destroy	app/controllers/openings_controller.rb	/^  def destroy$/;"	f	class:OpeningsController
+destroy	app/controllers/photos_controller.rb	/^  def destroy$/;"	f	class:PhotosController
+details_bar	app/helpers/walls_helper.rb	/^  def details_bar(wall)$/;"	f	class:WallsHelper
+developer	app/controllers/logins_controller.rb	/^  def developer$/;"	f	class:LoginsController
+dl_field	app/helpers/application_helper.rb	/^  def dl_field(object, what)$/;"	f	class:ApplicationHelper
+dm_error_notification	app/helpers/form_helper.rb	/^    def dm_error_notification(options = {})$/;"	f	class:SimpleForm.FormBuilder
+dropdown_menu	app/helpers/menu_helper.rb	/^  def dropdown_menu(title, &block)$/;"	f	class:MenuHelper
+edit	app/controllers/events_controller.rb	/^  def edit$/;"	f	class:EventsController
+edit	app/controllers/walls_controller.rb	/^  def edit$/;"	f	class:WallsController
+event_params	app/controllers/events_controller.rb	/^  def event_params$/;"	f	class:EventsController
+extension_white_list	app/uploaders/image_uploader.rb	/^  def extension_white_list$/;"	f	class:ImageUploader
+force_sso_user	app/controllers/application_controller.rb	/^  def force_sso_user$/;"	f	class:ApplicationController
+form_legend	app/helpers/form_helper.rb	/^  def form_legend(what)$/;"	f	class:FormHelper
+fwicon	app/helpers/application_helper.rb	/^  def fwicon(name, options = { text: "", size: "18" })$/;"	f	class:ApplicationHelper
+geocodes	app/models/wall.rb	/^  def self.geocodes$/;"	F	class:Wall
+get_event_and_check_permission	app/controllers/events_controller.rb	/^  def get_event_and_check_permission$/;"	f	class:EventsController
+get_wall_and_check_permission	app/controllers/events_controller.rb	/^  def get_wall_and_check_permission$/;"	f	class:EventsController
+get_wall_and_check_permission	app/controllers/openings_controller.rb	/^  def get_wall_and_check_permission$/;"	f	class:OpeningsController
+get_wall_and_event_and_check_permission	app/controllers/photos_controller.rb	/^  def get_wall_and_event_and_check_permission$/;"	f	class:PhotosController
+gmap_address	app/models/wall.rb	/^  def gmap_address$/;"	f	class:Wall
+google_oauth2	app/controllers/logins_controller.rb	/^  def google_oauth2$/;"	f	class:LoginsController
+has_bar?	app/models/wall.rb	/^  def has_bar?$/;"	f	class:Wall
+has_boulder?	app/models/wall.rb	/^  def has_boulder?$/;"	f	class:Wall
+has_music?	app/models/wall.rb	/^  def has_music?$/;"	f	class:Wall
+has_rope?	app/models/wall.rb	/^  def has_rope?$/;"	f	class:Wall
+has_training?	app/models/wall.rb	/^  def has_training?$/;"	f	class:Wall
+horizontal_form_for	app/helpers/form_helper.rb	/^  def horizontal_form_for(record, options={}, &block)$/;"	f	class:FormHelper
+icon	app/helpers/application_helper.rb	/^  def icon(name, options = { text: "", size: "18" })$/;"	f	class:ApplicationHelper
+index	app/controllers/admins_controller.rb	/^  def index$/;"	f	class:AdminsController
+index	app/controllers/home_controller.rb	/^  def index$/;"	f	class:HomeController
+index	app/controllers/walls_controller.rb	/^  def index$/;"	f	class:WallsController
+info_tag	app/helpers/application_helper.rb	/^  def info_tag(&block)$/;"	f	class:ApplicationHelper
+input	app/inputs/datetime_picker_input.rb	/^  def input(wrapper_options)$/;"	f	class:DatetimePickerInput
+li_tag	app/helpers/walls_helper.rb	/^  def li_tag(wall, what)$/;"	f
+link_to_back	app/helpers/link_helper.rb	/^  def link_to_back url$/;"	f	class:LinkHelper
+link_to_delete	app/helpers/link_helper.rb	/^  def link_to_delete(name = "", url)$/;"	f	class:LinkHelper
+link_to_download	app/helpers/link_helper.rb	/^  def link_to_download(url)$/;"	f	class:LinkHelper
+link_to_edit	app/helpers/link_helper.rb	/^  def link_to_edit(name = "", url)$/;"	f	class:LinkHelper
+link_to_edit2	app/helpers/link_helper.rb	/^  def link_to_edit2(name = "", url)$/;"	f	class:LinkHelper
+link_to_new	app/helpers/link_helper.rb	/^  def link_to_new(name = "", url)$/;"	f	class:LinkHelper
+link_to_remote_edit	app/helpers/link_helper.rb	/^  def link_to_remote_edit(url)$/;"	f	class:LinkHelper
+link_to_remote_new	app/helpers/link_helper.rb	/^  def link_to_remote_new(name = "", url)$/;"	f	class:LinkHelper
+link_to_show	app/helpers/link_helper.rb	/^  def link_to_show(name = "", url)$/;"	f	class:LinkHelper
+log_current_user	app/controllers/application_controller.rb	/^  def log_current_user$/;"	f	class:ApplicationController
+logged_user	app/helpers/menu_helper.rb	/^  def logged_user$/;"	f	class:MenuHelper
+login_link	app/helpers/menu_helper.rb	/^  def login_link$/;"	f	class:MenuHelper
+logout	app/controllers/logins_controller.rb	/^  def logout$/;"	f	class:LoginsController
+logout_link	app/helpers/menu_helper.rb	/^  def logout_link$/;"	f	class:MenuHelper
+master_of_universe?	app/models/user.rb	/^  def master_of_universe?$/;"	f	class:User
+new	app/controllers/admins_controller.rb	/^  def new$/;"	f	class:AdminsController
+new	app/controllers/events_controller.rb	/^  def new$/;"	f	class:EventsController
+new	app/controllers/photos_controller.rb	/^  def new$/;"	f	class:PhotosController
+new	app/controllers/walls_controller.rb	/^  def new$/;"	f	class:WallsController
+no_access	app/controllers/logins_controller.rb	/^  def no_access$/;"	f	class:LoginsController
+owns!	app/models/user.rb	/^  def owns!(what)$/;"	f	class:User
+owns?	app/models/user.rb	/^  def owns?(what)$/;"	f	class:User
+parse_google_omniauth	app/controllers/logins_controller.rb	/^  def parse_google_omniauth$/;"	f	class:LoginsController
+photo_params	app/controllers/photos_controller.rb	/^  def photo_params$/;"	f	class:PhotosController
+pippo_show	app/controllers/logins_controller.rb	/^  def pippo_show$/;"	f	class:LoginsController
+popover_help	app/helpers/application_helper.rb	/^  def popover_help(title, content)$/;"	f	class:ApplicationHelper
+privacy_alert	app/helpers/privacy_helper.rb	/^  def privacy_alert$/;"	f	class:PrivacyHelper
+privacy_cookie_name	app/helpers/privacy_helper.rb	/^  def privacy_cookie_name$/;"	f	class:PrivacyHelper
+redirect_unsigned_user	app/controllers/application_controller.rb	/^  def redirect_unsigned_user$/;"	f	class:ApplicationController
+select_opening_day	app/helpers/opening_helper.rb	/^  def select_opening_day$/;"	f	class:OpeningHelper
+select_opening_hour	app/helpers/opening_helper.rb	/^  def select_opening_hour(what)$/;"	f
+set_wall_and_check_permission	app/controllers/admins_controller.rb	/^  def set_wall_and_check_permission$/;"	f	class:AdminsController
+set_wall_and_check_permission	app/controllers/walls_controller.rb	/^  def set_wall_and_check_permission$/;"	f	class:WallsController
+show	app/controllers/events_controller.rb	/^  def show$/;"	f	class:EventsController
+show	app/controllers/walls_controller.rb	/^  def show$/;"	f	class:WallsController
+show_province	app/controllers/home_controller.rb	/^  def show_province$/;"	f	class:HomeController
+sign_in_and_redirect	app/controllers/logins_controller.rb	/^  def sign_in_and_redirect(user)$/;"	f	class:LoginsController
+simple_gmap_url	app/helpers/google_helper.rb	/^  def simple_gmap_url(address)$/;"	f	class:GoogleHelper
+store_dir	app/uploaders/image_uploader.rb	/^  def store_dir$/;"	f	class:ImageUploader
+support_mail	app/helpers/link_helper.rb	/^  def support_mail$/;"	f	class:LinkHelper
+to_s	app/models/admin.rb	/^  def to_s$/;"	f	class:Admin
+to_s	app/models/event.rb	/^  def to_s$/;"	f	class:Event
+to_s	app/models/opening.rb	/^  def to_s$/;"	f	class:Opening
+to_s	app/models/region.rb	/^  def to_s$/;"	f	class:Region
+to_s	app/models/user.rb	/^  def to_s$/;"	f	class:User
+to_s	app/models/wall.rb	/^  def to_s$/;"	f	class:Wall
+tooltip	app/helpers/application_helper.rb	/^  def tooltip(key)$/;"	f	class:ApplicationHelper
+update	app/controllers/events_controller.rb	/^  def update$/;"	f	class:EventsController
+update	app/controllers/walls_controller.rb	/^  def update$/;"	f	class:WallsController
+user_master_of_universe!	app/controllers/application_controller.rb	/^  def user_master_of_universe!$/;"	f	class:ApplicationController
+user_signed_in?	app/helpers/application_helper.rb	/^  def user_signed_in?$/;"	f	class:ApplicationHelper
+vertical_form_for	app/helpers/form_helper.rb	/^  def vertical_form_for(record, options={}, &block)$/;"	f	class:FormHelper
+wall_params	app/controllers/walls_controller.rb	/^  def wall_params$/;"	f	class:WallsController
