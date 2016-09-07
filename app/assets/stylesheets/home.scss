@@ -1,0 +1,42 @@
+div.home-header {
+  background: url(asset-path('background1.jpg')) no-repeat center top;
+  height: 566px;
+  margin: 0;
+  div.home-header-title {
+    font-size: 50px;
+    padding: 100px 50px;
+    text-align: center;
+    span {
+      background: rgba(127, 127, 127, 0.2);
+      padding: 0 10px;
+      line-height: 0px;
+      color: #fff;
+    }
+  }
+  div.home-header-invite {
+    font-size: 13px;
+    color: #fff;
+    background-color: $wall-blue;
+    padding: 20px;
+    float: right;
+  }
+}
+
+div.home-container {
+  @extend .container;
+  .home-contents {
+  }
+}
+.home-map {
+  margin: 20px 0;
+  #map {
+    width: 100%;
+    height: 566px;
+  }
+}
+
+ul.home-walls-list {
+  @extend .list-group;
+  a { @extend .list-group-item; }
+}
+

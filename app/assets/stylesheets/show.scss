@@ -1,0 +1,42 @@
+div#show_wall {
+  iframe#wall_map {
+    width: 100%;
+    height: 220px;
+  }
+  #wall_photos {
+    @include make-md-column(6);
+    img {
+      @extend .img-rounded;
+      margin: 10px 0;
+    }
+  }
+  #wall_events {
+    @include make-md-column(6);
+    a.wall_add_event {
+      @extend .button;
+      @extend .btn-lg;
+      margin: 20px 100px;
+    }
+  }
+}
+
+ul.wall-circles {
+  @extend .btn-group;
+  @extend .btn-group-justified;
+  margin: 30px auto;
+  li {
+    @extend .btn;
+    @extend .btn-info;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px 10px;
+    border-radius: 20px;
+  }
+  li.absent {
+    @extend .disabled;
+    // background-color: #ccc;
+    // color: #aaa;
+  }
+}
+
+
