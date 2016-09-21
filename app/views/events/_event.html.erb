@@ -1,14 +1,24 @@
-<div class="media">
-  <div class="media-right">
+<div class="event-container" style="background-color: <%= event_bg_color %>" data-url="<%= event_path(event) %>">
+<h3 class="event-date">
+  <%= event.start_date.day %><br/>
+  <small><%= event.start_date.strftime("%b") %></small><br/>
+  <small><%= event.start_date.year %></small>
+</h3>
+<div class="event-body">
+  <h3 class="event-head">
+    <%= event.wall.city %><br/>
+    <%= event.name %>
+  </h3>
+  <div class="event-image">
     <% if photo = event.photos.first %>  
-    <%= link_to image_tag(photo.image.thumb.url, class: "media-object img-rounded"), event %>
-  <% end %>
+      <%= image_tag(photo.image.thumb.url) %>
+    <% end %>
   </div>
-  <div class="media-body">
-    <h3 class="media-heading"><%= event.name %> <%= link_to_edit([:edit, event]) if current_user.owns?(event) %></h3>
-    <p>
-    <%= l event.start_date %>:<br/>   <%= event.description %>
-    <%= link_to '[...]', event %>  
+  <div class="event-body">
+    <h4><%= event.wall %></h4>
+    <p><i><%= event.description %></i>
+    <%= link_to_edit([:edit, event]) if current_user and current_user.owns?(event) %>
     </p>
   </div>
+</div>
 </div>

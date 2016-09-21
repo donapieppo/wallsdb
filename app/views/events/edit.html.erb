@@ -1,5 +1,9 @@
 <div class="container">
+<h1><%= link_to @event.wall, wall_path(@event.wall)  %> </h1>
+<fielset>
+<label>Modifica dati evento</label>
 <%= render partial: 'form' %>  
+</fielset>
 
 <fielset class="event-gallery">
 <legend>Immagini</legend>
