@@ -30,6 +30,11 @@
 
       <%= bootstrap_flash %>
       <%= bootstrap_modal_div %>
+
+      <% if @wall %>  
+        <h1 class="centered"><%= link_to @wall.province.name, root_path + @wall.province.name %>  - <%= @wall.name %></h1>
+      <% end %>
+      
       <%= yield %>
 
     <div id="footer" role="navigation">

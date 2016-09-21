@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.boolean "public"
     t.float   "lat",           limit: 24
     t.float   "lng",           limit: 24
+    t.boolean "verified"
     t.index ["province_id"], name: "province_id", using: :btree
   end
 

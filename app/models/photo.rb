@@ -3,5 +3,7 @@ class Photo < ApplicationRecord
   belongs_to :event, required: false
 
   mount_uploader :image, ImageUploader
+
+  validates :image, presence: {}
 end
 

@@ -11,13 +11,13 @@ ApplicationCable	app/channels/application_cable/connection.rb	/^module Applicati
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
 ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
 ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
-ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
 ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
 Channel	app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
 Connection	app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
 DatetimePickerInput	app/inputs/datetime_picker_input.rb	/^class DatetimePickerInput < SimpleForm::Inputs::Base$/;"	c
 Event	app/models/event.rb	/^class Event < ApplicationRecord$/;"	c
 EventsController	app/controllers/events_controller.rb	/^class EventsController < ApplicationController$/;"	c
+EventsHelper	app/helpers/events_helper.rb	/^module EventsHelper$/;"	m
 FormBuilder	app/helpers/form_helper.rb	/^  class FormBuilder < ActionView::Helpers::FormBuilder$/;"	c	class:SimpleForm
 FormHelper	app/helpers/form_helper.rb	/^module FormHelper$/;"	m
 GoogleHelper	app/helpers/google_helper.rb	/^module GoogleHelper$/;"	m
@@ -51,6 +51,8 @@ create	app/controllers/openings_controller.rb	/^  def create$/;"	f	class:Opening
 create	app/controllers/photos_controller.rb	/^  def create$/;"	f	class:PhotosController
 create	app/controllers/walls_controller.rb	/^  def create$/;"	f	class:WallsController
 current_user	app/controllers/application_controller.rb	/^  def current_user$/;"	f	class:ApplicationController
+current_user_owns!	app/controllers/application_controller.rb	/^  def current_user_owns!(what)$/;"	f	class:ApplicationController
+current_user_owns?	app/controllers/application_controller.rb	/^  def current_user_owns?(what)$/;"	f	class:ApplicationController
 destroy	app/controllers/admins_controller.rb	/^  def destroy$/;"	f	class:AdminsController
 destroy	app/controllers/openings_controller.rb	/^  def destroy$/;"	f	class:OpeningsController
 destroy	app/controllers/photos_controller.rb	/^  def destroy$/;"	f	class:PhotosController
@@ -61,6 +63,7 @@ dm_error_notification	app/helpers/form_helper.rb	/^    def dm_error_notification
 dropdown_menu	app/helpers/menu_helper.rb	/^  def dropdown_menu(title, &block)$/;"	f	class:MenuHelper
 edit	app/controllers/events_controller.rb	/^  def edit$/;"	f	class:EventsController
 edit	app/controllers/walls_controller.rb	/^  def edit$/;"	f	class:WallsController
+event_bg_color	app/helpers/events_helper.rb	/^  def event_bg_color$/;"	f	class:EventsHelper
 event_params	app/controllers/events_controller.rb	/^  def event_params$/;"	f	class:EventsController
 extension_white_list	app/uploaders/image_uploader.rb	/^  def extension_white_list$/;"	f	class:ImageUploader
 force_sso_user	app/controllers/application_controller.rb	/^  def force_sso_user$/;"	f	class:ApplicationController
@@ -73,15 +76,18 @@ get_wall_and_check_permission	app/controllers/openings_controller.rb	/^  def get
 get_wall_and_event_and_check_permission	app/controllers/photos_controller.rb	/^  def get_wall_and_event_and_check_permission$/;"	f	class:PhotosController
 gmap_address	app/models/wall.rb	/^  def gmap_address$/;"	f	class:Wall
 google_oauth2	app/controllers/logins_controller.rb	/^  def google_oauth2$/;"	f	class:LoginsController
+group_in_4	app/helpers/events_helper.rb	/^  def group_in_4(events)$/;"	f	class:EventsHelper
 has_bar?	app/models/wall.rb	/^  def has_bar?$/;"	f	class:Wall
 has_boulder?	app/models/wall.rb	/^  def has_boulder?$/;"	f	class:Wall
 has_music?	app/models/wall.rb	/^  def has_music?$/;"	f	class:Wall
 has_rope?	app/models/wall.rb	/^  def has_rope?$/;"	f	class:Wall
 has_training?	app/models/wall.rb	/^  def has_training?$/;"	f	class:Wall
 horizontal_form_for	app/helpers/form_helper.rb	/^  def horizontal_form_for(record, options={}, &block)$/;"	f	class:FormHelper
+html_id	app/models/event.rb	/^  def html_id$/;"	f	class:Event
 icon	app/helpers/application_helper.rb	/^  def icon(name, options = { text: "", size: "18" })$/;"	f	class:ApplicationHelper
 index	app/controllers/admins_controller.rb	/^  def index$/;"	f	class:AdminsController
 index	app/controllers/home_controller.rb	/^  def index$/;"	f	class:HomeController
+index	app/controllers/logins_controller.rb	/^  def index$/;"	f	class:LoginsController
 index	app/controllers/walls_controller.rb	/^  def index$/;"	f	class:WallsController
 info_tag	app/helpers/application_helper.rb	/^  def info_tag(&block)$/;"	f	class:ApplicationHelper
 input	app/inputs/datetime_picker_input.rb	/^  def input(wrapper_options)$/;"	f	class:DatetimePickerInput
@@ -114,6 +120,7 @@ pippo_show	app/controllers/logins_controller.rb	/^  def pippo_show$/;"	f	class:L
 popover_help	app/helpers/application_helper.rb	/^  def popover_help(title, content)$/;"	f	class:ApplicationHelper
 privacy_alert	app/helpers/privacy_helper.rb	/^  def privacy_alert$/;"	f	class:PrivacyHelper
 privacy_cookie_name	app/helpers/privacy_helper.rb	/^  def privacy_cookie_name$/;"	f	class:PrivacyHelper
+provinces_json	app/models/province.rb	/^  def self.provinces_json$/;"	F	class:Province
 redirect_unsigned_user	app/controllers/application_controller.rb	/^  def redirect_unsigned_user$/;"	f	class:ApplicationController
 select_opening_day	app/helpers/opening_helper.rb	/^  def select_opening_day$/;"	f	class:OpeningHelper
 select_opening_hour	app/helpers/opening_helper.rb	/^  def select_opening_hour(what)$/;"	f

@@ -8,5 +8,9 @@ class Event < ApplicationRecord
   def to_s
     I18n.l(self.start_date) + " " + self.name
   end
+
+  def html_id
+    "event_#{self.id}"
+  end
 end
 

@@ -27,7 +27,7 @@ module WallsHelper
     popover = present ? { toggle: "popover", content: notes, container: "body", placement: "bottom"} : ''
 
     content_tag :li, class: (present ? '' : 'absent'), data: popover, title: t(what) do 
-      big_icon(WallIcons[what]) + 
+      icon(WallIcons[what], size: 38) +
       "<br/>".html_safe +
       (mq ? "#{mq} m.q. di #{t what}" : t(what))
     end

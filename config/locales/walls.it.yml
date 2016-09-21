@@ -5,6 +5,8 @@ it:
   bar:      bar
   music:    musica
   events:   Notizie ed Eventi
+  choose_city:   Scegli la città
+  walls:    Muri
 
   activerecord:
     models:

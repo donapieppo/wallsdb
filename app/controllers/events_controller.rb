@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  skip_before_action :force_sso_user, only: :show
   before_action :get_wall_and_check_permission, only: [:new, :create]
   before_action :get_event_and_check_permission, only: [:edit, :update, :delete]
 

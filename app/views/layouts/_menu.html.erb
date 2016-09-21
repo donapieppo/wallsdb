@@ -14,7 +14,7 @@
     <% if @search_in_menu %>  
       <%= form_tag show_province_path, remote: true, id: 'search-province', class: "navbar-form navbar-left" do %>  
         <div class="form-group">
-          <input class="typeahead form-control" type="search" name="province" placeholder="Segli la città" /> 
+          <input class="typeahead form-control" type="search" name="province" placeholder="<%= t :choose_city %>" /> 
         </div>
         <input id="show_province" type="submit" value="invia"/> 
       <% end %>
@@ -36,7 +36,7 @@
 
 <script>
   $(document).ready(function() {
-  var provinces = <%= raw Province.order(:name).select(:name).pluck(:name).to_json %>;
+  var provinces = <%= raw Province.provinces_json %>;
 
   var substringMatcher = function(strs) {
     return function findMatches(q, cb) {
@@ -66,7 +66,9 @@
       minLength: 1}, 
     { name: 'provinces',
        source: substringMatcher(provinces)
-     });
+    }).bind("typeahead:selected", function () {
+      jQuery("#search-province").submit();
+    });
   });
 </script>
 

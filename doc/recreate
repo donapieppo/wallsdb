@@ -72,11 +72,11 @@ Questo è lo spirito che accomuna il gruppo di Eden Climbing, non solo una strut
 EOF
 
 mysql wallsdb << EOF
-update walls set `boulder_mq` = 100 where id=1;
-update walls set `boulder_notes` = "Pareti appogiate, verticali e strapiombanti fino a 40 gradi." where id=1;
-update walls set `training` = "1 trave, 2 pan Gullich, Trx, spalliere etc etc." where id=1;
-update walls set `bar`      = "Birre e spritz da mani professionali." where id=1;
-update walls set `music`    = "Sempre" where id=1;
+update walls set boulder_mq = 100 where id=1;
+update walls set boulder_notes = "Pareti appogiate, verticali e strapiombanti fino a 40 gradi." where id=1;
+update walls set training = "1 trave, 2 pan Gullich, Trx, spalliere etc etc." where id=1;
+update walls set bar      = "Birre e spritz da mani professionali." where id=1;
+update walls set music    = "Sempre" where id=1;
 
 -- openings
 insert into openings values(0, 1, 2, '14:00:00', '21:00:00');
@@ -85,6 +85,12 @@ insert into openings values(0, 1, 4, '14:00:00', '21:00:00');
 insert into openings values(0, 1, 5, '14:00:00', '21:00:00');
 insert into openings values(0, 1, 0, '12:00:00', '20:00:00');
 insert into openings values(0, 1, 6, '12:00:00', '20:00:00');
+
+INSERT INTO events 
+     VALUES (1,1,'Lavori in corso','Eden Climbing a Bologna lavora per nuovi muri verticali.','2016-09-14 10:00:00','2016-09-14 20:00:00'),
+            (2,1,'dqldkjqlks','deqwdqdqdqdwdqdqwdqd','2016-09-14 10:00:00','2016-09-14 20:00:00'),
+            (3,1,'','','2016-09-14 10:00:00','2016-09-14 20:00:00'),
+            (4,1,'qdqdqdqddq','dqwqdwqqdwqdqwdqwd','2016-09-23 10:00:00','2016-09-14 20:00:00');
 
 EOF
 
