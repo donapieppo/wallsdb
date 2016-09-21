@@ -1,17 +1,17 @@
-<center>
-<h1><%= @wall.name %> <%= link_to_edit [:edit, @wall] if current_user && current_user.owns?(@wall) %></h1>
-</center>
+<p><%= link_to_edit [:edit, @wall] if current_user && current_user.owns?(@wall) %></p>
 
 <div id="show_wall">
   <iframe id="wall_map" src="<%= simple_gmap_url(@wall.gmap_address) %>"></iframe>
 
   <div class="container">
 
-    <p><%= raw @wall.description %></p>
+    <p class='wall-description'><%= raw @wall.description %></p>
 
     <p><%= fwicon('external-link') %> <%= link_to 'pagina web ufficiale', @wall.web %> </p>
 
-    <%= details_bar(@wall) %>  
+    <div class="wall-details">
+      <%= details_bar(@wall) %> 
+    </div> 
 
     <dl class="dl-horizontal">
       <dt><%= fwicon('map-marker') %></dt>
@@ -23,22 +23,28 @@
     </dl>
 
     <div class="row">
-      <div id="wall_photos">
-        <h2>Immagini</h2>
-        <% @wall.photos.each do |photo| %>  
-          <%= image_tag photo.image.thumb.url %> 
-        <% end %>
-      </div><!-- wall_photos -->
-
-      <div id="wall_events">
-        <h2>Notizie ed eventi</h2>
-        <% @wall.events.each do |event| %>  
-          <%= render event %>  
-        <% end %>
-        <p><%= link_to icon('plus-circle') + ' Segnala prossimo evento', new_wall_event_path(@wall), class: 'wall_add_event' %></p>  
-      </div>
+      <% group_in_4(@wall.events).each do |event_group|%>  
+        <div class="col-md-3">
+          <% event_group.each do |event| %>  
+            <%= render event %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
+
+    <center>
+      <p><%= link_to icon('plus-circle') + ' Segnala prossimo evento', new_wall_event_path(@wall), class: 'wall_add_event' %></p>  
+    </center>
+
+    <div id="wall_photos">
+      <h2>Immagini</h2>
+      <% @wall.photos.each do |photo| %>  
+        <%= image_tag photo.image.thumb.url %> 
+      <% end %>
+    </div><!-- wall_photos -->
+
   </div>
+</div>
 </div>
 
 <%= javascript_tag do  %>  
