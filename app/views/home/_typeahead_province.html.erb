@@ -1,8 +1,6 @@
-<%= form_tag show_province_path, remote: true, id: 'search-province' do %>  
-  <input class="typeahead" type="search" name="province" placeholder="Segli la città">  
-  <input id="show_province" type="submit" value="invia"/>
+<div id="province_walls" style="margin: 30px;">
+<%  if @province %>  
+  <%= render partial: 'walls' %>  
 <% end %>
-
-<div id="province_walls">
 </div>
 

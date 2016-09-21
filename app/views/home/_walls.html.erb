@@ -5,10 +5,10 @@
 </ul>
 
 <% unless @walls.empty? %>  
-<script>
+  <script>
 if (map) {
   map.setCenter({lat: <%= @walls.first.lat %>, lng: <%= @walls.first.lng %>});
   map.setZoom(11);
 }
-</script>
+  </script>
 <% end %>

@@ -6,8 +6,9 @@
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 6,
+                minZoom: 6,
                 center: rome,
-                styles: [{ stylers: [ { hue: '#0000e6' }, { saturation: -50 } ] }]
+                //styles: [{ stylers: [ { hue: '#0000e6' }, { saturation: -50 } ] }]
               });
     walls.forEach(function(item, index) {
       marker = new google.maps.Marker({ position: {lat: item[0], lng: item[1]}, 
