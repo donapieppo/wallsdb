@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user
+  helper_method :current_user, :current_user_owns?, :current_user_owns!
 
   before_action :log_current_user, :force_sso_user
 
@@ -35,5 +35,13 @@ class ApplicationController < ActionController::Base
 
   def user_master_of_universe!
     (@current_user and @current_user.master_of_universe?) or raise NO_ACCESS
+  end
+
+  def current_user_owns?(what)
+    current_user and current_user.owns?(what)
+  end
+
+  def current_user_owns!(what)
+    current_user_owns?(what) or raise "NotAuthorized"
   end
 end
