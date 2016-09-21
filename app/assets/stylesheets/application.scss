@@ -10,6 +10,11 @@ body {
   // background: url(asset-path('esagono.svg')) no-repeat center top ;
 }
 
+.centered {
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: center;
+}
 /* NAVBAR */
 .navbar {
   margin-bottom: 0;
@@ -76,11 +81,11 @@ span.actions {
 
 input#wall_cap { width: 10ex; }
 
-.event {
-  @extend .well;
-  text-align: center;
-}
-
 @import 'home';
 @import 'show';
 @import 'edit';
+@import 'event';
+
+#mapid { height: 180px; }
+
+

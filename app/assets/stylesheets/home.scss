@@ -24,6 +24,9 @@ div.home-header {
 
 div.home-container {
   @extend .container;
+  #search-province {
+    margin: 20px 10px;
+  }
   .home-contents {
   }
 }
@@ -31,7 +34,8 @@ div.home-container {
   margin: 20px 0;
   #map {
     width: 100%;
-    height: 566px;
+    height: 350px;
+    filter: grayscale(80%);
   }
 }
 
