@@ -46,7 +46,6 @@ it:
         boulder: Indicare i m.q. di parete boulder.
         rope:    Indicare i m.q. di parete con corda.
         training: Attrezzi per allenamento a secco.
-        address:  Via, Piazza, n.
         bar: È possibile comprarsi una birra o uno spritz? 
         boulder_notes: Note sul boulder.
         rope_notes: Note sui muri di corda.
@@ -56,3 +55,5 @@ it:
         url:  http://
         contact: '+39 '
         training: system wall, travi, pan Gullich, trx
+        address:  Via, Piazza, n.
+        web: http://
