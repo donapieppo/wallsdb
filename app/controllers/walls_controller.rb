@@ -14,7 +14,7 @@ class WallsController < ApplicationController
   def create
     @wall = Wall.new(wall_params)
     if @wall.save and current_user.admins.create(wall_id: @wall.id)
-      redirect_to @wall, notice: 'OK'
+      redirect_to [:edit, @wall], notice: 'Il muro è stato registrato. È possibile ora aggiornare le caratteristiche.'
     else
       render action: :new
     end
@@ -25,7 +25,7 @@ class WallsController < ApplicationController
 
   def update
     if @wall.update_attributes(wall_params)
-      redirect_to @wall, notice: 'OK'
+      redirect_to [:edit, @wall], notice: 'Dati aggiornati correttamente'
     else
       render action: :edit
     end
