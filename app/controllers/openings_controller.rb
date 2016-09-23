@@ -14,13 +14,13 @@ class OpeningsController < ApplicationController
     if current_user.owns?(opening)
       opening.delete
     end
-    redirect_to opening.wall
+    redirect_to [:edit, opening.wall]
   end
 
   private
 
   def get_wall_and_check_permission
-    @wall = Wall.first
+    @wall = Wall.find(params[:wall_id])
   end
 end
 
