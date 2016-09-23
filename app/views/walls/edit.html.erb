@@ -1,12 +1,11 @@
 <div class="container">
 <%= @wall.address %>  <%= @wall.cap %>  <%= @wall.city %>  
-<%= raw @wall.description %>  
 
 <%= render partial: 'form' %>  
 
 <fielset class="wall-openings">
 <legend>Aperture</legend>
-<%= render partial: 'openings/form', locals: {wall: @wall} %>  
+  <%= render partial: 'openings/form', locals: {wall: @wall} %>  
 </fielset>
 
 <fielset class="wall-gallery">
