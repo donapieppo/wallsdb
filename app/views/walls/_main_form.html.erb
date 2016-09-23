@@ -1,0 +1,18 @@
+<div class="wall-form">
+<%= horizontal_form_for @wall do |wall| %>  
+  <fielset class="wall-main">
+  <legend>Dati principali</legend>
+  <%= wall.dm_error_notification %>  
+  <%= wall.input :name %>  
+  <%= wall.input :contact %>  
+  <%= wall.input :address %>  
+  <%= wall.input :cap %>  
+  <%= wall.input :city %>  
+  <%= wall.association :province, include_blank: false %>  
+  <%= wall.input :description, as: :text %>  
+  <%= wall.input :web %>  
+  <%= wall.submit %>  
+  </fielset>
+<% end %>
+</div>
+

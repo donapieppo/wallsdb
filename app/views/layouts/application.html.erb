@@ -31,7 +31,7 @@
       <%= bootstrap_flash %>
       <%= bootstrap_modal_div %>
 
-      <% if @wall %>  
+      <% if @wall and ! @wall.new_record? %>  
         <h1 class="centered"><%= link_to @wall.province.name, root_path + @wall.province.name %>  - <%= @wall.name %></h1>
       <% end %>
       

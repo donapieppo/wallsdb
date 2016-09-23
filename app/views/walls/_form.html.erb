@@ -1,38 +1,25 @@
 <div class="wall-form">
 <%= horizontal_form_for @wall do |wall| %>  
-  <fielset class="wall-main">
-  <legend>Dati principali</legend>
-  <%= wall.dm_error_notification %>  
-  <%= wall.input :name %>  
-  <%= wall.input :contact %>  
-  <%= wall.input :address %>  
-  <%= wall.input :cap %>  
-  <%= wall.input :city %>  
-  <%= wall.association :province, include_blank: false %>  
-  <%= wall.input :description, as: :text %>  
-  <%= wall.input :prices, as: :text %>  
-  <%= wall.input :web %>  
-  </fielset>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Boulder</h2>
+      <%= wall.input :boulder_mq %>  
+      <%= wall.input :boulder_notes %>  
+    </div>
+    <div class="col-md-6">
+      <h2>Corda</h2>
+      <%= wall.input :rope_mq %>  
+      <%= wall.input :rope_notes %>  
+    </div>
+  </div>
 
-  <fielset class="wall-walls">
-  <legend>Boulder</legend>
-  <%= wall.input :boulder_mq %>  
-  <%= wall.input :boulder_notes %>  
-  <legend>Corda</legend>
-  <%= wall.input :rope_mq %>  
-  <%= wall.input :rope_notes %>  
-  </fielset>
+    <h2>Dettagli</h2>
+    <%= wall.input :prices, as: :text %>  
+    <%= wall.input :training %>  
+    <%= wall.input :bar %>  
+    <%= wall.input :music %>  
 
-  <fielset class="wall-details">
-  <legend>Dettagli</legend>
-  <%= wall.input :training %>  
-  <%= wall.input :bar %>  
-  <%= wall.input :music %>  
-  </fielset>
-
-  <fielset class="wall-submit">
     <%= wall.submit %>  
-  </fielset>
-<% end %>
-</div>
+  <% end %>
+  </div>
 

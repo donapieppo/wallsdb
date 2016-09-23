@@ -1,3 +1,7 @@
+<div class="container">
+<%= @wall.address %>  <%= @wall.cap %>  <%= @wall.city %>  
+<%= raw @wall.description %>  
+
 <%= render partial: 'form' %>  
 
 <fielset class="wall-openings">
@@ -27,4 +31,4 @@
   <%= photo.submit %>  
 <% end %>
 </fielset>
-
+</div>
