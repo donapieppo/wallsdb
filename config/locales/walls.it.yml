@@ -14,9 +14,7 @@ it:
       wall:    Muro
       opening: Apertura
       event:   Evento
-
-  simple_form:
-    labels:
+    attributes:
       wall:
         name: Nome
         description: Descrizione 
@@ -40,6 +38,7 @@ it:
         start_date:  Inizio evento
         end_date:    Fine evento
 
+  simple_form:
     hints:
       wall: 
         description: Descrizione lunga. È possibile inserire tag html.
