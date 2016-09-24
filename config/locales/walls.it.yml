@@ -38,6 +38,11 @@ it:
         start_date:  Inizio evento
         end_date:    Fine evento
 
+  helpers:
+    submit:
+      opening:
+        create: Aggiungi apertura
+
   simple_form:
     hints:
       wall: 
