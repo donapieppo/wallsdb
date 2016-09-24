@@ -37,6 +37,8 @@ it:
         description: Dettagli
         start_date:  Inizio evento
         end_date:    Fine evento
+      photo:
+        importance: Visibilità
 
   helpers:
     submit:

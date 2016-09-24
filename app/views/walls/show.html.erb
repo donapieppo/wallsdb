@@ -1,13 +1,14 @@
-<p><%= link_to_edit [:edit, @wall] if current_user && current_user.owns?(@wall) %></p>
+<p class="centered">
+  <%= fwicon('external-link') %> <%= link_to 'pagina web ufficiale', @wall.web %>
+  <%= link_to_edit 'modifica', [:edit, @wall] if current_user && current_user.owns?(@wall) %>
+</p>
 
 <div id="show_wall">
   <iframe id="wall_map" src="<%= simple_gmap_url(@wall.gmap_address) %>"></iframe>
 
   <div class="container">
 
-    <p class='wall-description'><%= raw @wall.description %></p>
-
-    <p><%= fwicon('external-link') %> <%= link_to 'pagina web ufficiale', @wall.web %> </p>
+    <div class='wall-description'><%= raw @wall.description %></div>
 
     <div class="wall-details">
       <%= details_bar(@wall) %> 

@@ -3,13 +3,15 @@
 
 <%= render partial: 'form' %>  
 
-<fielset class="wall-openings">
-<legend>Aperture</legend>
-  <%= render partial: 'openings/form', locals: {wall: @wall} %>  
-</fielset>
+<h2>Aperture</h2>
+<%= render partial: 'openings/form', locals: {wall: @wall} %>  
 
-<fielset class="wall-gallery">
-<legend>Immagini</legend>
+<h2>Immagini</h2>
+<%= horizontal_form_for [@wall, Photo.new] do |photo| %>  
+  <%= photo.input :image, as: :file, label: 'Nuova Foto' %>  
+  <%= photo.input :importance, collection: Photo.importaces, label_method: -> (x) {I18n.t x[0]},  as: :radio_buttons %>  
+  <%= photo.submit %>  
+<% end %>
 
 <div class="row">
   <% @wall.photos.each do |photo| %>  
@@ -18,16 +20,9 @@
         <%= image_tag photo.image.url %>  
       </div>
       <div class="caption">
+        importanza: <%= photo.importance %>  
         <%= link_to_delete photo_path(photo) %>  
       </div>
     </div>
   <% end %>
-</div>
-
-<%= simple_form_for [@wall, @wall.photos.new] do |photo| %>  
-  <%= photo.input :image, as: :file, label: 'Nuova Foto' %>  
-  <%= photo.input :importance, collection: ['a', 'b', 'c'], as: :radio_buttons, boolean_style: :inline %>  
-  <%= photo.submit %>  
-<% end %>
-</fielset>
 </div>

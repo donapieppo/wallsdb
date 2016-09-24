@@ -4,25 +4,29 @@
   <%= wall.input :description, as: :text, label: false, input_html: {rows: 10} %>  
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <h2>Boulder</h2>
       <%= wall.input :boulder_mq %>  
       <%= wall.input :boulder_notes %>  
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <h2>Corda</h2>
       <%= wall.input :rope_mq %>  
       <%= wall.input :rope_notes %>  
     </div>
+    <div class="col-md-4">
+      <h2>Dettagli</h2>
+      <%= wall.input :training %>  
+      <%= wall.input :bar %>  
+      <%= wall.input :music %>  
+    </div>
   </div>
+  <p class="centered">
+  <%= wall.submit %> - <%= link_to_back wall_path(@wall)  %>  
+  </p>
 
-    <h2>Dettagli</h2>
-    <%= wall.input :prices, as: :text %>  
-    <%= wall.input :training %>  
-    <%= wall.input :bar %>  
-    <%= wall.input :music %>  
+  <%# <%= wall.input :prices, as: :text %1> %>  
 
-    <%= wall.submit %>  
-  <% end %>
-  </div>
+<% end %>
+</div>
 
