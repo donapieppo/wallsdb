@@ -7,7 +7,7 @@ class Photo < ApplicationRecord
   validates :image, presence: {}
 
   def self.importaces
-    {main: 1, secondary: 2}
+    {main: 1, secondary: 2, logo: 3}
   end
 end
 
