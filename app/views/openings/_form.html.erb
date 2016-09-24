@@ -1,11 +1,18 @@
-<% @wall.openings.each do |opening| %>  
-  <%= opening %> <%= link_to_delete opening_path(opening) %> <br/> 
-<% end %>
+<div class="row">
+<div class="col-md-4">
+  <dl class="dl-horizontal">
+    <% @wall.openings.each do |opening| %>  
+      <dt><%= opening.wday_to_s %></dt>
+      <dd><%= opening.hours_to_s %>  <%= link_to_delete opening_path(opening) %></dd>
+    <% end %>
+  </dl>
+</div>
+<div class="col-md-8">
+    <% @opening = @wall.openings.new %>  
 
-<% @opening = @wall.openings.new %>  
-
-<%= simple_form_for [@wall, @opening] do |opening| %>  
-  <%= select_opening_day %>
-  dalle <%= select_opening_hour(:open) %> alle <%= select_opening_hour(:close) %>  
-  <%= opening.submit %>  
+  <%= simple_form_for [@wall, @opening] do |opening| %>  
+    <%= select_opening_day %>
+    <p>dalle <%= select_opening_hour(:open) %> alle <%= select_opening_hour(:close) %></p>
+    <p><%= opening.submit %></p>
 <% end %>
+</div>
