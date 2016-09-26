@@ -8,6 +8,8 @@ class Wall < ApplicationRecord
   validates :name, uniqueness: true
   validates :province, presence: true
 
+  before_save :fill_geocodes
+
   def to_s
     self.name
   end
@@ -37,6 +39,7 @@ class Wall < ApplicationRecord
   end
 
   def fill_geocodes
+    return true unless (self.address_changed? or self.city_changed? or self.lat.nil?)
     url = "https://maps.googleapis.com/maps/api/geocode/json?"
     url << "address=#{gmap_address},+IT"
     url << "&key=#{ENV['WALLSDB_GOOGLE_MAP_API_KEY']}"
@@ -47,7 +50,8 @@ class Wall < ApplicationRecord
       res = response["results"]
       # "geometry"=>{"location"=>{"lat"=>44.5149894, "lng"=>11.3592175}
       lat_lng = res[0]["geometry"]["location"]
-      self.update_attributes(lat: lat_lng["lat"], lng: lat_lng["lng"])
+      self.lat = lat_lng["lat"]
+      self.lng = lat_lng["lng"]
     when "ZERO_RESULTS"
       self.errros.add(:address, message: "Indirizzo sconosciuto su google map")
     else
