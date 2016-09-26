@@ -24,9 +24,6 @@ div.home-header {
 
 div.home-container {
   @extend .container;
-  #search-province {
-    margin: 20px 10px;
-  }
   .home-contents {
   }
 }
@@ -39,6 +36,12 @@ div.home-container {
   }
 }
 
+#search-province {
+  margin: 20px 10px;
+}
+#search-province-home {
+  margin: 10px 200px;
+}
 ul.home-walls-list {
   @extend .list-group;
   a { @extend .list-group-item; }
