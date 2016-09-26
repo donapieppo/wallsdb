@@ -67,7 +67,7 @@
     { name: 'provinces',
        source: substringMatcher(provinces)
     }).bind("typeahead:selected", function () {
-      jQuery("#search-province").submit();
+      $(this).submit();
     });
   });
 </script>
