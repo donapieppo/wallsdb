@@ -37,8 +37,11 @@ class Wall < ApplicationRecord
   end
 
   def fill_geocodes
-    url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{gmap_address},+IT&key=#{ENV['WALLSDB_GOOGLE_MAP_API_KEY']}"
-    response = ActiveSupport::JSON.decode(Net::HTTP.get(URI.parse(url)))
+    url = "https://maps.googleapis.com/maps/api/geocode/json?"
+    url << "address=#{gmap_address},+IT"
+    url << "&key=#{ENV['WALLSDB_GOOGLE_MAP_API_KEY']}"
+    uri = URI.parse(URI.escape(url))
+    response = ActiveSupport::JSON.decode(Net::HTTP.get(uri))
     case response["status"] 
     when "OK"
       res = response["results"]
