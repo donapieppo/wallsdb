@@ -3,7 +3,11 @@ class WallsController < ApplicationController
   before_action :set_wall_and_check_permission, only: [:edit, :update, :show]
 
   def index
-    @walls = current_user.walls.all
+    @walls = Hash.new{|h,k| h[k] = {}}
+    Wall.includes(province: :region).order('regions.id, provinces.name, walls.name').each do |wall|
+      @walls[wall.province.region][wall.province] ||= []
+      @walls[wall.province.region][wall.province] << wall
+    end
   end
 
   def new
