@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   skip_before_action :force_sso_user, only: :show
   before_action :get_wall_and_check_permission, only: [:new, :create]
-  before_action :get_event_and_check_permission, only: [:edit, :update, :delete]
+  before_action :get_event_and_check_permission, only: [:edit, :update, :destroy]
 
   def new
     @event = @wall.events.new(start_date: Date.today + 1.week + 12.hours, end_date: Date.today + 1.week + 22.hours)
@@ -29,6 +29,11 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+  end
+
+  def destroy
+    @event.destroy and flash[:notice] = 'Evento cancellato correttamente.'
+    redirect_to wall_path(@event.wall)
   end
 
   private
