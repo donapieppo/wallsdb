@@ -17,7 +17,10 @@
   <div class="event-body">
     <h4><%= event.wall %></h4>
     <p><i><%= event.description %></i>
-    <%= link_to_edit([:edit, event]) if current_user and current_user.owns?(event) %>
+    <% if current_user and current_user.owns?(event) %>  
+      <%= link_to_edit([:edit, event]) %>
+      <%= link_to_delete event_path(event) %>
+    <% end %>
     </p>
   </div>
 </div>

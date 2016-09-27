@@ -19,20 +19,19 @@
         <input id="show_province" type="submit" value="invia"/> 
       <% end %>
     <% end %>
-    <% if current_user %>  
       <ul class="nav navbar-nav">
-        <li><%= link_to big_icon('plus')  + ' Nuovo muro', new_wall_path %></li>
-        <li><%= link_to(big_icon('users') + ' Amministratori', admins_path) if current_user.master_of_universe? %></li>
-      </ul>
+        <li><%= link_to icon(:sitemap) + ' Mappa',  walls_path %></li>  
+    <% if current_user %>  
+        <li><%= link_to icon('plus')  + ' Nuovo muro', new_wall_path %></li>
+        <li><%= link_to(icon('users') + ' Amministratori', admins_path) if current_user.master_of_universe? %></li>
     <% end %>
+      </ul>
     <ul class="nav navbar-nav navbar-right">
       <%= logged_user %>
     </ul>
   </nav>
 </div><!-- container -->
 </header>
-
-<%=  privacy_alert %>
 
 <script>
   $(document).ready(function() {

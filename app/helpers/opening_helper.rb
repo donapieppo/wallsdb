@@ -9,7 +9,7 @@ module OpeningHelper
 
   def select_opening_hour(what)
     res = %Q|<select name="#{what}_hour">|
-    (7..22).each do |hour|
+    (7..24).each do |hour|
        res += %Q|<option value="#{hour}">#{"%02d" % hour}</option>|
     end 
     res += "</select> : "

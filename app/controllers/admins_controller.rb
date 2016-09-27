@@ -2,8 +2,7 @@ class AdminsController < ApplicationController
   before_action :set_wall_and_check_permission, only: [:edit, :update, :show]
 
   def index
-    @walls = current_user.master_of_universe? ? Wall.all : current_user.walls
-    @admins = Admin.includes(:wall, :user).where(wall: @walls).all
+    @walls = current_user.master_of_universe? ? Wall.includes(admins: :user) : current_user.walls.includes(admins: :user)
   end
 
   def new
@@ -27,6 +26,7 @@ class AdminsController < ApplicationController
 
   def destroy
     admin = Admin.find(params[:id])
+    current_user.owns!(admin.wall)
     admin.destroy and flash[:notice] = 'Amministratore cancellato correttamente.'
     redirect_to root_path
   end

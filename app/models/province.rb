@@ -8,6 +8,10 @@ class Province < ApplicationRecord
   def self.provinces_json
     @@provinces_json
   end
+ 
+  def to_s
+    self.name
+  end
 
 end
 

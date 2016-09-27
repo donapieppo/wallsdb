@@ -1,5 +1,5 @@
 <p class="centered">
-  <%= fwicon('external-link') %> <%= link_to 'pagina web ufficiale', @wall.web %>
+  <%= link_to(fwicon('external-link') + ' pagina web ufficiale', @wall.web) unless @wall.web.blank? %>
   <%= link_to_edit 'modifica', [:edit, @wall] if current_user && current_user.owns?(@wall) %>
 </p>
 
@@ -14,12 +14,12 @@
       <%= details_bar(@wall) %> 
     </div> 
 
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal" id="openings_dl">
       <dt><%= fwicon('map-marker') %></dt>
       <dd><%= @wall.address %> - <%= @wall.city %> (<%= @wall.province.sig %>)</dd>
       <dt><%= fwicon('calendar') %></dt>  
       <% @wall.openings.each do |opening| %>  
-        <dd><%= opening %></dd>
+        <dd><span><%= opening.wday_to_s %></span><%= opening.hours_to_s %></dd>
       <% end %>
     </dl>
 

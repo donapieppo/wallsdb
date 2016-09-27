@@ -30,6 +30,7 @@
 
       <%= bootstrap_flash %>
       <%= bootstrap_modal_div %>
+      <%= privacy_alert %>
 
       <% if @wall and ! @wall.new_record? %>  
         <h1 class="centered"><%= link_to @wall.province.name, root_path + @wall.province.name %>  - <%= @wall.name %></h1>
@@ -39,7 +40,7 @@
 
     <div id="footer" role="navigation">
       <div class="container" style="text-align: center">
-        <a href="">Privacy</a><br/>
+        <p>Muri d'Italia. &copy;2016 - <a href="">Privacy</p
       </div>
     </div>
 
