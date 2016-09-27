@@ -11,22 +11,23 @@ body {
 }
 
 .centered {
-  margin-left: auto; 
+  margin-left:  auto; 
   margin-right: auto; 
-  text-align: center;
+  text-align:   center;
 }
+.button {
+  @extend .btn;
+  @extend .btn-primary;
+}
+
 /* NAVBAR */
 .navbar {
   margin-bottom: 0;
-  // background-color: transparent;
-  .login-link {
-    @extend .img-rounded;
-    border: 1px solid blue;
-  }
 }
 .navbar-icon {
   padding-top: 2px;
 }
+
 #footer {
   @extend .navbar;
   @extend .navbar-default;
@@ -46,23 +47,17 @@ input.integer {
   width: 8em;
   text-align: right;
 }
-
-.button {
-  @extend .btn;
-  @extend .btn-primary;
-}
-fieldset {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 input.date_picker {
   width: 10em;
 }
 input.datetime_picker {
   width: 15em;
 }
+fieldset {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
-// ul with links expanded
 li { list-style-type: none; }
 ul.all_clickable {
   @extend .list-group;
@@ -88,4 +83,12 @@ input#wall_cap { width: 10ex; }
 
 #mapid { height: 180px; }
 
+.dl-admins {
+  dt {
+    margin-top: 1ex;
+  }
+  dd {
+    margin-left: 3ex;
+  }
+}
 
