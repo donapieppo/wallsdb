@@ -1,16 +1,29 @@
 <div class="container">
-<h1><%= link_to @event.wall, wall_path(@event.wall)  %> </h1>
-<fielset>
-<label>Modifica dati evento</label>
-<%= render partial: 'form' %>  
-</fielset>
-
-<fielset class="event-gallery">
-<legend>Immagini</legend>
+<h1><%= link_to @event.wall, wall_path(@event.wall) %></h1>
 
 <div class="row">
+  <div class="col-md-8">
+    <fielset>
+    <legend>Dati evento</legend>
+    <%= render partial: 'form' %>  
+    </fielset>
+  </div>
+  <div class="col-md-4">
+    <fielset class="event-gallery">
+    <legend>Immagini</legend>
+    <%= simple_form_for [@event, Photo.new] do |photo| %>  
+      <%= photo.input :image, as: :file, label: "Aggiungi foto per l'evento" %>  
+      <%= photo.input :importance, collection: ['a', 'b', 'c'], as: :radio_buttons, boolean_style: :inline %>  
+      <%= photo.submit %>  
+    <% end %>
+    </fielset>
+  </div>
+</div>
+
+<h2>Immagini</h2>
+<div class="row">
   <% @event.photos.each do |photo| %>  
-    <div class="col-xs-6 col-md-2">
+    <div class="col-xs-6 col-md-3">
       <div class='thumbnail'>
         <%= image_tag photo.image.url %>  
       </div>
@@ -20,13 +33,6 @@
     </div>
   <% end %>
 </div>
-
-<%= simple_form_for [@event, @event.photos.new] do |photo| %>  
-  <%= photo.input :image, as: :file, label: 'Nuova Foto' %>  
-  <%= photo.input :importance, collection: ['a', 'b', 'c'], as: :radio_buttons, boolean_style: :inline %>  
-  <%= photo.submit %>  
-<% end %>
-</fielset>
 </div>
 
 

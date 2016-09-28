@@ -39,6 +39,8 @@ it:
         end_date:    Fine evento
       photo:
         importance: Visibilità
+      admin:
+        email: Nuovo amministratore
 
   helpers:
     submit:
@@ -63,3 +65,5 @@ it:
         training: system wall, travi, pan Gullich, trx
         address:  Via, Piazza, n.
         web: http://
+      admin:
+        email: nome.cognome@gmail.com

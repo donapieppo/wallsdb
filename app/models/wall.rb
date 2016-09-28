@@ -6,6 +6,7 @@ class Wall < ApplicationRecord
   has_many :events
 
   validates :name, uniqueness: true
+  validates :web, uniqueness: true
   validates :province, presence: true
 
   before_save :fill_geocodes

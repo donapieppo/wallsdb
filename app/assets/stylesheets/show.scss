@@ -46,6 +46,11 @@ ul.wall-circles:after {
   clear: both;
   visibility: hidden;
 }
-
+#openings_dl {
+  dd span {
+    display: inline-block;
+    width: 12ex;
+  }
+}
 
 

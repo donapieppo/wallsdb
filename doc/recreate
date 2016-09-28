@@ -3,10 +3,16 @@
 mysql -e 'drop   database wallsdb'
 mysql -e 'create database wallsdb'
 
-mysql wallsdb < doc/regions.sql 
-mysql wallsdb < doc/provinces.sql 
-mysql wallsdb < doc/walls.mysql 
+ssh rwalls "mysqldump wallsdb" > tmp/wallsdb.mysql
 
-rake db:schema:dump
-touch tmp/restart.txt
+mysql wallsdb < tmp/wallsdb.mysql
+
+rsync --delete -av rwalls:/home/rails/wallsdb/public/uploads /home/rails/wallsdb/public/
+
+#mysql wallsdb < doc/regions.sql 
+#mysql wallsdb < doc/provinces.sql 
+#mysql wallsdb < doc/walls.mysql 
+
+#rake db:schema:dump
+#touch tmp/restart.txt
 

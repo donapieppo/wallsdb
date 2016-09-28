@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     resources :photos
   end
 
-  get  'pippo', to: 'home#pippo'
   post 'show_province', to: 'home#show_province', as: :show_province
 
   get 'login', to: 'logins#index', as: :login

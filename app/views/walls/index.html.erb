@@ -1,6 +1,24 @@
-<ul>
-  <% @walls.each do |wall| %>  
-    <li><%= wall.name %> <%= link_to_edit edit_wall_path(wall) %>  </li>
+<div class="container">
+<div class="row">
+  <% @walls.each do |region, prov_walls| %>
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title"><%= region %></h2>
+        </div>
+        <div class="panel-body">
+          <dl>
+            <% prov_walls.each do |province, walls| %>  
+              <dt><%= province %></dt>
+              <% walls.each do |wall| %>  
+                <dd><%= link_to wall, wall_path(wall) %> </dd>
+              <% end %>
+            <% end %>
+          </dl>
+        </div><!-- body -->
+      </div><!-- panel -->
+    </div><!-- col -->
   <% end %>
-</ul>
+</div><!-- row -->
+</div>
 
