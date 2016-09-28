@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   def index
     @home_header    = true
     @search_in_menu = true
-    @walls  = Wall.includes(province: :region).order('regions.name')
+    @walls  = Wall.includes(province: :region).order('regions.name, walls.name')
     if params[:province] 
       @province = Province.where(name: params[:province]).first
       @walls = @walls.where(province_id: @province.id) if @province
