@@ -27,5 +27,7 @@ Rails.application.routes.draw do
 
   post 'auth/developer/callback',    to: 'logins#developer'
 
+  get '/privacy', to: 'home#privacy', as: :privacy
+
   get '/(:province)', to: 'home#index'
 end

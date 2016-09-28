@@ -28,6 +28,9 @@ gem 'bootstrap3-datetimepicker-rails', '~>4.0.0'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'tinymce-rails'
+gem 'tinymce-rails-langs'
+
 #gem 'ice_cube'
 #gem 'schedulable'
 

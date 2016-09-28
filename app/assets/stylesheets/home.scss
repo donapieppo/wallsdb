@@ -41,6 +41,9 @@ div.home-container {
 }
 #search-province-home {
   margin: 10px 200px;
+  input.form-control {
+    width: 300px;
+  }
 }
 ul.home-walls-list {
   @extend .list-group;

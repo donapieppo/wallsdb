@@ -1,7 +1,10 @@
 <div class="wall-form">
 <%= horizontal_form_for @wall do |wall| %>  
   <h2>Descrizione</h2>
-  <%= wall.input :description, as: :text, label: false, input_html: {rows: 10} %>  
+
+  <%= tinymce_assets %>
+  <%= wall.input :description, as: :text, label: false, input_html: {class: 'tinymce', rows: 10} %>  
+  <%= tinymce language: "it" %>
 
   <div class="row">
     <div class="col-md-4">

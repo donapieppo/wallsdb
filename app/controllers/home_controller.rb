@@ -17,4 +17,6 @@ class HomeController < ApplicationController
     @walls = @province ? @province.walls.order(:name) : []
   end
 
+  def privacy
+  end
 end
