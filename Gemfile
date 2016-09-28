@@ -13,6 +13,7 @@ gem 'therubyracer', platforms: :ruby
 
 gem 'omniauth'
 gem 'omniauth-google-oauth2'  
+gem 'omniauth-facebook'
 
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
