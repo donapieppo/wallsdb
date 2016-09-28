@@ -11,13 +11,11 @@
   </div><!-- navbar-header -->
 
   <nav class="collapse navbar-collapse" id="bs-navbar-collapse">
-    <% if @search_in_menu %>  
-      <%= form_tag show_province_path, remote: true, id: 'search-province', class: "navbar-form navbar-left" do %>  
-        <div class="form-group">
-          <input class="typeahead form-control" type="search" name="province" placeholder="<%= t :choose_city %>" /> 
-        </div>
-        <input id="show_province" type="submit" value="invia"/> 
-      <% end %>
+    <%= form_tag show_province_path, remote: true, id: 'search-province', class: "navbar-form navbar-left" do %>  
+      <div class="form-group">
+        <input class="typeahead form-control" type="search" name="province" placeholder="<%= t :choose_city %>" /> 
+      </div>
+      <input id="show_province" type="submit" value="cerca"/> 
     <% end %>
     <% if current_user %>  
       <ul class="nav navbar-nav">
