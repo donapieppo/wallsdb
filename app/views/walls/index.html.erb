@@ -11,7 +11,7 @@
             <% prov_walls.each do |province, walls| %>  
               <dt><%= province %></dt>
               <% walls.each do |wall| %>  
-                <dd><%= link_to wall, wall_path(wall) %> </dd>
+                <dd><%= link_to wall, wall_path(wall) %> - <%= link_to icon('external-link'), wall.web %></dd>
               <% end %>
             <% end %>
           </dl>
