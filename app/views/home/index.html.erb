@@ -1,9 +1,9 @@
-<%= form_tag show_province_path, remote: true, id: 'search-province-home', class: 'form-inline' do %>  
+<%= form_tag show_province_path, remote: true, id: 'search-province-home', class: 'form-inline centered' do %>  
   <div class="form-group">
     <input class="typeahead form-control" type="search" name="province" placeholder="<%= t :choose_city %>" /> 
   </div>
   <div class="form-group">
-    <input id="show_province" type="submit" value="invia"/> 
+    <input id="show_province" type="submit" value="cerca"/> 
   </div>
 <% end %>
 
