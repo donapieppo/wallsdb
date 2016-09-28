@@ -33,6 +33,11 @@ class LoginsController < ApplicationController
     allow_and_create
   end
 
+  def facebook
+    raise request.env['omniauth.auth'].inspect
+    oinfo = request.env['omniauth.auth'].info
+  end
+
   def developer
     Socket.gethostname == 'truffaut' or Socket.gethostname == 'casa' or raise "NOT IN TRUFFAUT"
     Rails.env.development? or raise "NOT IN DEVELOPMENT"
