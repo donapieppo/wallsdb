@@ -34,8 +34,8 @@ class LoginsController < ApplicationController
   end
 
   def facebook
-    raise request.env['omniauth.auth'].inspect
-    oinfo = request.env['omniauth.auth'].info
+    parse_facebook_omniauth
+    allow_and_create
   end
 
   def developer
@@ -71,6 +71,13 @@ class LoginsController < ApplicationController
   # omniauth.auth: #<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=... token="..."> extra=#<OmniAuth::AuthHash id_info=#<OmniAuth::AuthHash at_hash="..." aud="..." azp="..." email="donapieppo@gmail.com" email_verified=true exp=1472639186 iat=1472635586 iss="accounts.google.com" sub="..."> id_token="..." raw_info=#<OmniAuth::AuthHash email="donapieppo@gmail.com" email_verified="true" family_name="Dona" gender="male" given_name="Pieppo" kind="plus#personOpenIdConnect" locale="it" name="Pieppo Dona" picture="..." profile="..." sub="...">> info=#<OmniAuth::AuthHash::InfoHash email="donapieppo@gmail.com" first_name="Pieppo" image="https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg" last_name="Dona" name="Pieppo Dona" urls=#<OmniAuth::AuthHash Google="https://plus.google.com/104065190780467868357">> provider="google_oauth2" uid="104065190780467868357">
   def parse_google_omniauth
     # logger.info("omniauth.auth: #{request.env['omniauth.auth'].inspect}")
+    oinfo  = request.env['omniauth.auth'].info
+    @email = oinfo.email
+    @name  = oinfo.name
+  end
+
+  # omniauth.auth: #<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=1480285227 token="EAAPuofO2BuIBAAY5TaFnQfTFZBLbRAoBl7ZCrq6WZBLkw3RC39LD6OJyvlxynFtzZCvjlGsIxfLjoryYnIgxb7X3CSyiBAUAHxV93QHCxi1KZA1Q48ejwQQmXAZCHDguP0o26dMEf96VzjAL9P4qgFNYAom367BhnOZAaJ1J1qEZAQZDZD"> extra=#<OmniAuth::AuthHash raw_info=#<OmniAuth::AuthHash email="donapieppo@yahoo.it" id="1816187078617148" name="Peter Climb">> info=#<OmniAuth::AuthHash::InfoHash email="donapieppo@yahoo.it" image="http://graph.facebook.com/v2.6/1816187078617148/picture" name="Peter Climb"> provider="facebook" uid="1816187078617148">
+  def parse_facebook_omniauth
     oinfo  = request.env['omniauth.auth'].info
     @email = oinfo.email
     @name  = oinfo.name
