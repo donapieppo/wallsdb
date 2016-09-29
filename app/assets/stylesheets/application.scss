@@ -7,6 +7,7 @@
 @import "typeaheadjs";
 
 body {
+  font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
   // background: url(asset-path('esagono.svg')) no-repeat center top ;
 }
 
@@ -80,6 +81,7 @@ input#wall_cap { width: 10ex; }
 @import 'show';
 @import 'edit';
 @import 'event';
+@import 'login';
 
 #mapid { height: 180px; }
 
@@ -92,3 +94,7 @@ input#wall_cap { width: 10ex; }
   }
 }
 
+.walls-list {
+  @include make-row();
+  margin-top: 10px;
+}

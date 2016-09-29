@@ -8,6 +8,10 @@ it:
   choose_city:   Scegli la città
   walls:    Muri
 
+  login_description: Accedi a Muri d'Italia per poter inserire nuove palestre o segnalare eventi.
+  google_login:   Accedi con Google
+  facebook_login: Accedi con Facebook
+
   activerecord:
     models:
       address: Indirizzo
@@ -50,7 +54,6 @@ it:
   simple_form:
     hints:
       wall: 
-        description: Descrizione lunga. È possibile inserire tag html.
         boulder: Indicare i m.q. di parete boulder.
         rope:    Indicare i m.q. di parete con corda.
         training: Attrezzi per allenamento a secco.

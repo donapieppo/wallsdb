@@ -18,7 +18,7 @@
       <input id="show_province" type="submit" value="cerca"/> 
     <% end %>
       <ul class="nav navbar-nav">
-        <li><%= link_to icon(:sitemap) + ' Mappa',  walls_path %></li>  
+        <li><%= link_to icon(:folder) + ' Muri',  walls_path %></li>  
     <% if current_user %>  
         <li><%= link_to icon('plus')  + ' Nuovo muro', new_wall_path %></li>
         <li><%= link_to(icon('users') + ' Amministratori', admins_path) if current_user.master_of_universe? %></li>

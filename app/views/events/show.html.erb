@@ -1,3 +1,4 @@
+<div class="container">
 <h1><%= @event.wall %> <%= link_to_edit([:edit, @event]) if current_user_owns?(@event) %></h1>
 
 <div class="well">
@@ -7,4 +8,4 @@
 <% @event.photos.each do |photo| %>  
   <%= image_tag photo.image.thumb.url %> 
 <% end %>
-
+</div>
