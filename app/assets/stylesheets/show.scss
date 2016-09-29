@@ -4,47 +4,44 @@ div#show_wall {
     height: 220px;
   }
   a.wall_add_event {
-    @extend .button;
+    @extend .btn;
     @extend .btn-lg;
+    @extend .btn-default;
     margin: 20px 100px;
   }
 }
 
 div.wall-description {
   background-color: #eee;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
   padding: 20px;
-  margin: 20px;
+  margin: 20px auto;
   border-radius: 10px;
   font-size: 120%;
 }
 div.wall-details {
-  width: 100%;
-  display: block;
-}
-ul.wall-circles {
-  margin: 10px auto;
-  li {
-    float:  left;
-    height: 12em;
-    width:  12em;
-    border-radius: 50%;
+  @include make-row();
+  div.col {
+    @include make-md-column(3);
+  }
+  div.wall-detail {
+    margin-bottom: 2em;
+    height: 20em;
+    border: 1px solid #111;
     font-weight: bold;
     text-align: center;
-    padding-top: 3em;
-    margin: 10px;
-    background: #8bacbd;
+    padding: 2em 2em;
     opacity: .8;
+    h3 {
+      font-size: 18px;
+    }
+    p {
+      color: #888;
+    }
   }
-  li.absent {
+  .absent {
     opacity: .3;
   }
-}
-ul.wall-circles:after {
-  content: '';
-  display: block;
-  clear: both;
-  visibility: hidden;
 }
 #openings_dl {
   dd span {

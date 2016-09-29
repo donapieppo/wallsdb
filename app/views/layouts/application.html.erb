@@ -33,7 +33,7 @@
       <%= privacy_alert %>
 
       <% if @wall and ! @wall.new_record? %>  
-        <h1 class="centered"><%= link_to @wall.province.name, root_path + @wall.province.name %>  - <%= @wall.name %></h1>
+        <h1 class="centered"> <%= @wall.name %></h1>
       <% end %>
       
       <%= yield %>

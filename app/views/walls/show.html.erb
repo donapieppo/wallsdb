@@ -1,4 +1,7 @@
 <p class="centered">
+  <%= @wall.address %> - <%= @wall.city %> -  <%= link_to @wall.province.name, root_path + @wall.province.name %> 
+</p>
+<p class="centered">
   <%= link_to(fwicon('external-link') + ' pagina web ufficiale', @wall.web) unless @wall.web.blank? %>
   <%= link_to_edit 'modifica', [:edit, @wall] if current_user && current_user.owns?(@wall) %>
 </p>
@@ -7,21 +10,20 @@
   <iframe id="wall_map" src="<%= simple_gmap_url(@wall.gmap_address) %>"></iframe>
 
   <div class="container">
-
     <div class='wall-description'><%= raw @wall.description %></div>
 
-    <div class="wall-details">
-      <%= details_bar(@wall) %> 
-    </div> 
+    <h2>Dettagli</h2>
+    <%= details_bar(@wall) %> 
 
+    <h2>Aperture</h2>
     <dl class="dl-horizontal" id="openings_dl">
-      <dt><%= fwicon('map-marker') %></dt>
-      <dd><%= @wall.address %> - <%= @wall.city %> (<%= @wall.province.sig %>)</dd>
       <dt><%= fwicon('calendar') %></dt>  
       <% @wall.openings.each do |opening| %>  
         <dd><span><%= opening.wday_to_s %></span><%= opening.hours_to_s %></dd>
       <% end %>
     </dl>
+
+    <h2>Eventi e news</h2>
 
     <div class="row">
       <% group_in_4(@wall.events).each do |event_group|%>  
@@ -48,8 +50,3 @@
 </div>
 </div>
 
-<%= javascript_tag do  %>  
-  $(function () {
-  $('[data-toggle="popover"]').popover()
-  })
-<% end %>
