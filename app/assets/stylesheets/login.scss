@@ -1,0 +1,22 @@
+p#login_description {
+  background-color: #eee;
+  width: 70%;
+  margin: 30px auto;
+  padding: 50px;
+  text-align: center;
+  font-size: 130%;
+}
+div#login_form {
+  margin: 30px;
+  text-align: center;
+}
+.google_button {
+  @extend .btn;
+  @extend .btn-default;
+  width: 20em;
+}
+.facebook_button {
+  @extend .btn;
+  @extend .btn-default;
+  width: 20em;
+}

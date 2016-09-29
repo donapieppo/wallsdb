@@ -1,5 +1,13 @@
-<center>
-  <%= link_to image_tag('btn_google_signin_dark_focus_web@2x.png'), google_login_path %>
-  <%= link_to 'facebook', facebook_login_path %>
-</center>
+<div class="container">
+
+<p id="login_description">
+  <%= t :login_description %>  
+</p>
+
+<div id="login_form">
+  <p><%= link_to icon('google')   + ' &nbsp;'.html_safe + t(:google_login), google_login_path, class: :google_button %></p>
+  <p><%= link_to icon('facebook') + ' &nbsp;'.html_safe + t(:facebook_login), facebook_login_path, class: :facebook_button %></p>
+</div>
+
+</div>
 
