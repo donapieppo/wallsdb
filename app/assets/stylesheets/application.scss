@@ -7,8 +7,30 @@
 @import "typeaheadjs";
 
 body {
-  font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  // font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
   // background: url(asset-path('esagono.svg')) no-repeat center top ;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+
+h2 {
+  position: relative;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+h2:after {
+  content: "";
+  background: #333333;
+  top: 52px;
+  position: absolute;
+  height: 2px;
+  left: 46%;
+  width: 8%;
 }
 
 .centered {
@@ -97,4 +119,8 @@ input#wall_cap { width: 10ex; }
 .walls-list {
   @include make-row();
   margin-top: 10px;
+  dd {
+    margin-left: 5px;
+  }
 }
+

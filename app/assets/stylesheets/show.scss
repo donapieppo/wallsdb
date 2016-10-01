@@ -9,11 +9,19 @@ div#show_wall {
     @extend .btn-default;
     margin: 20px 100px;
   }
+  .unverified {
+    @extend .alert;
+    @extend .alert-danger;
+    margin: 30px;
+    text-align: center;
+    font-size: 160%;
+  }
 }
 
 div.wall-description {
-  background-color: #eee;
+  background-color: #eaeaea;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+  width: 80%;
   padding: 20px;
   margin: 20px auto;
   border-radius: 10px;
