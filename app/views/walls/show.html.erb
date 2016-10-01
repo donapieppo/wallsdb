@@ -10,7 +10,16 @@
   <iframe id="wall_map" src="<%= simple_gmap_url(@wall.gmap_address) %>"></iframe>
 
   <div class="container">
-    <div class='wall-description'><%= raw @wall.description %></div>
+    <% unless @wall.verified %>  
+      <div class="unverified">
+        <p><%= icon('frown-o', size: 48) %></p>
+        <p>Questa palestra non ha ancora un amministratore<br/> che si prenda cura di lei, poverina.</p>
+        <p><%= link_to 'Sono proprietario di questa palestra', own_wall_path(@wall), class: 'btn btn-primary btn-lg' %></p>
+      </div>
+    <% end %>
+    <div class='wall-description'>
+      <%= raw @wall.description %>
+    </div>
 
     <h2>Dettagli</h2>
     <%= details_bar(@wall) %> 
@@ -22,6 +31,7 @@
         <dd><span><%= opening.wday_to_s %></span><%= opening.hours_to_s %></dd>
       <% end %>
     </dl>
+    <div class="clearfix">...</div>
 
     <h2>Eventi e news</h2>
 
