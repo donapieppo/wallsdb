@@ -1,6 +1,6 @@
 class WallsController < ApplicationController
   skip_before_action :force_sso_user, only: [:index, :show]
-  before_action :set_wall_and_check_permission, only: [:edit, :update, :show]
+  before_action :set_wall_and_check_permission, only: [:edit, :update, :show, :own]
 
   def index
     @walls = Hash.new{|h,k| h[k] = {}}
@@ -37,6 +37,9 @@ class WallsController < ApplicationController
 
   def show
     @bg_photo = @wall.photos.where(importance: 1).first
+  end
+
+  def own
   end
 
   private
