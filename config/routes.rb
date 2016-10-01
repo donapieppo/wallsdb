@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :walls do
+    get :own, on: :member
     resources :admins
     resources :openings
     resources :photos
