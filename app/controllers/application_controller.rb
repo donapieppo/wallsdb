@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   def force_sso_user
     if ! current_user
       session[:original_request] = request.fullpath
-      redirect_to google_login_path and return 
+      redirect_to login_path and return 
     end
   end
 
