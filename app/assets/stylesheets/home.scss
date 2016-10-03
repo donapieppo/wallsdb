@@ -1,9 +1,10 @@
 div.home-header {
   background: url(asset-path('background1.jpg')) no-repeat center top;
-  height: 566px;
+  min-height: 566px;
   margin: 0;
   div.home-header-title {
-    font-size: 50px;
+    font-size: 32px;
+    @media (min-width: 992px) { font-size: 42px; }
     padding: 100px 50px;
     text-align: center;
     span {
@@ -19,16 +20,12 @@ div.home-header {
     background-color: $wall-blue;
     padding: 20px;
     float: right;
-    width: 400px;
+    width: 300px;
+    @media (min-width: 992px) { width: 500px; }
     text-align: right;
   }
 }
 
-div.home-container {
-  @extend .container;
-  .home-contents {
-  }
-}
 .home-map {
   margin: 20px 0;
   #map {
@@ -42,7 +39,7 @@ div.home-container {
   margin: 20px 10px;
 }
 #search-province-home {
-  margin: 10px 200px;
+  margin-top: 10px;
   input.form-control {
     width: 300px;
   }

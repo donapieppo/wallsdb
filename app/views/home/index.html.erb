@@ -10,20 +10,21 @@
 
 <%= render partial: 'typeahead_province' %>  
 
-  <h2 class="centered"><%= t :events %></h2>
+<h2 class="centered"><%= t :events %></h2>
 
-  <div class="row">
-    <% group_in_4(@events).each do |event_group|%>  
-      <div class="col-md-3">
-        <% event_group.each do |event| %>  
-          <%= render event %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+<div class="row">
+  <% group_in_4(@events).each do |event_group|%>  
+    <div class="col-md-3">
+      <% event_group.each do |event| %>  
+        <%= render event %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <h2><center><%= t :walls %></center></h2>
+</div><!-- container -->
+
 
 <div class="home-map" style="border: 4px double #000">
   <%= render partial: 'main_google_map' %>  
