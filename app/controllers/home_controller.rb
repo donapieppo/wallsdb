@@ -12,9 +12,14 @@ class HomeController < ApplicationController
     @events = Event.includes(:photos).order(:start_date).limit(10)
   end
 
-  def show_province
-    @province = Province.where(name: params[:province]).first
-    @walls = @province ? @province.walls.order(:name) : []
+  def search
+    if province = Province.where(name: params[:search_string]).first
+      @walls = province.walls.order(:name)
+    elsif wall = Wall.where(name: params[:search_string]).first
+      @walls = [wall]
+    else
+      @walls = []
+    end
   end
 
   def privacy

@@ -1,14 +1,12 @@
 <div class="container">
-<%= form_tag show_province_path, remote: true, id: 'search-province-home', class: 'form-inline centered' do %>  
-  <div class="form-group">
-    <input class="typeahead form-control" type="search" name="province" placeholder="<%= t :choose_city %>" /> 
-  </div>
-  <div class="form-group">
-    <input id="show_province" type="submit" value="cerca"/> 
+<%= form_tag search_path, remote: true, id: 'search-form', class: 'form-inline centered' do %>  
+  <div class="input-group">
+    <input class="typeahead form-control" type="search" name="search_string" placeholder="<%= t :choose_city %>" /> 
+    <span class="input-group-btn">
+      <input type="submit" value="cerca" class="btn btn-default"/> 
+    </span>
   </div>
 <% end %>
-
-<%= render partial: 'typeahead_province' %>  
 
 <h2 class="centered"><%= t :events %></h2>
 

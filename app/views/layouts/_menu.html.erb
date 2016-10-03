@@ -11,11 +11,13 @@
   </div><!-- navbar-header -->
 
   <nav class="collapse navbar-collapse" id="bs-navbar-collapse">
-    <%= form_tag show_province_path, remote: true, id: 'search-province', class: "navbar-form navbar-left" do %>  
-      <div class="form-group">
-        <input class="typeahead form-control" type="search" name="province" placeholder="<%= t :choose_city %>" /> 
+    <%= form_tag search_path, remote: true, id: 'search-form', class: "navbar-form navbar-left" do %>  
+      <div class="input-group">
+        <input class="typeahead form-control" type="search" name="search_string" placeholder="<%= t :choose_city %>" /> 
+        <span class="input-group-btn">
+          <input type="submit" value="cerca" class="btn btn-default"/> 
+        </span>
       </div>
-      <input id="show_province" type="submit" value="cerca"/> 
     <% end %>
       <ul class="nav navbar-nav">
         <li><%= link_to icon(:folder) + ' Muri',  walls_path %></li>  
@@ -34,6 +36,7 @@
 <script>
   $(document).ready(function() {
   var provinces = <%= raw Province.provinces_json %>;
+  var walls = <%= raw Wall.walls_json %>;
 
   var substringMatcher = function(strs) {
     return function findMatches(q, cb) {
@@ -62,7 +65,16 @@
       highlight: true,
       minLength: 1}, 
     { name: 'provinces',
-       source: substringMatcher(provinces)
+      source: substringMatcher(provinces),
+      templates: {
+        header: '<h3 class="typeahead-header">Dove</h3>' 
+      }
+    },
+    { name: 'walls',
+      source: substringMatcher(walls), 
+      templates: {
+        header: '<h3 class="typeahead-header">Palestre</h3>'
+      }
     }).bind("typeahead:selected", function () {
       $(this).submit();
     });

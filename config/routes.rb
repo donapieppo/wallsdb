@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :photos
   end
 
-  post 'show_province', to: 'home#show_province', as: :show_province
+  post 'search', to: 'home#search', as: :search
 
   get 'login', to: 'logins#index', as: :login
   # get 'login_facebook', to: 'logins#facebook', as: :facebook_login

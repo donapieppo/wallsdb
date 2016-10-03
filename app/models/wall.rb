@@ -10,6 +10,7 @@ class Wall < ApplicationRecord
   validates :province, presence: true
 
   before_save :fill_geocodes
+  after_save  :reload_walls_json
 
   # allowed_tags = Set.new(%w(strong em b i p code pre tt samp kbd var sub
   #      sup dfn cite big small address hr br div span h1 h2 h3 h4 h5 h6 ul ol li dl dt dd abbr
@@ -73,6 +74,13 @@ class Wall < ApplicationRecord
     self.all.map {|wall| [wall.lat, wall.lng, wall.name, wall.id]}
   end
 
+  def self.reload_walls_json
+    @@walls_json = Wall.select(:name).pluck(:name).to_json
+  end
+
+  def self.walls_json
+    defined?(@@walls_json) ? @@walls_json : reload_walls_json
+  end
 end
 
 # https://developers.google.com/maps/documentation/geocoding/intro
