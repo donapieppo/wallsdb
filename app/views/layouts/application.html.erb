@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Muri d'Italia.">
     <meta name="author" content="Luca and Piider">
-    <meta name="Description" CONTENT="Le palestre di arrampicata in Italia.">
+    <meta name="Description" content="Le palestre di arrampicata in Italia. Tutte le informazioni, le novità e gli eventi.">
     <title>Muri d'Italia</title>
 
     <%= stylesheet_link_tag    "application", media: "all" %>
@@ -20,11 +20,16 @@
 
     <% if @home_header %>  
       <div class="home-header">  
-        <%# <div class="home-header-invite">Iscriviti al portale per <br/>tutti i muri di Italia.</div> %>
         <div class="home-header-title">
           <span>Cerca la palestra di arrampicata</span><br/>
           <span>più vicina a te</span><br/>
           <span>e a come ti piace.</span>
+        </div>
+        <div class="home-header-description">
+          Con il progetto "Muri d'Italia" vogliamo fornire un portale
+          dove trovare informazioni su tutte le palestre di arrampicata 
+          in Italia. Se avete una palestra potete registravi per mantenere
+          aggiornati i dati e informare sulle vostre iniziative.
         </div>
       </div>
     <% end %>

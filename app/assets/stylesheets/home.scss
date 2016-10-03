@@ -13,12 +13,14 @@ div.home-header {
       color: #fff;
     }
   }
-  div.home-header-invite {
-    font-size: 13px;
+  div.home-header-description {
+    font-size: 14px;
     color: #fff;
     background-color: $wall-blue;
     padding: 20px;
     float: right;
+    width: 400px;
+    text-align: right;
   }
 }
 

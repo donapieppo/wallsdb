@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_tag show_province_path, remote: true, id: 'search-province-home', class: 'form-inline centered' do %>  
   <div class="form-group">
     <input class="typeahead form-control" type="search" name="province" placeholder="<%= t :choose_city %>" /> 
@@ -9,7 +10,6 @@
 
 <%= render partial: 'typeahead_province' %>  
 
-<div class="container">
   <h2 class="centered"><%= t :events %></h2>
 
   <div class="row">
