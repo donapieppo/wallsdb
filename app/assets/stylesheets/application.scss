@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
-  // font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 16px;
   // background: url(asset-path('esagono.svg')) no-repeat center top ;
 }
 
@@ -18,7 +18,7 @@ h1, h2, h3, h4 {
 
 h2 {
   position: relative;
-  font-size: 40px;
+  font-size: 2em;
   text-align: center;
   margin-top: 60px;
   margin-bottom: 60px;
@@ -125,7 +125,7 @@ input#wall_cap { width: 10ex; }
 }
 
 .typeahead-header {
-  font-size: 14px;
+  font-size: 1.2em;
   font-weight: bold;
 }
 

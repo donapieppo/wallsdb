@@ -38,7 +38,9 @@ it:
         music: Musica
       event:
         name:        Titolo
-        description: Dettagli
+        description: Descrizione
+        description_long: Altri dettagli
+        web:         Sito Web
         start_date:  Inizio evento
         end_date:    Fine evento
       photo:

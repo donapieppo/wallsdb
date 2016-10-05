@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Muri d'Italia.">
     <meta name="author" content="Luca and Piider">
     <meta name="Description" content="Le palestre di arrampicata in Italia. Tutte le informazioni, le novità e gli eventi.">
@@ -52,8 +52,12 @@
       </div>
     </div>
 
-    <script>
+    <%= javascript_tag do %>
+        typeahead_search(<%= raw Province.provinces_json %>, <%= raw Wall.walls_json %>);
+    <% end %>
+
+    <%= javascript_tag do %>
      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-83638663-1', 'auto'); ga('send', 'pageview');
-    </script>
+   <% end %>
   </body>
 </html>

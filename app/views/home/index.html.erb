@@ -8,6 +8,11 @@
   </div>
 <% end %>
 
+<% if @province %>  
+  <h2><%= @province %></h2>
+  <%= render partial: 'home/walls'  %>
+<% end %>
+
 <h2 class="centered"><%= t :events %></h2>
 
 <div class="row">

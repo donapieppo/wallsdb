@@ -5,9 +5,9 @@ class Wall < ApplicationRecord
   has_many :photos
   has_many :events
 
-  validates :name, uniqueness: true
-  validates :web, uniqueness: true
+  validates :name, presence: true,  uniqueness: true
   validates :province, presence: true
+  validates :web, uniqueness: true
 
   before_save :fill_geocodes
   after_save  :reload_walls_json
