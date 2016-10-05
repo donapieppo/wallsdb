@@ -4,12 +4,12 @@
   <legend>Dati principali</legend>
   <%= wall.dm_error_notification %>  
   <%= wall.input :name %>  
-  <%= wall.input :contact %>  
   <%= wall.input :address %>  
   <%= wall.input :cap %>  
   <%= wall.input :city %>  
   <%= wall.association :province, include_blank: false %>  
   <%= wall.input :web %>  
+  <%= wall.input :contact %>  
   <%= wall.submit %>  
   </fielset>
 <% end %>
