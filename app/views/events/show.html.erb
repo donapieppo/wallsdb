@@ -5,6 +5,10 @@
   <%= @event.description %>  
 </div>
 
+<div>
+  <%= raw @event.description_long %>  
+</div>
+
 <% @event.photos.each do |photo| %>  
   <%= image_tag photo.image.thumb.url %> 
 <% end %>
