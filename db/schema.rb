@@ -20,9 +20,11 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "events", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "wall_id",                   null: false, unsigned: true
-    t.string   "name",                      null: false
-    t.text     "description", limit: 65535
+    t.integer  "wall_id",                        null: false, unsigned: true
+    t.string   "name",                           null: false
+    t.text     "description",      limit: 65535
+    t.text     "description_long", limit: 65535
+    t.string   "web"
     t.datetime "start_date"
     t.datetime "end_date"
     t.index ["wall_id"], name: "wall_id", using: :btree
