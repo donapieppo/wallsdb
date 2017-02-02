@@ -1,4 +1,3 @@
-<div class="container">
 <div class="walls-list">
   <% @walls.each do |region, prov_walls| %>
     <div class="col-md-3">
@@ -11,7 +10,7 @@
             <% prov_walls.each do |province, walls| %>  
               <dt><%= province %></dt>
               <% walls.each do |wall| %>  
-                <dd><%= link_to wall, wall_path(wall) %> - <%= link_to icon('external-link'), wall.web %></dd>
+                <dd><%= link_to wall, wall_path(wall) %> - <%= link_to(icon('external-link'), wall.web) unless wall.web.blank? %></dd>
               <% end %>
             <% end %>
           </dl>
@@ -20,5 +19,3 @@
     </div><!-- col -->
   <% end %>
 </div><!-- row -->
-</div>
-

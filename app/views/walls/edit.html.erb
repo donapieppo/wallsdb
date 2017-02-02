@@ -1,9 +1,9 @@
-<div class="container">
 <%= @wall.address %>  <%= @wall.cap %>  <%= @wall.city %>  
 
 <% if params[:all] %>  
   <%= render partial: 'main_form' %>  
 <% end %>
+
 <%= render partial: 'form' %>  
 
 <h2>Aperture</h2>
@@ -24,8 +24,10 @@
       </div>
       <div class="caption">
         importanza: <%= photo.importance %>  
-        <%= link_to_delete photo_path(photo) %>  
+      <%= link_to_delete photo_path(photo) %>  
       </div>
     </div>
   <% end %>
 </div>
+
+
