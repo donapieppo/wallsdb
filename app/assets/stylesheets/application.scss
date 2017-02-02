@@ -16,14 +16,14 @@ h1, h2, h3, h4 {
   font-weight: bold;
 }
 
-h2 {
+h1, h2 {
   position: relative;
   font-size: 2em;
   text-align: center;
   margin-top: 60px;
   margin-bottom: 60px;
 }
-h2:after {
+h1:after, h2:after {
   content: "";
   background: #333333;
   top: 52px;
