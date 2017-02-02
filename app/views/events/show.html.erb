@@ -1,7 +1,8 @@
-<h1><%= @event.wall %> <%= link_to_edit([:edit, @event]) if current_user_owns?(@event) %></h1>
+<h1><%= @event.wall %></h1>
 
 <%= render @event, complete: true %>  
 
+<h2>Altri eventi <small>a <%= @event.wall %></small></h2>  
 <div class="row">
 <% @other_events.each do |event| %>  
   <div class="col-md-4 col-md-offset-4">

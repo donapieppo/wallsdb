@@ -12,7 +12,7 @@
   <div class="event-image">
     <% if defined?(complete) and complete %>  
       <% @event.photos.each do |photo| %>  
-        <%= image_tag photo.image.thumb.url %> 
+        <%= image_tag photo.image.url %> 
       <% end %>
     <% else %>
       <% if photo = event.photos.first %>  
@@ -21,13 +21,12 @@
     <% end %>
   </div>
   <div class="event-body">
-    <h4><%= event.wall %></h4>
-    <p><i><%= event.description %></i>
-    <% if current_user and current_user.owns?(event) %>  
-      <%= link_to_edit([:edit, event]) %>
-      <%= link_to_delete event_path(event) %>
-    <% end %>
-    </p>
+    <h4><%= link_to event.wall, event.wall %></h4>
+    <p><i><%= event.description %></i></p>
   </div>
+  <% if current_user and current_user.owns?(event) %>  
+    <%= link_to_edit([:edit, event]) %>
+    <%= link_to_delete event_path(event) %>
+  <% end %>
 </div>
 </div>

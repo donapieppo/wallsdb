@@ -28,6 +28,11 @@ div.event-container {
       color: #333;
     }
   }
+  .event-body {
+    a, a:hover {
+      color: #000;
+    }
+  }
 
   h3.event-wall {
     font-size: 120%;
