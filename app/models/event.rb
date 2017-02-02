@@ -11,5 +11,8 @@ class Event < ApplicationRecord
   def html_id
     "event_#{self.id}"
   end
+
+  scope :future, -> { where('events.end_date >= NOW()').order(:start_date) }
+  scope :past,   -> { where('events.end_date < NOW()').order('start_date desc') }
 end
 
