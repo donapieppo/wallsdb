@@ -26,7 +26,7 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    params[:photo].permit(:image, :importance)
+    params[:photo].permit(:image, :importance, :remote_image_url)
   end
 
   def get_wall_and_event_and_check_permission

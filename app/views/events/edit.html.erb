@@ -11,7 +11,8 @@
     <fielset class="event-gallery">
     <legend>Immagini</legend>
     <%= simple_form_for [@event, Photo.new] do |photo| %>  
-      <%= photo.input :image, as: :file, label: "Aggiungi foto per l'evento" %>  
+      <%= photo.input :image, as: :file, label: "Aggiungi foto per l'evento", required: false %>  
+      <%= photo.input :remote_image_url, label: "Scarica la foto dall'indirizzo" %>  
       <%= photo.input :importance, collection: ['a', 'b', 'c'], as: :radio_buttons, boolean_style: :inline %>  
       <%= photo.submit %>  
     <% end %>

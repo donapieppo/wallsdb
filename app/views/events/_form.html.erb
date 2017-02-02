@@ -3,7 +3,7 @@
 <%= horizontal_form_for [@wall, @event] do |event| %>  
   <%= event.input :name %>  
   <%= event.input :description %>  
-  <%= event.input :description_long, as: :text, input_html: {class: 'tinymce', rows: 10} %>  
+  <%= event.input :description_long, as: :text, input_html: { class: 'tinymce', rows: 8 } %>  
   <%= event.input :web %>  
   <%= event.input :start_date, as: :datetime_picker %>  
   <%= event.input :end_date, as: :datetime_picker %>  
