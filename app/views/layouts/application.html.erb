@@ -36,6 +36,7 @@
       </div>
     <% end %>
 
+    <div class="container">
       <%= bootstrap_flash %>
       <%= bootstrap_modal_div %>
       <%= privacy_alert %>
@@ -45,6 +46,13 @@
       <% end %>
       
       <%= yield %>
+    </div>
+
+    <% if @home_header %>  
+      <div class="home-map" style="border: 4px double #000">
+        <%= render partial: 'main_google_map' %>  
+      </div>
+    <% end %>
 
     <div id="footer" role="navigation">
       <div class="container" style="text-align: center">
