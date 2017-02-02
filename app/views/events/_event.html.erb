@@ -10,8 +10,14 @@
     <p><%= event.name %></p>
   </h3>
   <div class="event-image">
-    <% if photo = event.photos.first %>  
-      <%= image_tag(photo.image.thumb.url) %>
+    <% if defined?(complete) and complete %>  
+      <% @event.photos.each do |photo| %>  
+        <%= image_tag photo.image.thumb.url %> 
+      <% end %>
+    <% else %>
+      <% if photo = event.photos.first %>  
+        <%= image_tag(photo.image.thumb.url) %>
+      <% end %>
     <% end %>
   </div>
   <div class="event-body">
