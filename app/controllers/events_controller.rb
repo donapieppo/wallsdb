@@ -29,6 +29,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @other_events = @event.wall.events.where.not(id: @event.id)
   end
 
   def destroy
