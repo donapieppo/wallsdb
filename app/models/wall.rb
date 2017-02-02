@@ -10,7 +10,7 @@ class Wall < ApplicationRecord
   validates :web, uniqueness: true
 
   before_save :fill_geocodes
-  after_save  :reload_walls_json
+  after_save  :clear_cache
 
   # allowed_tags = Set.new(%w(strong em b i p code pre tt samp kbd var sub
   #      sup dfn cite big small address hr br div span h1 h2 h3 h4 h5 h6 ul ol li dl dt dd abbr
@@ -72,6 +72,10 @@ class Wall < ApplicationRecord
 
   def self.geocodes
     self.all.map {|wall| [wall.lat, wall.lng, wall.name, wall.id]}
+  end
+
+  def clear_cache
+    Wall.reload_walls_json
   end
 
   def self.reload_walls_json
