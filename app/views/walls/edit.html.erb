@@ -1,31 +1,28 @@
-<%# <%= @wall.address %1>  <%= @wall.cap %1>  <%= @wall.city %1> %>  
+<div>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#anagrafica"  aria-controls="anagrafica"  role="tab" data-toggle="tab">Anagrafica</a></li>
+  <li role="presentation"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Descrizione</a></li>
+  <li role="presentation"><a href="#details"     aria-controls="details"     role="tab" data-toggle="tab">Dettagli</a></li>
+  <li role="presentation"><a href="#openings"    aria-controls="openings"    role="tab" data-toggle="tab">Orari aperture</a></li>
+  <li role="presentation"><a href="#images"      aria-controls="images"      role="tab" data-toggle="tab">Immagini</a></li>
+</ul>
 
-<%= render partial: 'main_form' %>  
-<%= render partial: 'form' %>  
-
-<h2>Aperture</h2>
-<%= render partial: 'openings/form', locals: {wall: @wall} %>  
-
-<h2>Immagini</h2>
-<%= horizontal_form_for [@wall, Photo.new] do |photo| %>  
-  <%= photo.input :image, as: :file, label: 'Nuova Foto' %>  
-  <%= photo.input :remote_image_url, label: "Scarica la foto dall'indirizzo" %>  
-  <%= photo.input :importance, collection: Photo.importaces, label_method: -> (x) {I18n.t x[0]},  as: :radio_buttons %>  
-  <%= photo.submit %>  
-<% end %>
-
-<div class="row">
-  <% @wall.photos.each do |photo| %>  
-    <div class="col-xs-6 col-md-2">
-      <div class='thumbnail'>
-        <%= image_tag photo.image.url %>  
-      </div>
-      <div class="caption">
-        importanza: <%= photo.importance %>  
-      <%= link_to_delete photo_path(photo) %>  
-      </div>
-    </div>
-  <% end %>
+<!-- Tab panes -->
+<div class="tab-content" style="margin: 30px;">
+  <div role="tabpanel" class="tab-pane active" id="anagrafica">
+    <%= render partial: 'main_form' %>  
+  </div>
+  <div role="tabpanel" class="tab-pane" id="description">
+    <%= render partial: 'description_form' %>  
+  </div>
+  <div role="tabpanel" class="tab-pane" id="details">
+    <%= render partial: 'form' %>  
+  </div>
+  <div role="tabpanel" class="tab-pane" id="openings">
+    <%= render partial: 'openings/form', locals: {wall: @wall} %>  
+  </div>
+  <div role="tabpanel" class="tab-pane" id="images">
+    <%= render partial: 'images_form', locals: {wall: @wall} %>  
+  </div>
 </div>
-
-

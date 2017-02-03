@@ -1,11 +1,4 @@
 <%= horizontal_form_for @wall do |wall| %>  
-  <fieldset class="wall-form">
-  <legend>Descrizione</legend>
-
-  <%= tinymce_assets %>
-  <%= wall.input :description, as: :text, label: false, input_html: {class: 'tinymce', rows: 10} %>  
-  <%= tinymce language: "it" %>
-
   <div class="row">
     <div class="col-md-4">
       <h2>Boulder</h2>
@@ -27,6 +20,5 @@
   <p class="centered">
   <%= wall.submit %> - <%= link_to_back wall_path(@wall)  %>  
   </p>
-  </fieldset>
   <%# <%= wall.input :prices, as: :text %1> %>  
 <% end %>

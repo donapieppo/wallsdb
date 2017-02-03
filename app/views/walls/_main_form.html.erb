@@ -1,7 +1,5 @@
 <div class="wall-form">
 <%= horizontal_form_for @wall do |wall| %>  
-  <fielset class="wall-main">
-  <legend>Dati principali</legend>
   <%= wall.dm_error_notification %>  
   <%= wall.input :name %>  
   <%= wall.input :address %>  
@@ -11,7 +9,6 @@
   <%= wall.input :web %>  
   <%= wall.input :contact %>  
   <%= wall.submit %>  
-  </fielset>
 <% end %>
 </div>
 

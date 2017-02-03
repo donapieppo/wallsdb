@@ -1,10 +1,6 @@
 <div id="show_wall">
 <div class="row">
   <div class="col-md-4">
-    <p class="centered">
-    <%= link_to(fwicon('external-link') + ' pagina web ufficiale', @wall.web) unless @wall.web.blank? %><br/>
-    <%= link_to_edit 'modifica', [:edit, @wall] if current_user && current_user.owns?(@wall) %>
-    </p>
     <iframe id="wall_map" src="<%= simple_gmap_url(@wall.gmap_address) %>"></iframe>
     <p class="centered">
     <%= @wall.address %> <br/> 
@@ -32,13 +28,6 @@
       </div>
     <% end %><!-- unverified -->
 
-    <% unless @wall.description.blank?  %>  
-      <div class='wall-description'>
-        <%= raw @wall.description %>
-      </div>
-    <% end %>
-
-    <h2>Dettagli</h2>
     <%= details_bar(@wall) %> 
 
     <h2>Aperture</h2>
