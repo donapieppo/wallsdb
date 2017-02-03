@@ -1,32 +1,3 @@
-div.home-header {
-  background: url(asset-path('background.jpg')) no-repeat center top;
-  background-size: cover;
-  min-height: 566px;
-  margin: 0;
-  div.home-header-title {
-    font-size: 32px;
-    @media (min-width: 992px) { font-size: 42px; }
-    padding: 100px 50px;
-    text-align: center;
-    span {
-      background: rgba(127, 127, 127, 0.2);
-      padding: 0 10px;
-      line-height: 0px;
-      color: #fff;
-    }
-  }
-  div.home-header-description {
-    font-size: 16px;
-    color: #fff;
-    background-color: $wall-blue;
-    padding: 20px;
-    float: right;
-    width: 300px;
-    @media (min-width: 992px) { width: 500px; }
-    text-align: right;
-  }
-}
-
 .home-map {
   margin: 20px 0;
   #map {

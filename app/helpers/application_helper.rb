@@ -86,4 +86,11 @@ module ApplicationHelper
     raw %Q|<p class="info">| + capture(&block) + %Q|</p>|
   end
 
+  def wall_image(wall)
+    wall.photos.first ? @wall.photos.first.image.url : image_url('background.jpg') 
+  end
+
+  def wall_header_description(wall)
+    @wall.description.blank? ? "Questo muro non ha ancora una descrizione" : raw(@wall.description)
+  end
 end

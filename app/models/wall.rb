@@ -60,9 +60,9 @@ class Wall < ApplicationRecord
       self.lat = lat_lng["lat"]
       self.lng = lat_lng["lng"]
     when "ZERO_RESULTS"
-      self.errros.add(:address, message: "Indirizzo sconosciuto su google map")
+      self.errors.add(:address, message: "Indirizzo sconosciuto su google map")
     else
-      self.errros.add(:address, message: "Indirizzo sconosciuto su google map")
+      self.errors.add(:address, message: "Indirizzo sconosciuto su google map")
     end
   end
 
