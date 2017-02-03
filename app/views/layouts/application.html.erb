@@ -39,15 +39,15 @@
     <% if @wall and ! @wall.new_record? %>  
       <div class="wall-header" style="background: url('<%= wall_image(@wall) %>') no-repeat center top;">
         <h1><%= @wall.name %></h1>
-          <div class='wall-description'>
-            <div>
-              <%= wall_header_description(@wall) %>  
-            </div>
-            <p style="text-align: right; font-size: 13px;">
-              <%= link_to(fwicon('external-link') + ' pagina web ufficiale', @wall.web) unless @wall.web.blank? %><br/>
-              <%= link_to_edit 'modifica', [:edit, @wall] if current_user && current_user.owns?(@wall) %>
-            </p>
+        <div class='wall-description'>
+          <div>
+            <%= wall_header_description(@wall) %>  
           </div>
+          <p style="text-align: right">
+          <%= link_to(fwicon('external-link') + ' pagina web ufficiale', @wall.web) unless @wall.web.blank? %><br/>
+          <%= link_to_edit 'modifica', [:edit, @wall] if current_user && current_user.owns?(@wall) %>
+          </p>
+        </div>
         &nbsp;
       </div>
     <% end %>
