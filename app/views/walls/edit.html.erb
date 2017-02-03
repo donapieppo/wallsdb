@@ -11,13 +11,13 @@
 <!-- Tab panes -->
 <div class="tab-content" style="margin: 30px;">
   <div role="tabpanel" class="tab-pane active" id="anagrafica">
-    <%= render partial: 'main_form' %>  
+    <%= render partial: 'anagraphic_form', locals: {wall: @wall} %>  
   </div>
   <div role="tabpanel" class="tab-pane" id="description">
-    <%= render partial: 'description_form' %>  
+    <%= render partial: 'description_form', locals: {wall: @wall} %>  
   </div>
   <div role="tabpanel" class="tab-pane" id="details">
-    <%= render partial: 'form' %>  
+    <%= render partial: 'details_form', locals: {wall: @wall} %>  
   </div>
   <div role="tabpanel" class="tab-pane" id="openings">
     <%= render partial: 'openings/form', locals: {wall: @wall} %>  
