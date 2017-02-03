@@ -10,8 +10,8 @@ div#show_wall {
     margin: 20px 100px;
   }
   .unverified {
-    @extend .alert;
-    @extend .alert-danger;
+    // @extend .alert;
+    // @extend .alert-danger;
     margin: 30px;
     text-align: center;
     font-size: 160%;
