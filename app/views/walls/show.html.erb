@@ -1,25 +1,42 @@
-<p class="centered">
-  <%= @wall.address %> - <%= @wall.city %> -  <%= link_to @wall.province.name, root_path + @wall.province.name %> 
-</p>
-<p class="centered">
-  <%= link_to(fwicon('external-link') + ' pagina web ufficiale', @wall.web) unless @wall.web.blank? %>
-  <%= link_to_edit 'modifica', [:edit, @wall] if current_user && current_user.owns?(@wall) %>
-</p>
-
 <div id="show_wall">
-  <iframe id="wall_map" src="<%= simple_gmap_url(@wall.gmap_address) %>"></iframe>
+<div class="row">
+  <div class="col-md-4">
+    <p class="centered">
+    <%= link_to(fwicon('external-link') + ' pagina web ufficiale', @wall.web) unless @wall.web.blank? %><br/>
+    <%= link_to_edit 'modifica', [:edit, @wall] if current_user && current_user.owns?(@wall) %>
+    </p>
+    <iframe id="wall_map" src="<%= simple_gmap_url(@wall.gmap_address) %>"></iframe>
+    <p class="centered">
+    <%= @wall.address %> <br/> 
+    <%= @wall.cap %> <%= @wall.city %> <br/>
+    <%= link_to @wall.province.name, root_path + @wall.province.name %> 
+    </p>
 
-  <div class="container">
+    <h2>Eventi e news</h2>
+
+    <%= render @wall.events %>
+
+    <div id="wall_photos">
+      <% @wall.photos.each do |photo| %>  
+        <%= image_tag photo.image.thumb.url %> 
+      <% end %>
+    </div><!-- wall_photos -->
+  </div>
+  <div class="col-md-8">
+
     <% unless @wall.verified %>  
       <div class="unverified">
         <p><%= icon('frown-o', size: 48) %></p>
         <p>Questa palestra non ha ancora un amministratore<br/> che si prenda cura di lei, poverina.</p>
         <p><%= link_to 'Sono proprietario di questa palestra', own_wall_path(@wall), class: 'btn btn-primary btn-lg' %></p>
       </div>
+    <% end %><!-- unverified -->
+
+    <% unless @wall.description.blank?  %>  
+      <div class='wall-description'>
+        <%= raw @wall.description %>
+      </div>
     <% end %>
-    <div class='wall-description'>
-      <%= raw @wall.description %>
-    </div>
 
     <h2>Dettagli</h2>
     <%= details_bar(@wall) %> 
@@ -33,28 +50,9 @@
     </dl>
     <div class="clearfix">...</div>
 
-    <h2>Eventi e news</h2>
-
-    <div class="row">
-      <% group_in_4(@wall.events).each do |event_group|%>  
-        <div class="col-md-3">
-          <% event_group.each do |event| %>  
-            <%= render event %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-
     <center>
       <p><%= link_to icon('plus-circle') + ' Segnala prossimo evento', new_wall_event_path(@wall), class: 'wall_add_event' %></p>  
     </center>
-
-    <div id="wall_photos">
-      <h2>Immagini</h2>
-      <% @wall.photos.each do |photo| %>  
-        <%= image_tag photo.image.thumb.url %> 
-      <% end %>
-    </div><!-- wall_photos -->
 
   </div>
 </div>
