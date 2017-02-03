@@ -42,7 +42,7 @@
       <%= privacy_alert %>
 
       <% if @wall and ! @wall.new_record? %>  
-        <h1 class="centered"> <%= @wall.name %></h1>
+        <h1 class="centered wall-h1" style="backgroud: url('<%= @wall.photos.first.image.url %>') no-repeat center top;"><%= @wall.name %></h1>
       <% end %>
       
       <%= yield %>
