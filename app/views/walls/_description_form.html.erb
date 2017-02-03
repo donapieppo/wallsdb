@@ -1,5 +1,6 @@
-<%= horizontal_form_for @wall do |wall| %>  
+<%= horizontal_form_for wall do |f| %>  
   <%= tinymce_assets %>
-  <%= wall.input :description, as: :text, label: false, input_html: {class: 'tinymce', rows: 10} %>  
+  <%= f.input :description, as: :text, label: false, input_html: {class: 'tinymce', rows: 10} %>  
   <%= tinymce language: "it" %>
+  <%= f.submit %>  
 <% end %>

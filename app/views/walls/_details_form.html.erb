@@ -1,24 +1,16 @@
-<%= horizontal_form_for @wall do |wall| %>  
-  <div class="row">
-    <div class="col-md-4">
-      <h2>Boulder</h2>
-      <%= wall.input :boulder_mq %>  
-      <%= wall.input :boulder_notes %>  
-    </div>
-    <div class="col-md-4">
-      <h2>Corda</h2>
-      <%= wall.input :rope_mq %>  
-      <%= wall.input :rope_notes %>  
-    </div>
-    <div class="col-md-4">
-      <h2>Dettagli</h2>
-      <%= wall.input :training %>  
-      <%= wall.input :bar %>  
-      <%= wall.input :music %>  
-    </div>
-  </div>
-  <p class="centered">
-  <%= wall.submit %> - <%= link_to_back wall_path(@wall)  %>  
-  </p>
-  <%# <%= wall.input :prices, as: :text %1> %>  
+<%= horizontal_form_for wall do |f| %>  
+  <fieldset>
+    <legend>Boulder</legend>
+    <%= f.input :boulder_mq %>  
+    <%= f.input :boulder_notes %>  
+    <legend>Corda</legend>
+    <%= f.input :rope_mq %>  
+    <%= f.input :rope_notes %>  
+    <legend>Dettagli</legend>
+    <%= f.input :training %>  
+    <%= f.input :bar %>  
+    <%= f.input :music %>  
+    <%= f.submit %> - <%= link_to_back wall_path(wall)  %>  
+    <%# <%= wall.input :prices, as: :text %1> %>  
+  </fieldset>
 <% end %>
