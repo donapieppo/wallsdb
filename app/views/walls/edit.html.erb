@@ -1,9 +1,6 @@
-<%= @wall.address %>  <%= @wall.cap %>  <%= @wall.city %>  
+<%# <%= @wall.address %1>  <%= @wall.cap %1>  <%= @wall.city %1> %>  
 
-<% if params[:all] %>  
-  <%= render partial: 'main_form' %>  
-<% end %>
-
+<%= render partial: 'main_form' %>  
 <%= render partial: 'form' %>  
 
 <h2>Aperture</h2>
@@ -12,6 +9,7 @@
 <h2>Immagini</h2>
 <%= horizontal_form_for [@wall, Photo.new] do |photo| %>  
   <%= photo.input :image, as: :file, label: 'Nuova Foto' %>  
+  <%= photo.input :remote_image_url, label: "Scarica la foto dall'indirizzo" %>  
   <%= photo.input :importance, collection: Photo.importaces, label_method: -> (x) {I18n.t x[0]},  as: :radio_buttons %>  
   <%= photo.submit %>  
 <% end %>
