@@ -44,6 +44,8 @@ it:
         start_date:  Inizio evento
         end_date:    Fine evento
       photo:
+        image: Immagine
+        remote_image_url: Indirizzo web
         importance: Visibilità
       admin:
         email: Nuovo amministratore
@@ -62,6 +64,9 @@ it:
         bar: È possibile comprarsi una birra o uno spritz? 
         boulder_notes: Note sul boulder.
         rope_notes: Note sui muri di corda.
+      photo:
+        image: Scegliere l'immagine dal proprio computer.
+        remote_image_url: Indicare l'indirizzo web in cui si trova la foto da importare.
 
     placeholders:
       wall:
@@ -72,3 +77,8 @@ it:
         web: http://
       admin:
         email: nome.cognome@gmail.com
+      photo:
+        remote_image_url: http://
+
+
+

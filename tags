@@ -45,6 +45,7 @@ big_icon	app/helpers/application_helper.rb	/^  def big_icon(name, options = {})$
 bootstrap_flash	app/helpers/application_helper.rb	/^  def bootstrap_flash$/;"	f	class:ApplicationHelper
 bootstrap_modal_div	app/helpers/application_helper.rb	/^  def bootstrap_modal_div$/;"	f	class:ApplicationHelper
 class_active	app/helpers/application_helper.rb	/^  def class_active(x,y)$/;"	f	class:ApplicationHelper
+clear_cache	app/models/wall.rb	/^  def clear_cache$/;"	f	class:Wall
 create	app/controllers/admins_controller.rb	/^  def create$/;"	f	class:AdminsController
 create	app/controllers/events_controller.rb	/^  def create$/;"	f	class:EventsController
 create	app/controllers/openings_controller.rb	/^  def create$/;"	f	class:OpeningsController
@@ -75,6 +76,7 @@ form_legend	app/helpers/form_helper.rb	/^  def form_legend(what)$/;"	f	class:For
 fwicon	app/helpers/application_helper.rb	/^  def fwicon(name, options = { text: "", size: "18" })$/;"	f	class:ApplicationHelper
 geocodes	app/models/wall.rb	/^  def self.geocodes$/;"	F	class:Wall
 get_event_and_check_permission	app/controllers/events_controller.rb	/^  def get_event_and_check_permission$/;"	f	class:EventsController
+get_photo_and_check_permission	app/controllers/photos_controller.rb	/^  def get_photo_and_check_permission$/;"	f	class:PhotosController
 get_wall_and_check_permission	app/controllers/events_controller.rb	/^  def get_wall_and_check_permission$/;"	f	class:EventsController
 get_wall_and_check_permission	app/controllers/openings_controller.rb	/^  def get_wall_and_check_permission$/;"	f	class:OpeningsController
 get_wall_and_event_and_check_permission	app/controllers/photos_controller.rb	/^  def get_wall_and_event_and_check_permission$/;"	f	class:PhotosController
@@ -86,6 +88,7 @@ has_boulder?	app/models/wall.rb	/^  def has_boulder?$/;"	f	class:Wall
 has_music?	app/models/wall.rb	/^  def has_music?$/;"	f	class:Wall
 has_rope?	app/models/wall.rb	/^  def has_rope?$/;"	f	class:Wall
 has_training?	app/models/wall.rb	/^  def has_training?$/;"	f	class:Wall
+header_image	app/controllers/photos_controller.rb	/^  def header_image$/;"	f	class:PhotosController
 horizontal_form_for	app/helpers/form_helper.rb	/^  def horizontal_form_for(record, options={}, &block)$/;"	f	class:FormHelper
 hours_to_s	app/models/opening.rb	/^  def hours_to_s$/;"	f	class:Opening
 html_id	app/models/event.rb	/^  def html_id$/;"	f	class:Event
@@ -158,6 +161,8 @@ user_master_of_universe!	app/controllers/application_controller.rb	/^  def user_
 user_signed_in?	app/helpers/application_helper.rb	/^  def user_signed_in?$/;"	f	class:ApplicationHelper
 vertical_form_for	app/helpers/form_helper.rb	/^  def vertical_form_for(record, options={}, &block)$/;"	f	class:FormHelper
 wall_detail	app/helpers/walls_helper.rb	/^  def wall_detail(wall, what)$/;"	f
+wall_header_description	app/helpers/application_helper.rb	/^  def wall_header_description(wall)$/;"	f	class:ApplicationHelper
+wall_image	app/helpers/application_helper.rb	/^  def wall_image(wall)$/;"	f	class:ApplicationHelper
 wall_params	app/controllers/walls_controller.rb	/^  def wall_params$/;"	f	class:WallsController
 walls_json	app/models/wall.rb	/^  def self.walls_json$/;"	F	class:Wall
 wday_to_s	app/models/opening.rb	/^  def wday_to_s$/;"	f	class:Opening

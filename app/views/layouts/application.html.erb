@@ -37,7 +37,7 @@
     <% end %>
 
     <% if @wall and ! @wall.new_record? %>  
-      <div class="wall-header" style="background: url('<%= wall_image(@wall) %>') no-repeat center top;">
+      <div id="wall-header" style="background: url('<%= wall_image_url(@wall) %>') no-repeat center top;">
         <h1><%= @wall.name %></h1>
         <div class='wall-description'>
           <div>

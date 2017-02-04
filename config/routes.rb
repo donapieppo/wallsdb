@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :admins
   resources :openings
-  resources :photos
+  resources :photos do
+    put :header_image, on: :member
+  end
   resources :events do 
     resources :photos
   end

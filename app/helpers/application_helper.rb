@@ -86,8 +86,12 @@ module ApplicationHelper
     raw %Q|<p class="info">| + capture(&block) + %Q|</p>|
   end
 
-  def wall_image(wall)
-    wall.photos.first ? @wall.photos.first.image.url : image_url('background.jpg') 
+  def wall_photo(wall)
+    wall.photos.header.first 
+  end
+
+  def wall_image_url(wall)
+    wall_photo(wall) ? wall_photo(wall).image.url : image_url('background.jpg')
   end
 
   def wall_header_description(wall)
