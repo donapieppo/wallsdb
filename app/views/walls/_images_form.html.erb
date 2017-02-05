@@ -2,7 +2,7 @@
 <div class="col-md-8">
   <p class="alert alert-info">
   È possibile inserire immagini dal proprio computer oppure indicando
-  l'inidirizzo web da cui prenderle.
+  l'indirizzo web da cui prenderle.
   </p>
 
   <%= simple_form_for [wall, Photo.new] do |photo| %>  
@@ -21,8 +21,8 @@
       <%= image_tag photo.image.url %>  
     </div>
     <div class="caption">
-      <%= link_to icon(photo.importance == 1 ? 'check-square-o' : 'square-o') + ' immagine principale', header_image_photo_path(photo), remote: true, method: :put, id: "link_#{photo.id}" %> -
-      <%= link_to icon('trash') + ' elimina', photo_path(photo), method: :delete %>
+      <%= link_to icon('check-square-o') + ' immagine principale', header_image_photo_path(photo), remote: true, method: :put, id: "link_#{photo.id}", class: :button, disabled: (photo.importance == 1) %> -
+      <%= link_to icon('trash') + ' elimina', photo_path(photo), method: :delete, class: :button %>
     </div>
   <% end %>
 </div>
