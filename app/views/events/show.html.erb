@@ -1,9 +1,9 @@
-<h1><%= @event.wall %></h1>
+<h1><%= link_to @event.wall, @event.wall %></h1>
 
 <%= render @event, complete: true %>  
 
 <% if @other_events.any? %>  
-  <h2>Altri eventi <small>a <%= @event.wall %></small></h2>  
+  <h2>Altri eventi</h2>  
   <div class="row">
     <% @other_events.each do |event| %>  
       <div class="col-md-4 col-md-offset-4">

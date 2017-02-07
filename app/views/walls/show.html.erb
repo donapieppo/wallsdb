@@ -8,13 +8,19 @@
     <%= link_to @wall.province.name, root_path + @wall.province.name %> 
     </p>
 
-    <h2>Eventi e news</h2>
+    <h2>Eventi e notizie</h2>
+
+    <p class="centered">
+      <%= link_to icon('plus-circle') + ' Segnala prossimo evento', new_wall_event_path(@wall), class: 'wall_add_event' %>
+    </p>  
 
     <%= render @wall.events %>
 
     <div id="wall_photos">
       <% @wall.photos.each do |photo| %>  
+        <div class="thumbnail">
         <%= image_tag photo.image.thumb.url %> 
+        </div>
       <% end %>
     </div><!-- wall_photos -->
   </div>
@@ -30,18 +36,13 @@
 
     <%= details_bar(@wall) %> 
 
-    <h2>Aperture</h2>
     <dl class="dl-horizontal" id="openings_dl">
-      <dt><%= fwicon('calendar') %></dt>  
+      <dt><%= fwicon('calendar') %> Aperture</dt>  
       <% @wall.openings.each do |opening| %>  
         <dd><span><%= opening.wday_to_s %></span><%= opening.hours_to_s %></dd>
       <% end %>
     </dl>
     <div class="clearfix">...</div>
-
-    <center>
-      <p><%= link_to icon('plus-circle') + ' Segnala prossimo evento', new_wall_event_path(@wall), class: 'wall_add_event' %></p>  
-    </center>
 
   </div>
 </div>

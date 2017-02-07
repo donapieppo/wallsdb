@@ -5,7 +5,7 @@
   l'indirizzo web da cui prenderle.
   </p>
 
-  <%= simple_form_for [wall, Photo.new] do |photo| %>  
+  <%= simple_form_for [what, Photo.new] do |photo| %>  
     <%= photo.input :image, as: :file %>  
     <%= photo.submit 'Invia foto' %>  
 
@@ -16,7 +16,7 @@
   <% end %>
 </div>
 <div class="col-md-4">
-  <% wall.photos.each do |photo| %>  
+  <% what.photos.each do |photo| %>  
     <div class='thumbnail'>
       <%= image_tag photo.image.url %>  
     </div>

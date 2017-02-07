@@ -1,36 +1,17 @@
-<h1><%= link_to @event.wall, wall_path(@event.wall) %></h1>
+<div>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Descrizione</a></li>
+  <li role="presentation"><a href="#images"      aria-controls="images"      role="tab" data-toggle="tab">Immagini</a></li>
+</ul>
 
-<div class="row">
-  <div class="col-md-8">
-    <fielset>
-    <legend>Dati evento</legend>
-    <%= render partial: 'form' %>  
-    </fielset>
+<!-- Tab panes -->
+<div class="tab-content" style="margin: 30px;">
+  <div role="tabpanel" class="tab-pane active" id="description">
+    <%= render partial: 'form', locals: {event: @event} %>  
   </div>
-  <div class="col-md-4">
-    <fielset class="event-gallery">
-    <legend>Immagini</legend>
-    <%= simple_form_for [@event, Photo.new] do |photo| %>  
-      <%= photo.input :image, as: :file, label: "Aggiungi foto per l'evento", required: false %>  
-      <%= photo.input :remote_image_url, label: "Scarica la foto dall'indirizzo" %>  
-      <%= photo.input :importance, collection: ['a', 'b', 'c'], as: :radio_buttons, boolean_style: :inline %>  
-      <%= photo.submit %>  
-    <% end %>
-    </fielset>
+  <div role="tabpanel" class="tab-pane" id="images">
+    <%= render partial: 'images/form', locals: {what: @event} %>  
   </div>
 </div>
-
-<h2>Immagini</h2>
-<div class="row">
-  <% @event.photos.each do |photo| %>  
-    <div class="col-xs-6 col-md-3">
-      <div class='thumbnail'>
-        <%= image_tag photo.image.url %>  
-      </div>
-      <div class="caption">
-        <%= link_to_delete photo_path(photo) %>  
-      </div>
-    </div>
-  <% end %>
 </div>
-

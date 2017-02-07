@@ -1,6 +1,7 @@
 <div class="walls-list">
-  <% @walls.each do |region, prov_walls| %>
-    <div class="col-md-3">
+<% group_in(@walls, 4).each do |wall_group| %>  
+  <div class="col-md-3">
+    <% wall_group.each do |region, prov_walls| %>  
       <div class="panel panel-default">
         <div class="panel-heading">
           <p class="panel-title"><%= region %></p>
@@ -16,6 +17,7 @@
           </dl>
         </div><!-- body -->
       </div><!-- panel -->
-    </div><!-- col -->
-  <% end %>
+    <% end %>
+  </div><!-- col -->
+<% end %>
 </div><!-- row -->
