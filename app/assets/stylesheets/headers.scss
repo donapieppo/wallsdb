@@ -36,10 +36,13 @@ div#wall-header {
   margin-bottom: 20px;
   color: #000;
   h1 {
-    background-color: #ccc;
+    color: #fff;
+    background-color: #333;
     opacity: 0.60; 
     filter: alpha(opacity=60);
     margin-top: 30px;
+    padding: 20px;
+    font-weight: 300;
   }
   div.wall-description {
     width: 50%;

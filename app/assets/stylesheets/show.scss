@@ -5,9 +5,7 @@ div#show_wall {
   }
   a.wall_add_event {
     @extend .btn;
-    @extend .btn-lg;
     @extend .btn-default;
-    margin: 20px 100px;
   }
   .unverified {
     // @extend .alert;
@@ -21,11 +19,11 @@ div#show_wall {
 div.wall-details {
   @include make-row();
   div.col {
-    @include make-md-column(3);
+    @include make-md-column(4);
   }
   div.wall-detail {
     margin-bottom: 2em;
-    height: 20em;
+    height: 15em;
     border: 1px solid #111;
     font-weight: bold;
     text-align: center;
