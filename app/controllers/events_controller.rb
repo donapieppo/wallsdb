@@ -50,6 +50,7 @@ class EventsController < ApplicationController
 
   def get_event_and_check_permission
     @event = Event.includes(:wall).find(params[:id])
+    @wall  = @event.wall
     current_user.owns!(@event.wall)
   end
 end

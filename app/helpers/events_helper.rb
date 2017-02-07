@@ -9,14 +9,6 @@ module EventsHelper
     COLORS[(@i += 1) % COLORS.size]
   end
 
-  def group_in_4(events)
-    res = []
-    events.each_with_index do |event, i|
-      res[i%4] ||= []
-      res[i%4] << event
-    end
-    res
-  end
 end
 
 

@@ -97,4 +97,13 @@ module ApplicationHelper
   def wall_header_description(wall)
     @wall.description.blank? ? "Questo muro non ha ancora una descrizione" : raw(@wall.description)
   end
+
+  def group_in(events, num)
+    res = []
+    events.each_with_index do |event, i|
+      res[i%num] ||= []
+      res[i%num] << event
+    end
+    res
+  end
 end
