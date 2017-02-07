@@ -15,7 +15,7 @@
 <h2 class="centered"><%= t :events %></h2>
 
 <div class="row">
-  <% group_in_4(@events).each do |event_group|%>  
+  <% group_in(@events, 4).each do |event_group|%>  
     <div class="col-md-3">
       <% event_group.each do |event| %>  
         <%= render event %>

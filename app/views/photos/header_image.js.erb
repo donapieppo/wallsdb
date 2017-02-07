@@ -1,1 +1,3 @@
-$("#wall-header").css("background", "url('<%= wall_image_url(@parent) %>') no-repeat center top");
+<% if @parent.is_a?(Wall) %>  
+  $("#wall-header").css("background", "url('<%= wall_image_url(@parent) %>') no-repeat center top");
+<% end %>
