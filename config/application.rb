@@ -18,5 +18,7 @@ module Wallsdb
     config.i18n.default_locale = :it
     config.active_record.time_zone_aware_types = [:datetime, :time]
 
+
+    config.tinymce.install = :copy
   end
 end
