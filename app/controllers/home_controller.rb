@@ -10,7 +10,7 @@ class HomeController < ApplicationController
       @walls = @walls.where(province_id: @province.id) if @province
     end
     @events = Event.includes(:photos, :wall).future.limit(10).all + 
-              Event.includes(:photos, :wall).past.limit(10).all
+              Event.includes(:photos, :wall).past.last_days(15).limit(10).all
   end
 
   def search
