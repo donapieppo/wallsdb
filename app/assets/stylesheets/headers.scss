@@ -45,8 +45,8 @@ div#wall-header {
     font-weight: 300;
   }
   div.wall-description {
-    width: 50%;
-    margin-left: 45%;
+    width: 60%;
+    margin-left: 35%;
     text-align: right;
     opacity: 0.65; 
     filter: alpha(opacity=65);
@@ -55,5 +55,6 @@ div#wall-header {
     padding: 20px;
     border-radius: 10px;
     margin-top: 80px;
+    margin-bottom: 80px;
   }
 }
