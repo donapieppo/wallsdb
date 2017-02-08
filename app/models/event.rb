@@ -4,6 +4,10 @@ class Event < ApplicationRecord
 
   validates :name, presence: true
 
+  scope :future,    -> { where('events.end_date >= NOW()').order(:start_date) }
+  scope :past,      -> { where('events.end_date < NOW()').order('start_date desc') }
+  scope :last_days, -> (num) { where('events.end_date > DATE_SUB(NOW(), INTERVAL ? day)', num) }
+
   def to_s
     I18n.l(self.start_date) + " " + self.name
   end
@@ -12,7 +16,5 @@ class Event < ApplicationRecord
     "event_#{self.id}"
   end
 
-  scope :future, -> { where('events.end_date >= NOW()').order(:start_date) }
-  scope :past,   -> { where('events.end_date < NOW()').order('start_date desc') }
 end
 
