@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "map"
     t.string  "contact"
     t.string  "web"
+    t.string  "facebook"
+    t.string  "instagram"
     t.text    "prices",        limit: 65535
     t.integer "boulder_mq"
     t.string  "boulder_notes"
