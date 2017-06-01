@@ -37,16 +37,16 @@
     <% end %>
 
     <% if @wall and ! @wall.new_record? %>  
-      <div id="wall-header" style="background: url('<%= wall_image_url(@wall) %>') no-repeat center top;">
+      <div id="wall-header" style="background: url('<%= wall_image_url(@wall) %>') no-repeat center center;">
         <h1><%= @wall.name %></h1>
         <div class='wall-description'>
           <div>
             <%= wall_header_description(@wall) %>  
           </div>
           <p style="text-align: right">
-          <%= link_to(fwicon('external-link') + ' pagina web ufficiale <br/>'.html_safe, @wall.web) unless @wall.web.blank? %>
-          <%= link_to(fwicon('facebook-square') + ' pagina web ufficiale <br/>'.html_safe, @wall.web) unless @wall.facebook.blank? %>
-          <%= link_to(fwicon('instagram') + ' pagina web ufficiale <br/>'.html_safe, @wall.web) unless @wall.instagram.blank? %>
+          <%= link_to(fwicon('external-link') + ' pagina web ufficiale<br/>'.html_safe, @wall.web) unless @wall.web.blank? %>
+          <%= link_to(fwicon('facebook-square') + ' pagina facebook<br/>'.html_safe, @wall.facebook) unless @wall.facebook.blank? %>
+          <%= link_to(fwicon('instagram') + ' pagina instagram<br/>'.html_safe, @wall.instagram) unless @wall.instagram.blank? %>
           <%= link_to_edit 'modifica', [:edit, @wall] if current_user && current_user.owns?(@wall) %>
           </p>
         </div>
